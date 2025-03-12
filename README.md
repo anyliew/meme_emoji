@@ -1,6 +1,6 @@
 # meme_emoji 
 
-![芙宁娜](./picture/fufu.gif)
+![芙宁娜dome](./picture/logo.png)
 
 
 ## 表情包扩展仓库 meme_emoji 
@@ -65,3 +65,4 @@ gif_max_frames = 100  # 限制生成的 gif 文件帧数
 [log]
 log_level = "INFO"  # 日志等级
 ```
+![芙宁娜](./picture/fufu.gif)

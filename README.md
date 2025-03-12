@@ -1,8 +1,7 @@
 # meme_emoji 
 
-![芙宁娜](https://bbs-static.miyoushe.com/static/2023/12/28/d6bfa59a83721d7e7dd27363f5bfc88b_732370910818099450.png)
+![芙宁娜](./picture/fufu.gif)
 
-![芙宁娜2](https://bbs-static.miyoushe.com/static/2023/08/23/b936459d0514da31651d086a2c507345_3938242848160050564.png)
 
 ## 表情包扩展仓库 meme_emoji 
 

@@ -10,10 +10,10 @@ from meme_generator.utils import make_jpg_or_gif
 img_dir = Path(__file__).parent / "images"
 
 
-def op_call(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+def mihoyo_funina_death_penalty(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
 
-    ta = "她"
+    ta = "他"
     name = ta
     if texts:
         name = texts[0]
@@ -25,9 +25,9 @@ def op_call(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     text = f""
     try:
         frame.draw_text(
-            (50, 20, 700, 130),
+            (745, 45, 1274, 171),
             text,
-            max_fontsize=70,
+            max_fontsize=100,
             min_fontsize=20,
             valign="bottom",
         )
@@ -35,20 +35,24 @@ def op_call(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
         raise TextOverLength(name)
 
     def make(imgs: list[BuildImage]) -> BuildImage:
-        img = imgs[0].convert("RGBA").circle().resize((180, 180))
-        return frame.copy().paste(img, (500, 100), alpha=True)
+        #.resize
+        img = imgs[0].convert("RGBA").circle().resize((280, 280))
+        #img = img.rotate(-15, expand=True)
+        return frame.copy().paste(img, (950, 380), alpha=True)
 
     return make_jpg_or_gif(images, make)
 
 
 add_meme(
-    "op_call",
-    op_call,
+    "mihoyo_funina_death_penalty",
+    mihoyo_funina_death_penalty,
     min_images=1,
     max_images=1,
     min_texts=0,
     max_texts=1,
-    keywords=["大伟哥", "OP","op", "Op","oP"],
-    date_created=datetime(2024, 7, 26),
-    date_modified=datetime(2024, 7, 26),
+    keywords=["死刑"],
+    date_created=datetime(2025, 3, 14),
+    #time 2025年3月14日 20:18:58
+    #By Anyliew
+    date_modified=datetime(2025, 3, 14),
 )

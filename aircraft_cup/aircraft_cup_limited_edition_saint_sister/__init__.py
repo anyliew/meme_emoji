@@ -10,7 +10,7 @@ from meme_generator.utils import make_jpg_or_gif
 img_dir = Path(__file__).parent / "images"
 
 
-def holy_sister(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+def aircraft_cup_limited_edition_saint_sister(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
 
     ta = "他"
@@ -43,13 +43,13 @@ def holy_sister(images: list[BuildImage], texts: list[str], args: MemeArgsModel)
 
 
 add_meme(
-    "holy_sister",
-    holy_sister,
+    "aircraft_cup_limited_edition_saint_sister",
+    aircraft_cup_limited_edition_saint_sister,
     min_images=1,
     max_images=1,
     min_texts=0,
     max_texts=1,
-    keywords=["圣修女"],
+    keywords=["限定版圣修女"],
     date_created=datetime(2024, 12, 21),
     #time 2024年12月21日 21:31:25
     #By Anyliew

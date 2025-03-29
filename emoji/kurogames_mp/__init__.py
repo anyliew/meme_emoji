@@ -10,7 +10,7 @@ from meme_generator.utils import make_jpg_or_gif
 img_dir = Path(__file__).parent / "images"
 
 
-def kurogames_songlun(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+def kurogames_mp(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
 
     ta = "她"
@@ -35,20 +35,20 @@ def kurogames_songlun(images: list[BuildImage], texts: list[str], args: MemeArgs
         raise TextOverLength(name)
 
     def make(imgs: list[BuildImage]) -> BuildImage:
-        img = imgs[0].convert("RGBA").circle().resize((180, 180))
-        return frame.copy().paste(img, (500, 100), alpha=True)
-
+        img = imgs[0].convert("RGBA").circle().resize((130, 130))
+        img_rotated = img.rotate(25, expand=True)  # 向左旋转18度
+        return frame.copy().paste(img_rotated, (300, 2), alpha=True)
     return make_jpg_or_gif(images, make)
 
 
 add_meme(
-    "kurogames_songlun",
-    kurogames_songlun,
+    "kurogames_mp",
+    kurogames_mp,
     min_images=1,
     max_images=1,
     min_texts=0,
     max_texts=1,
-    keywords=["松伦哥指", "潮批"],
+    keywords=["鸣批","鸣P","鸣p","鸣潮玩家"],
     date_created=datetime(2025, 3, 7),
     date_modified=datetime(2025, 3, 7),
 )

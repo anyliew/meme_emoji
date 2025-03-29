@@ -48,7 +48,7 @@ add_meme(
     max_images=1,
     min_texts=0,
     max_texts=1,
-    keywords=["鸣批","鸣P","鸣p","鸣潮玩家"],
+    keywords=["鸣批","鸣P","鸣p","鸣潮玩家","鸣潮男"],
     date_created=datetime(2025, 3, 7),
     date_modified=datetime(2025, 3, 7),
 )

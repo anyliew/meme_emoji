@@ -3,13 +3,16 @@
 
 🚀 基于 [meme-generator](https://github.com/MemeCrafters/meme-generator) 插件做的扩展表情包仓库
 
-*✨* 为你的聊天机器人添加更多趣味表情生成功能！
+*✨* 为你的聊天机器人添加更多趣味表情生成！
 
 ## 特性
 
 - ✅ **海量模板** 偶尔做做热门表情包模板
 - ⚡ **实时生成** 支持通过指令快速生成表情
 - 🔄 **搭配使用** 需要搭配 [meme-generator](https://github.com/MemeCrafters/meme-generator) 一起使用
+
+- ✨**搭配演示架构图所示：**
+![架构图](./picture/meme_emoji.jpg)
 
 
 ## 已实现表情示例
@@ -64,14 +67,12 @@ log_level = "INFO"  # 日志等级
 
 ## 相关链接
 
--  [meme-generator](https://github.com/MemeCrafters/meme-generator) 插件的Wiki：[--> Wiki <--](https://github.com/MemeCrafters/meme-generator/wiki)
+-  [meme-generator](https://github.com/MemeCrafters/meme-generator) 的Wiki：[--> Wiki <--](https://github.com/MemeCrafters/meme-generator/wiki)
 
-
-其他表情仓库：
 - [MemeCrafters/meme-generator-contrib](https://github.com/MemeCrafters/meme-generator-contrib) meme-generator 额外表情仓库
 
-
 ## 声明
+
 本仓库的表情素材等均来自网络，如有侵权请联系作者删除
 
 

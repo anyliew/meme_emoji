@@ -10,7 +10,7 @@ from meme_generator.utils import make_jpg_or_gif
 img_dir = Path(__file__).parent / "images"
 
 
-def summer_liuli_zi(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+def aircraft_cup_summer_liuli_zi(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
 
     ta = "他"
@@ -43,8 +43,8 @@ def summer_liuli_zi(images: list[BuildImage], texts: list[str], args: MemeArgsMo
 
 
 add_meme(
-    "summer_liuli_zi",
-    summer_liuli_zi,
+    "aircraft_cup_summer_liuli_zi",
+    aircraft_cup_summer_liuli_zi,
     min_images=1,
     max_images=1,
     min_texts=0,

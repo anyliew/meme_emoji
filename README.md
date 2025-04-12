@@ -25,38 +25,45 @@
 ![架构图](./picture/meme_emoji.jpg)
 
 
-## 已实现表情示例
 
-- 杯子系列 `[夏日琉璃子、琉璃子、圣修女、纪念版圣修女、限定版圣修女、对魔忍、偶像心跳、杰士邦、空气玩法]`<img src="./picture/Phone.png" alt="image-20250312190444844" style="zoom:50%;" />
-- 名人名言 `[大伟哥嘲笑指]`
+## 已实现表情示例
+### 简略清单
+- 杯子系列 `[夏日琉璃子、琉璃子、圣修女、纪念版圣修女、限定版圣修女、对魔忍、偶像心跳、杰士邦、空气玩法]`
+- OP `[名人名言大伟哥嘲笑指]`
 - 芙芙指 `[芙宁娜嘲笑]`
 - 表情三连 `[三连 内容]`
+### 参考预览图：
+<img src="./picture/Phone.png" alt="image-20250312190444844" style="zoom:50%;" />
 
 
+## 配置信息
 
+### 仓库文件信息
 
-## 配置参考
+| Name      | Info                   |
+| --------- | ---------------------- |
+| ----      |                        |
+| docker    | docker compose编排文件 |
+| emoji     | 表情包文件             |
+| picture   | 文档引用图片           |
+| LICENSE   | 许可文件               |
+| README.md | 说明文档               |
+
 
 ### Windows Config:
-
 > 文件参考路径 C:\Users\liew\AppData\Roaming\meme_generator\config.toml
->
-
 ```bash
 [meme]
 load_builtin_memes = true  # 是否加载内置表情包
-meme_dirs = ["D:/meme_emoji/aircraft_cup","D:/meme_emoji/emoji"]  # 加载其他位置的表情包，填写
+meme_dirs = ["D:/meme_emoji/emoji"] # 加载其他位置的表情包，填写文件夹路径
 ```
 
 ### Linux Config:
-
 > 文件参考路径 /root/.config/meme_generator/config.toml
->
-
 ```bash
 [meme]
 load_builtin_memes = true  # 是否加载内置表情包
-meme_dirs = ["/opt/meme_emoji/aircraft_cup","/opt/meme_emoji/emoji"]  # 加载其他位置的表情包，填写文件夹路径
+meme_dirs = ["/opt/meme_emoji/emoji"]  # 加载其他位置的表情包，填写文件夹路径
 ```
 
 ## 相关链接
@@ -66,15 +73,17 @@ meme_dirs = ["/opt/meme_emoji/aircraft_cup","/opt/meme_emoji/emoji"]  # 加载�
 - [MemeCrafters/meme-generator-contrib](https://github.com/MemeCrafters/meme-generator-contrib) meme-generator 额外表情仓库
 
 ## 反馈
-单个表情有问题反馈请附带日志和截图，答复受限网络没那么快及时处理
+单个表情有问题反馈请附带日志和截图
 
-[issues]: https://github.com/anyliew/meme_emoji/issues
+答复受限网络没那么快及时处理
 
-### meme_emoji 交流群 743103809 欢迎进来投稿高清素材
+> issues https://github.com/anyliew/meme_emoji/issues 
+
+### meme_emoji 交流群 743103809 
+
+> 欢迎进来投稿高清素材，看到一些有趣的素材图片会制作成表情更新到本仓库
 
 ![群组](./picture/group.jpg)
-
-
 
 
 ## 声明

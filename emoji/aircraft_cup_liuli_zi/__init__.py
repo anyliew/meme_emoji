@@ -10,7 +10,7 @@ from meme_generator.utils import make_jpg_or_gif
 img_dir = Path(__file__).parent / "images"
 
 
-def taimanin_asgi(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+def aircraft_cup_liuli_zi(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
 
     ta = "他"
@@ -26,7 +26,7 @@ def taimanin_asgi(images: list[BuildImage], texts: list[str], args: MemeArgsMode
     #{name}挚爱❤️👩‍❤️‍💋‍👨{name}愛のカップ。
     try:
         frame.draw_text(
-            (35, 111, 428, 210),
+            (26, 74, 380, 141),
             text,
             max_fontsize=100,
             min_fontsize=20,
@@ -36,20 +36,20 @@ def taimanin_asgi(images: list[BuildImage], texts: list[str], args: MemeArgsMode
         raise TextOverLength(name)
 
     def make(imgs: list[BuildImage]) -> BuildImage:
-        img = imgs[0].convert("RGBA").circle().resize((780, 780))
-        return frame.copy().paste(img, (215, 222), alpha=True, below=True)
+        img = imgs[0].convert("RGBA").circle().resize((500, 500))
+        return frame.copy().paste(img, (145, 180), alpha=True, below=True)
 
     return make_jpg_or_gif(images, make)
 
 
 add_meme(
-    "taimanin_asgi",
-    taimanin_asgi,
+    "aircraft_cup_liuli_zi",
+    aircraft_cup_liuli_zi,
     min_images=1,
     max_images=1,
     min_texts=0,
     max_texts=1,
-    keywords=["对魔忍"],
+    keywords=["琉璃子"],
     date_created=datetime(2024, 12, 21),
     #time 2024年12月21日 21:31:25
     #By Anyliew

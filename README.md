@@ -1,16 +1,24 @@
+<div align="center">
+<img src="https://upload-bbs.miyoushe.com/upload/2025/05/08/365152535/0a154b759159adf6beb79d1582528fae_4082085489423633137.png" width=200 />
+
 # meme_emoji 
-![logo_dome-png](./picture/logo_demo.png)
 
 <p align="center">
-  <img src="https://img.shields.io/github/license/MemeCrafters/meme-generator" alt="license">
-  <img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="Python">
+  <img src="https://img.shields.io/github/license/MemeCrafters/meme-generator-rs">
+  <a href="https://crates.io/crates/meme_generator">
+    <img src="https://img.shields.io/crates/v/meme_generator">
+  </a>
   <a href="https://pypi.org/project/meme-generator">
-    <img src="https://badgen.net/pypi/v/meme-generator" alt="pypi">
+    <img src="https://img.shields.io/pypi/v/meme-generator">
+  </a>
+  <a href="https://qm.qq.com/q/DVb9aGPmaQ">
+    <img src="https://img.shields.io/badge/QQ%E7%BE%A4-743103809-orange">
+  </a>
 </p>
 
 ## 表情包扩展仓库 meme_emoji 
 
-🚀 基于 [meme-generator](https://github.com/MemeCrafters/meme-generator) 插件做的扩展表情包仓库
+🚀 基于 [meme-generator](https://github.com/MemeCrafters/meme-generator) 做的扩展表情包仓库
 
 *✨* 为你的聊天机器人添加更多趣味表情生成！
 
@@ -83,11 +91,6 @@ meme_dirs = ["/opt/meme_emoji/emoji"]  # 加载其他位置的表情包，填写
 
 > 欢迎进来投稿高清素材，看到一些有趣的素材图片会制作成表情更新到本仓库
 
-![群组](./picture/group.jpg)
-
-
 ## 声明
 
 本仓库的表情素材等均来自网络，如有侵权请联系作者删除
-
-![bot](./picture/logo_info.png)

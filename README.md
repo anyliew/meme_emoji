@@ -4,12 +4,10 @@
 # meme_emoji 
 
 <p align="center">
-  <img src="https://img.shields.io/github/license/MemeCrafters/meme-generator-rs">
-  <a href="https://crates.io/crates/meme_generator">
-    <img src="https://img.shields.io/crates/v/meme_generator">
-  </a>
+  <img src="https://img.shields.io/github/license/MemeCrafters/meme-generator" alt="license">
+  <img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="Python">
   <a href="https://pypi.org/project/meme-generator">
-    <img src="https://img.shields.io/pypi/v/meme-generator">
+    <img src="https://badgen.net/pypi/v/meme-generator" alt="pypi">
   </a>
   <a href="https://qm.qq.com/q/DVb9aGPmaQ">
     <img src="https://img.shields.io/badge/QQ%E7%BE%A4-743103809-orange">
@@ -42,8 +40,69 @@
 ### 参考预览图：
 <img src="./picture/Phone.png" alt="image-20250312190444844" style="zoom:50%;" />
 
+## 表情包清单
 
-## 配置信息
+```
+
+1. aircraft_cup_air_play (空气玩法)
+2. aircraft_cup_cleaning_liquid (清洗液)
+3. aircraft_cup_commemorative_edition_saint_sister (纪念版圣修女)
+4. aircraft_cup_hoshino_alice (拉拉队偶像)
+5. aircraft_cup_idol_heartbeat (偶像心跳)
+6. aircraft_cup_jissbon (杰士邦)
+7. aircraft_cup_limited_edition_saint_sister (限定版圣修女)
+8. aircraft_cup_liuli_zi (琉璃子)
+9. aircraft_cup_pure_buttocks (纯洁臀)
+10. aircraft_cup_saint_sister (圣修女)
+11. aircraft_cup_selena (魔女之森)
+12. aircraft_cup_summer_liuli_zi (夏日琉璃子)
+13. aircraft_cup_taimanin_asgi (对魔忍)
+14. all_the_days (一生一世)
+15. atri_like (亚托莉喜欢)
+16. begged_me (求我)
+17. congyu_dislike (丛雨讨厌)
+18. contract (⭐️💢契约/橙喵契约/卖身契)
+19. deer_help (帮鹿/帮🦌)
+20. deer_se (🦌/鹿)
+21. dinosaur_head (恐龙头)
+22. dog_face (🐶)
+23. fbi_photo (fbi/FBI)
+24. fireworks_head (烟花头像)
+25. funina_finger (芙芙指)
+26. gong_xi_fa_cai (恭喜发财)
+27. hitachi_mako_together (和她在一起)
+28. ice_tea_head (冰红茶)
+29. ikun_durian_head (榴莲坤头)
+30. ikun_head (小黑子)
+31. kfc_head (KFC/kfc)
+32. kun_like (坤坤喜欢)
+33. kurogames_mp (鸣批/鸣P/鸣p/鸣潮玩家/鸣潮男)
+34. kurogames_phoebe_say (菲比说)
+35. kurogames_songlun (松伦哥指/潮批)
+36. mahiro_fuck (真寻中指/中指/🖕🏻)
+37. mi_monkey (米猴/🐒/🐵)
+38. mihoyo_elysia_come (爱莉希雅降临)
+39. mihoyo_funina_death_penalty (死刑)
+40. mihoyo_funina_round_head (芙芙圆形头像)
+41. mihoyo_funina_square_head (芙芙方形头像)
+42. mihoyo_genshin_impact_op (OP/op/Op/oP)
+43. mihoyo_genshin_impact_players (原批/原神玩家)
+44. miss_in_my_sleep (睡梦中想念)
+45. murasame_blackboard (丛雨黑板)
+46. murasame_husband (丛雨老公)
+47. murasame_like (丛雨喜欢)
+48. s_ninja (S忍/s忍)
+49. spend_christmas (一起圣诞)
+50. swimsuit_group_photo (泳衣合影)
+51. together_two (在一起)
+52. torture_yourself (折磨自己)
+53. xinxi_news (新喜报)
+54. youzi_kitchen (柚子厨)
+55. youzi_question_mark (震惊柚子厨)
+
+```
+
+
 
 ### 仓库文件信息
 

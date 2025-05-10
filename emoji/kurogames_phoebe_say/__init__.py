@@ -19,8 +19,8 @@ def kurogames_phoebe_say(images, texts: list[str], args):
             text,
             fill=(0, 0, 0),
             allow_wrap=True,
-            max_fontsize=60,
-            min_fontsize=35,
+            max_fontsize=120,
+            min_fontsize=50,
             lines_align="center",
         )
     except ValueError:

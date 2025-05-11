@@ -34,9 +34,6 @@
 ## 已实现表情示例
 ### 简略清单
 - 杯子系列 `[夏日琉璃子、琉璃子、圣修女、纪念版圣修女、限定版圣修女、对魔忍、偶像心跳、杰士邦、空气玩法]`
-- OP `[名人名言大伟哥嘲笑指]`
-- 芙芙指 `[芙宁娜嘲笑]`
-- 表情三连 `[三连 内容]`
 ### 参考预览图：
 <img src="./picture/Phone.png" alt="image-20250312190444844" style="zoom:50%;" />
 
@@ -74,33 +71,36 @@
 29. ice_tea_head (冰红茶)
 30. ikun_durian_head (榴莲坤头)
 31. ikun_head (小黑子)
-32. kfc_head (KFC/kfc)
-33. kun_like (坤坤喜欢)
-34. kurogames_mp (鸣批/鸣P/鸣p/鸣潮玩家/鸣潮男)
-35. kurogames_phoebe_say (菲比说)
-36. kurogames_songlun (松伦哥指/潮批)
-37. mahiro_fuck (真寻中指/中指/🖕🏻)
-38. mi_monkey (米猴/🐒/🐵)
-39. mihoyo_elysia_come (爱莉希雅降临)
-40. mihoyo_funina_death_penalty (死刑)
-41. mihoyo_funina_round_head (芙芙圆形头像)
-42. mihoyo_funina_square_head (芙芙方形头像)
-43. mihoyo_genshin_impact_op (OP/op/Op/oP)
-44. mihoyo_genshin_impact_players (原批/原神玩家)
-45. miss_in_my_sleep (睡梦中想念)
-46. murasame_blackboard (丛雨黑板)
-47. murasame_husband (丛雨老公)
-48. murasame_like (丛雨喜欢)
-49. s_ninja (S忍/s忍)
-50. spend_christmas (一起圣诞)
-51. swimsuit_group_photo (泳衣合影)
-52. together_two (在一起)
-53. torture_yourself (折磨自己)
-54. xinxi_news (新喜报)
-55. youzi_kitchen (柚子厨)
-56. youzi_question_mark (震惊柚子厨)
-57. yuzu_soft_murasame_clothes (丛雨衣服/丛雨衣物)
-58. yuzu_soft_murasame_say (丛雨说)
+32. kfc (kfc/KFC/肯德基)
+33. kfc_head (kfc头像/KFC头像/肯德基头像)
+34. kun_like (坤坤喜欢)
+35. kurogames_changli_finger (长离指)
+36. kurogames_mp (鸣批/鸣P/鸣p/鸣潮玩家/鸣潮男)
+37. kurogames_phoebe_say (菲比说)
+38. kurogames_songlun (松伦哥指/潮批)
+39. mahiro_fuck (真寻中指/中指/🖕🏻)
+40. mi_monkey (米猴/🐒/🐵)
+41. mihoyo_elysia_come (爱莉希雅降临)
+42. mihoyo_funina_death_penalty (死刑)
+43. mihoyo_funina_round_head (芙芙圆形头像)
+44. mihoyo_funina_square_head (芙芙方形头像)
+45. mihoyo_genshin_impact_op (OP/op/Op/oP)
+46. mihoyo_genshin_impact_players (原批/原神玩家)
+47. miss_in_my_sleep (睡梦中想念)
+48. murasame_blackboard (丛雨黑板)
+49. murasame_husband (丛雨老公)
+50. murasame_like (丛雨喜欢)
+51. s_ninja (S忍/s忍)
+52. spend_christmas (一起圣诞)
+53. swimsuit_group_photo (泳衣合影)
+54. together_two (在一起)
+55. torture_yourself (折磨自己)
+56. xinxi_news (新喜报)
+57. youzi_kitchen (柚子厨)
+58. youzi_question_mark (震惊柚子厨)
+59. yuzu_soft_ayachi_nene (宁宁困惑/绫地宁宁困惑)
+60. yuzu_soft_murasame_clothes (丛雨衣服/丛雨衣物)
+61. yuzu_soft_murasame_say (丛雨说)
 ```
 
 

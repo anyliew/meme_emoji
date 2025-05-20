@@ -33,6 +33,7 @@ def atri_finger(images: list[BuildImage], texts: list[str], args: MemeArgsModel)
             max_fontsize=150,
             min_fontsize=15,
             lines_align="left",
+            font_families=["FZShaoEr-M11S"],
         )
     except ValueError:
         raise TextOverLength(name)

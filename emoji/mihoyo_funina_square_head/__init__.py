@@ -50,7 +50,7 @@ add_meme(
     max_images=1,
     min_texts=0,
     max_texts=1,
-    keywords=["芙芙方形头像"],
+    keywords=["芙芙方形头像","芙宁娜方形头像"],
     date_created=datetime(2025, 3, 29),
     date_modified=datetime(2025, 3, 29),
 )

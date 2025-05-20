@@ -23,6 +23,7 @@ def yuzu_soft_murasame_say(images, texts: list[str], args):
             max_fontsize=150,
             min_fontsize=20,
             lines_align="right",
+            font_families=["FZKaTong-M19S"],
         )
     except ValueError:
         raise TextOverLength(text)

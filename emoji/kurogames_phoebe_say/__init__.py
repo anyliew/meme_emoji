@@ -22,6 +22,7 @@ def kurogames_phoebe_say(images, texts: list[str], args):
             max_fontsize=120,
             min_fontsize=50,
             lines_align="center",
+            font_families=["FZShaoEr-M11S"],
         )
     except ValueError:
         raise TextOverLength(text)

@@ -11,7 +11,7 @@ from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
 
 
-def murasame_blackboard(images, texts: list[str], args):
+def yuzu_soft_murasame_blackboard(images, texts: list[str], args):
     text = texts[0]
     frame = BuildImage.open(img_dir / "0.jpg")
     try:
@@ -23,6 +23,7 @@ def murasame_blackboard(images, texts: list[str], args):
             max_fontsize=150,
             min_fontsize=20,
             lines_align="left",
+            font_families=["FZSJ-QINGCRJ"],
         )
     except ValueError:
         raise TextOverLength(text)
@@ -30,8 +31,8 @@ def murasame_blackboard(images, texts: list[str], args):
 
 
 add_meme(
-    "murasame_blackboard",
-    murasame_blackboard,
+    "yuzu_soft_murasame_blackboard",
+    yuzu_soft_murasame_blackboard,
     min_texts=1,
     max_texts=1,
     default_texts=["不要再涩涩了"],

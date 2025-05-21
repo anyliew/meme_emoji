@@ -36,8 +36,8 @@ def adoption(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
         raise TextOverLength(name)
 
     def make(imgs: list[BuildImage]) -> BuildImage:
-        img = imgs[0].convert("RGBA").circle().resize((300, 300))
-        return frame.copy().paste(img, (300, 95), alpha=True,below=True)
+        img = imgs[0].convert("RGBA").circle().resize((310, 310))
+        return frame.copy().paste(img, (293, 90), alpha=True,below=True)
 
     return make_jpg_or_gif(images, make)
 

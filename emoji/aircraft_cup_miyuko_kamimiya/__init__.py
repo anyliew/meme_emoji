@@ -10,7 +10,7 @@ from meme_generator.utils import make_jpg_or_gif
 img_dir = Path(__file__).parent / "images"
 
 
-def adoption(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+def aircraft_cup_miyuko_kamimiya(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
 
     ta = "他"
@@ -22,13 +22,15 @@ def adoption(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
         ta = "他" if info.gender == "male" else "她"
         name = info.name or ta
 
-    text = f"请收养{name}"
+    text = f"{name}の❤️最愛"
+    #{name}挚爱❤️👩‍❤️‍💋‍👨{name}愛のカップ。
     try:
         frame.draw_text(
-            (96, 585, 521, 782),
+            (13, 1039, 428, 1191),
             text,
-            fill=(57,49,46),
+            fill="white",
             max_fontsize=100,
+            min_fontsize=20,
             lines_align="center",
             font_families=["FZShaoEr-M11S"],
         )
@@ -36,20 +38,22 @@ def adoption(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
         raise TextOverLength(name)
 
     def make(imgs: list[BuildImage]) -> BuildImage:
-        img = imgs[0].convert("RGBA").circle().resize((310, 310))
-        return frame.copy().paste(img, (293, 90), alpha=True,below=True)
+        img = imgs[0].convert("RGBA").circle().resize((950, 950))
+        return frame.copy().paste(img, (275, -10), alpha=True,below=True)
 
     return make_jpg_or_gif(images, make)
 
 
 add_meme(
-    "adoption",
-    adoption,
+    "aircraft_cup_miyuko_kamimiya",
+    aircraft_cup_miyuko_kamimiya,
     min_images=1,
     max_images=1,
     min_texts=0,
     max_texts=1,
-    keywords=["收养"],
+    keywords=["神宫美优子"],
     date_created=datetime(2025, 3, 24),
+    #time 2025年3月24日 21:31:25
+    #By Anyliew
     date_modified=datetime(2025, 3, 24),
 )

@@ -36,7 +36,7 @@ add_meme(
     max_texts=1,
     default_texts=["你的声音太尖锐了"],
     keywords=["刘伟举牌","大伟举牌","大伟哥举牌"],
-    tags=MemeTags.bronya,
+    tags=MemeTags.mihoyo,
     date_created=datetime(2025, 5, 17),
     date_modified=datetime(2025, 5, 17),
 )

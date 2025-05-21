@@ -34,9 +34,9 @@ add_meme(
     kurogames_phoebe_say,
     min_texts=1,
     max_texts=1,
-    default_texts=["anyliew,我的主人"],
+    default_texts=["嘟嘟嘟说什么呢"],
     keywords=["菲比说"],
-    tags=MemeTags.bronya,
-    date_created=datetime(2022, 10, 27),
-    date_modified=datetime(2023, 3, 30),
+    tags=MemeTags.wuthering_waves,
+    date_created=datetime(2025, 5, 10),
+    date_modified=datetime(2025, 5, 10),
 )

@@ -36,6 +36,7 @@ add_meme(
     max_texts=1,
     default_texts=["曾经我是戴上假面的演员，只想要掩饰真相…"],
     keywords=["芙芙举牌","芙宁娜举牌","芙芙酱举牌"],
+    tags=MemeTags.genshin,
     date_created=datetime(2025, 5, 17),
     date_modified=datetime(2025, 5, 17),
 )

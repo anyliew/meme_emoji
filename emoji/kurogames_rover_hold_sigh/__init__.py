@@ -36,7 +36,7 @@ add_meme(
     max_texts=1,
     default_texts=["不可以色色"],
     keywords=["漂泊者举牌"],
-    tags=MemeTags.bronya,
+    tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 5, 17),
     date_modified=datetime(2025, 5, 17),
 )

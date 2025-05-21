@@ -36,6 +36,7 @@ add_meme(
     max_texts=1,
     default_texts=["祝你鸣潮玩的开心"],
     keywords=["折枝举牌"],
+    tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 5, 17),
     date_modified=datetime(2025, 5, 17),
 )

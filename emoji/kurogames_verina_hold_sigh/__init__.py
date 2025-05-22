@@ -26,7 +26,7 @@ def kurogames_verina_hold_sigh(images, texts: list[str], args):
         )
     except ValueError:
         raise TextOverLength(text)
-    return frame.save_jpg()
+    return frame.save_png()
 
 
 add_meme(

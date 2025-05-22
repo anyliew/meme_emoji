@@ -6,6 +6,7 @@ from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
+from meme_generator.tags import MemeTags
 
 img_dir = Path(__file__).parent / "images"
 
@@ -52,6 +53,7 @@ add_meme(
     max_texts=1,
     keywords=["原批","原神玩家"],
     date_created=datetime(2025, 3, 14),
+    tags=MemeTags.genshin,
     #time 2025年3月14日 20:18:58
     #By Anyliew
     date_modified=datetime(2025, 3, 14),

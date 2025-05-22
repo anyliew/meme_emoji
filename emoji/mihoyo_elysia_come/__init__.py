@@ -3,6 +3,7 @@ from pathlib import Path
 
 from meme_generator import add_meme
 from pil_utils import BuildImage
+from meme_generator.tags import MemeTags
 
 img_dir = Path(__file__).parent / "images"
 
@@ -25,6 +26,7 @@ add_meme(
     min_images=2,
     max_images=2,
     keywords=["爱莉希雅降临"],
+    tags=MemeTags.mihoyo,
     date_created=datetime(2023, 3, 16),
     date_modified=datetime(2023, 3, 16),
 )

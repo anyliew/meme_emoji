@@ -6,6 +6,7 @@ from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
+from meme_generator.tags import MemeTags
 
 img_dir = Path(__file__).parent / "images"
 
@@ -30,6 +31,7 @@ add_meme(
     min_texts=0,
     max_texts=1,
     keywords=["长离指"],
-    date_created=datetime(2024, 7, 26),
-    date_modified=datetime(2024, 7, 26),
+    tags=MemeTags.wuthering_waves,
+    date_created=datetime(2025, 5, 10),
+    date_modified=datetime(2025, 5, 10),
 )

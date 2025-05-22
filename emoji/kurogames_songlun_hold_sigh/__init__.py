@@ -36,7 +36,7 @@ add_meme(
     max_texts=1,
     default_texts=["你必歪雪豹"],
     keywords=["李松伦举牌","松伦举牌","松伦哥举牌"],
-    tags=MemeTags.bronya,
+    tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 5, 17),
     date_modified=datetime(2025, 5, 17),
 )

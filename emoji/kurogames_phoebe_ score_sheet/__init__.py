@@ -25,12 +25,12 @@ def kurogames_phoebe_score_sheet(images: list[BuildImage], texts: list[str], arg
     text = f"{name},你这个月评分为0,纯纯的饭桶！"
     try:
         frame.draw_text(
-            (0, 0, 722, 276),
+            (0, 0, 732, 281),
             text,
             fill="black",
             max_fontsize=100,
             min_fontsize=35,
-            lines_align="center",
+            lines_align="left",
             font_families=["FZShaoEr-M11S"],
         )
     except ValueError:

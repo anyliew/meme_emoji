@@ -1,43 +1,43 @@
-name: 功能建议
-description: 对本项目提出一个功能建议
-title: "[功能建议]: "
+name: 素材投稿
+description: 对本项目提出一个素材投稿
+title: "[素材投稿]: "
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        感谢提出功能建议，我们将仔细考虑！
+        感谢提出素材投稿，我们将仔细考虑能否做成一个表情包！
   - type: textarea
     id: related-problem
     attributes:
-      label: 你的功能建议是否和某个问题相关？
-      description: 清晰并简洁地描述问题是什么，例如，当我...时，我总是感到困扰。
+      label: 你的素材投稿图片出自哪里，表达了什么内容
+      description: 清晰并简洁地描述素材来源是什么，例如图片的角色出自库洛制作的游戏《鸣潮》的登场角色菲比，表达了恪守教义、自我约束的圣职者，仍然存有着为所爱之物欢欣雀跃的真挚之心。
     validations:
       required: false
   - type: textarea
     id: desired-solution
     attributes:
-      label: 你希望看到什么解决方案？
+      label: 你希望看到做成怎样的表情包？
       description: 清晰并简洁地描述你希望发生的事情。
     validations:
       required: true
   - type: textarea
     id: alternatives
     attributes:
-      label: 你考虑过哪些替代方案？
-      description: 清晰并简洁地描述你考虑过的任何替代解决方案或功能。
+      label: 你是否检查meme-generator和meme-generator-contrib存在相同或者类似的表情包？
+      description: 清晰并简洁地描述你是否检查过。
     validations:
       required: false
   - type: textarea
     id: additional-context
     attributes:
-      label: 你有其他上下文或截图吗？
+      label: 你有考虑过投稿可能被鸽，等待时间长？毕竟Anyliew很爱躺平歇逼~
       description: 在此处添加有关功能请求的任何其他上下文或截图。
     validations:
       required: false
   - type: checkboxes
     attributes:
-      label: 意向参与贡献
+      label: 意向参与投稿贡献
       options:
-        - label: 我有意向参与具体功能的开发实现并将代码贡献回到上游社区
+        - label: 我有意向参与meme_emoji的投稿素材制作实现有趣的表情包并将代码以及素材贡献到https://github.com/anyliew/meme_emoji仓库里！
           required: false

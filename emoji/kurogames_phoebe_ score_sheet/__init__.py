@@ -29,7 +29,7 @@ def kurogames_phoebe_score_sheet(images: list[BuildImage], texts: list[str], arg
             text,
             fill="black",
             max_fontsize=100,
-            min_fontsize=20,
+            min_fontsize=35,
             lines_align="center",
             font_families=["FZShaoEr-M11S"],
         )

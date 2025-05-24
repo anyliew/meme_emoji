@@ -31,7 +31,7 @@ def kurogames_phoebe_score_sheet(images: list[BuildImage], texts: list[str], arg
             max_fontsize=100,
             min_fontsize=35,
             lines_align="left",
-            font_families=["FZShaoEr-M11S"],
+            font_families=["FZKaTong-M19S"],
         )
     except ValueError:
         raise TextOverLength(name)

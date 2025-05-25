@@ -37,6 +37,7 @@ add_meme(
     max_texts=1,
     default_texts=["不要再涩涩了"],
     keywords=["柚子厨举牌"],
+    tags=MemeTags.yuzu_soft,
     date_created=datetime(2024, 12, 21),
     #By Anyliew 2024年12月21日 22:10:12
     date_modified=datetime(2024, 12, 21),

@@ -44,7 +44,6 @@ add_meme(
     max_texts=1,
     default_texts=[default_text],
     keywords=["丛雨讨厌"],
-    tags=["丛雨","讨厌"],
     tags=MemeTags.yuzu_soft,
     date_created=datetime(2025, 5, 25),
     date_modified=datetime(2025, 5, 25),

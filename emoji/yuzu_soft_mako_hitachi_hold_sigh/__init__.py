@@ -36,6 +36,7 @@ add_meme(
     max_texts=1,
     default_texts=["Ciallo～"],
     keywords=["常陸茉子举牌","茉子举牌","常陆茉子举牌"],
+    tags=MemeTags.yuzu_soft,
     date_created=datetime(2025, 5, 17),
     date_modified=datetime(2025, 5, 17),
 )

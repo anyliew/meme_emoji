@@ -52,6 +52,7 @@ add_meme(
     min_texts=0,
     max_texts=1,
     keywords=["丛雨衣服","丛雨衣物"],
+    tags=MemeTags.yuzu_soft,
     date_created=datetime(2025, 3, 24),
     date_modified=datetime(2025, 3, 24),
 )

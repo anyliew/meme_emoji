@@ -6,6 +6,7 @@ from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
+from meme_generator.tags import MemeTags
 
 img_dir = Path(__file__).parent / "images"
 
@@ -52,6 +53,7 @@ add_meme(
     min_texts=0,
     max_texts=1,
     keywords=["宁宁困惑","绫地宁宁困惑"],
+    tags=MemeTags.ayachi,
     date_created=datetime(2025, 3, 24),
     date_modified=datetime(2025, 3, 24),
 )

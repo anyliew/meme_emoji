@@ -13,7 +13,7 @@ img_dir = Path(__file__).parent / "images"
 default_text = "丛雨喜欢这个"
 
 
-def murasame_like(images: list[BuildImage], texts: list[str], args):
+def yuzu_soft_murasame_like(images: list[BuildImage], texts: list[str], args):
     text = texts[0] if texts else default_text
     frame = BuildImage.open(img_dir / "0.png")
     try:
@@ -36,8 +36,8 @@ def murasame_like(images: list[BuildImage], texts: list[str], args):
 
 
 add_meme(
-    "murasame_like",
-    murasame_like,
+    "yuzu_soft_murasame_like",
+    yuzu_soft_murasame_like,
     min_images=1,
     max_images=1,
     min_texts=0,
@@ -45,6 +45,6 @@ add_meme(
     default_texts=[default_text],
     keywords=["丛雨喜欢"],
     tags=["丛雨","柚子社","柚子厨","喜欢"],
-    date_created=datetime(2022, 5, 10),
-    date_modified=datetime(2023, 2, 14),
+    date_created=datetime(2025, 5, 25),
+    date_modified=datetime(2025, 5, 25),
 )

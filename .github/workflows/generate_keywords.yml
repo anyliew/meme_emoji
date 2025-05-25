@@ -3,7 +3,7 @@ name: Generate Meme Keywords
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
 
 jobs:
@@ -44,4 +44,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "🤖 Auto-generate meme_emoji_keywords.md"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/anyliew/meme_emoji.git
-          git push origin master
+          git push origin main

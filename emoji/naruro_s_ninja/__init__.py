@@ -10,7 +10,7 @@ from meme_generator.utils import make_jpg_or_gif
 img_dir = Path(__file__).parent / "images"
 
 
-def s_ninja(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+def naruro_s_ninja(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
 
     ta = "她"
@@ -44,13 +44,13 @@ def s_ninja(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
 
 
 add_meme(
-    "s_ninja",
-    s_ninja,
+    "naruro_s_ninja",
+    naruro_s_ninja,
     min_images=1,
     max_images=1,
     min_texts=0,
     max_texts=1,
     keywords=["S忍","s忍"],
     date_created=datetime(2024, 7, 26),
-    date_modified=datetime(2024, 7, 26),
+    date_modified=datetime(2025, 5, 25),
 )

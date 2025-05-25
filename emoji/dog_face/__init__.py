@@ -20,7 +20,7 @@ add_meme(
     dog_face,
     min_images=1,
     max_images=1,
-    keywords=["🐶"],
-    date_created=datetime(2022, 3, 30),
-    date_modified=datetime(2023, 2, 14),
+    keywords=["🐶","狗"],
+    date_created=datetime(2025, 5, 25),
+    date_modified=datetime(2025, 5, 25),
 )

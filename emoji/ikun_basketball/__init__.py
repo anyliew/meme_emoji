@@ -30,7 +30,7 @@ add_meme(
     max_images=1,
     min_texts=0,
     max_texts=1,
-    keywords=["篮球","打篮球","🏀"],
+    keywords=["篮球","🏀"],
     date_created=datetime(2024, 7, 26),
     date_modified=datetime(2024, 7, 26),
 )

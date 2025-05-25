@@ -6,11 +6,12 @@ from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
+from meme_generator.tags import MemeTags
 
 img_dir = Path(__file__).parent / "images"
 
 
-def murasame_husband(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+def yuzu_soft_murasame_husband(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
 
     ta = "她"
@@ -42,13 +43,14 @@ def murasame_husband(images: list[BuildImage], texts: list[str], args: MemeArgsM
 
 
 add_meme(
-    "murasame_husband",
-    murasame_husband,
+    "yuzu_soft_murasame_husband",
+    yuzu_soft_murasame_husband,
     min_images=1,
     max_images=1,
     min_texts=0,
     max_texts=1,
     keywords=["丛雨老公"],
+    tags=MemeTags.yuzu_soft,
     date_created=datetime(2024, 7, 26),
-    date_modified=datetime(2024, 7, 26),
+    date_modified=datetime(2025, 5, 25),
 )

@@ -68,17 +68,17 @@
 | 61 | <img src="../emoji/kfc_head/images/0.png" width="100"> | kfc头像、 KFC头像、 肯德基头像 | 1 | 0 | &nbsp; | [kfc_head](../emoji/kfc_head) | 2024-07-26 |
 | 62 | <img src="../emoji/dinosaur_head/images/0.png" width="100"> | 恐龙头 | 1 | 0 | &nbsp; | [dinosaur_head](../emoji/dinosaur_head) | 2024-07-26 |
 | 63 | <img src="../emoji/miss_in_my_sleep/images/0.png" width="100"> | 睡梦中想念 | 1 | 0 | &nbsp; | [miss_in_my_sleep](../emoji/miss_in_my_sleep) | 2024-07-26 |
-| 64 | <img src="../emoji/deer/images/0.png" width="100"> | 鹿、 🦌、 鹿乃子乃子、 鹿乃子 | 1 | 0 | &nbsp; | [deer](../emoji/deer) | 2024-07-26 |
-| 65 | <img src="../emoji/jd_takeout/images/0.png" width="100"> | 京东外卖 | 1 | 0 | &nbsp; | [jd_takeout](../emoji/jd_takeout) | 2024-07-26 |
-| 66 | <img src="../emoji/hitachi_mako_together/images/0.png" width="100"> | 和她在一起 | 1 | 0 | &nbsp; | [hitachi_mako_together](../emoji/hitachi_mako_together) | 2024-07-26 |
-| 67 | <img src="../emoji/ikun_basketball/images/0.png" width="100"> | 篮球、 🏀 | 1 | 0 | &nbsp; | [ikun_basketball](../emoji/ikun_basketball) | 2024-07-26 |
-| 68 | <img src="../emoji/yuzu_soft_murasame_finger/images/0.png" width="100"> | 柚子厨、 丛雨指 | 1 | 0 | &nbsp; | [yuzu_soft_murasame_finger](../emoji/yuzu_soft_murasame_finger) | 2024-07-26 |
-| 69 | <img src="../emoji/gong_xi_fa_cai/images/0.png" width="100"> | 恭喜发财 | 1 | 0 | &nbsp; | [gong_xi_fa_cai](../emoji/gong_xi_fa_cai) | 2024-07-26 |
-| 70 | <img src="../emoji/murasame_husband/images/0.png" width="100"> | 丛雨老公 | 1 | 0 | &nbsp; | [murasame_husband](../emoji/murasame_husband) | 2024-07-26 |
+| 64 | <img src="../emoji/naruro_s_ninja/images/0.png" width="100"> | S忍、 s忍 | 1 | 0 | &nbsp; | [naruro_s_ninja](../emoji/naruro_s_ninja) | 2024-07-26 |
+| 65 | <img src="../emoji/deer/images/0.png" width="100"> | 鹿、 🦌、 鹿乃子乃子、 鹿乃子 | 1 | 0 | &nbsp; | [deer](../emoji/deer) | 2024-07-26 |
+| 66 | <img src="../emoji/jd_takeout/images/0.png" width="100"> | 京东外卖 | 1 | 0 | &nbsp; | [jd_takeout](../emoji/jd_takeout) | 2024-07-26 |
+| 67 | <img src="../emoji/hitachi_mako_together/images/0.png" width="100"> | 和她在一起 | 1 | 0 | &nbsp; | [hitachi_mako_together](../emoji/hitachi_mako_together) | 2024-07-26 |
+| 68 | <img src="../emoji/ikun_basketball/images/0.png" width="100"> | 篮球、 🏀 | 1 | 0 | &nbsp; | [ikun_basketball](../emoji/ikun_basketball) | 2024-07-26 |
+| 69 | <img src="../emoji/yuzu_soft_murasame_finger/images/0.png" width="100"> | 柚子厨、 丛雨指 | 1 | 0 | &nbsp; | [yuzu_soft_murasame_finger](../emoji/yuzu_soft_murasame_finger) | 2024-07-26 |
+| 70 | <img src="../emoji/gong_xi_fa_cai/images/0.png" width="100"> | 恭喜发财 | 1 | 0 | &nbsp; | [gong_xi_fa_cai](../emoji/gong_xi_fa_cai) | 2024-07-26 |
 | 71 | <img src="../emoji/ikun_why_are_you/images/0.jpg" width="100"> | 你干嘛、 你干吗 | 1 | 0 | &nbsp; | [ikun_why_are_you](../emoji/ikun_why_are_you) | 2024-07-26 |
-| 72 | <img src="../emoji/mi_monkey/images/0.png" width="100"> | 米猴、 🐒、 🐵 | 1 | 0 | &nbsp; | [mi_monkey](../emoji/mi_monkey) | 2024-07-26 |
-| 73 | <img src="../emoji/xinxi_news/images/0.png" width="100"> | 新喜报 | 1 | 0 | &nbsp; | [xinxi_news](../emoji/xinxi_news) | 2024-07-26 |
-| 74 | <img src="../emoji/s_ninja/images/0.png" width="100"> | S忍、 s忍 | 1 | 0 | &nbsp; | [s_ninja](../emoji/s_ninja) | 2024-07-26 |
+| 72 | <img src="../emoji/yuzu_soft_murasame_husband/images/0.png" width="100"> | 丛雨老公 | 1 | 0 | &nbsp; | [yuzu_soft_murasame_husband](../emoji/yuzu_soft_murasame_husband) | 2024-07-26 |
+| 73 | <img src="../emoji/mi_monkey/images/0.png" width="100"> | 米猴、 🐒、 🐵 | 1 | 0 | &nbsp; | [mi_monkey](../emoji/mi_monkey) | 2024-07-26 |
+| 74 | <img src="../emoji/xinxi_news/images/0.png" width="100"> | 新喜报 | 1 | 0 | &nbsp; | [xinxi_news](../emoji/xinxi_news) | 2024-07-26 |
 | 75 | <img src="../emoji/mihoyo_genshin_impact_op/images/0.png" width="100"> | OP、 op、 Op、 oP | 1 | 0 | &nbsp; | [mihoyo_genshin_impact_op](../emoji/mihoyo_genshin_impact_op) | 2024-07-26 |
 | 76 | <img src="../emoji/mahiro_fuck/images/0.png" width="100"> | 真寻中指、 中指、 🖕🏻 | 1 | 0 | &nbsp; | [mahiro_fuck](../emoji/mahiro_fuck) | 2024-07-26 |
 | 77 | <img src="../emoji/together_two/images/0.jpg" width="100"> | 在一起 | 2 | &nbsp; | &nbsp; | [together_two](../emoji/together_two) | 2023-03-16 |

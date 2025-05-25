@@ -44,7 +44,7 @@ add_meme(
     max_texts=1,
     default_texts=[default_text],
     keywords=["亚托莉喜欢"],
-    tags=["亚托莉","喜欢","atri"],
-    date_created=datetime(2022, 5, 10),
-    date_modified=datetime(2023, 2, 14),
+    tags=MemeTags.atri,
+    date_created=datetime(2025, 5, 25),
+    date_modified=datetime(2025, 5, 25),
 )

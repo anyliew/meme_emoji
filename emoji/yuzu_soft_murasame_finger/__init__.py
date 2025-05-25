@@ -6,11 +6,12 @@ from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
+from meme_generator.tags import MemeTags
 
 img_dir = Path(__file__).parent / "images"
 
 
-def youzi_kitchen(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+def yuzu_soft_murasame_finger(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
 
     ta = "她"
@@ -42,13 +43,14 @@ def youzi_kitchen(images: list[BuildImage], texts: list[str], args: MemeArgsMode
 
 
 add_meme(
-    "youzi_kitchen",
-    youzi_kitchen,
+    "yuzu_soft_murasame_finger",
+    yuzu_soft_murasame_finger,
     min_images=1,
     max_images=1,
     min_texts=0,
     max_texts=1,
-    keywords=["柚子厨"],
+    keywords=["柚子厨","丛雨指"],
+    tags=MemeTags.yuzu_soft,
     date_created=datetime(2024, 7, 26),
-    date_modified=datetime(2024, 7, 26),
+    date_modified=datetime(2025, 5, 25),
 )

@@ -10,7 +10,7 @@ from meme_generator.utils import make_jpg_or_gif
 img_dir = Path(__file__).parent / "images"
 
 
-def deer(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+def shikanoko_noko(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
 
     def make(imgs: list[BuildImage]) -> BuildImage:
@@ -23,13 +23,13 @@ def deer(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
 
 
 add_meme(
-    "deer",
-    deer,
+    "shikanoko_noko",
+    shikanoko_noko,
     min_images=1,
     max_images=1,
     min_texts=0,
     max_texts=1,
-    keywords=["鹿","🦌","鹿乃子乃子","鹿乃子"],
-    date_created=datetime(2024, 7, 26),
-    date_modified=datetime(2024, 7, 26),
+    keywords=["鹿乃子乃子","鹿乃子"],
+    date_created=datetime(2025, 5, 25),
+    date_modified=datetime(2025, 5, 25),
 )

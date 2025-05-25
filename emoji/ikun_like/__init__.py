@@ -13,7 +13,7 @@ img_dir = Path(__file__).parent / "images"
 default_text = "坤坤喜欢这个"
 
 
-def kun_like(images: list[BuildImage], texts: list[str], args):
+def ikun_like(images: list[BuildImage], texts: list[str], args):
     text = texts[0] if texts else default_text
     frame = BuildImage.open(img_dir / "0.png")
     try:
@@ -36,8 +36,8 @@ def kun_like(images: list[BuildImage], texts: list[str], args):
 
 
 add_meme(
-    "kun_like",
-    kun_like,
+    "ikun_like",
+    ikun_like,
     min_images=1,
     max_images=1,
     min_texts=0,
@@ -45,6 +45,6 @@ add_meme(
     default_texts=[default_text],
     keywords=["坤坤喜欢"],
     tags=["ikun","坤坤","真爱粉","喜欢"],
-    date_created=datetime(2022, 5, 10),
-    date_modified=datetime(2023, 2, 14),
+    date_created=datetime(2025, 5, 25),
+    date_modified=datetime(2025, 5, 25),
 )

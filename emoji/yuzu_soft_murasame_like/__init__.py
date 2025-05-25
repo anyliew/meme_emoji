@@ -44,6 +44,7 @@ add_meme(
     max_texts=1,
     default_texts=[default_text],
     keywords=["丛雨喜欢"],
+    tags=MemeTags.yuzu_soft,
     tags=["丛雨","柚子社","柚子厨","喜欢"],
     date_created=datetime(2025, 5, 25),
     date_modified=datetime(2025, 5, 25),

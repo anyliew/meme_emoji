@@ -1,6 +1,6 @@
 # ✨Meme Emoji Keywords
 
-**🎈总表情数：81**
+**🎈总表情数：80**
 
 
 | # | 预览 | 关键词 | 图片数 | 文字数 | 默认文字 | 模块 | 创建日期 |
@@ -79,10 +79,9 @@
 | 72 | <img src="../emoji/mi_monkey/images/0.png" width="100"> | 米猴、 🐒、 🐵 | 1 | 0 | &nbsp; | [mi_monkey](../emoji/mi_monkey) | 2024-07-26 |
 | 73 | <img src="../emoji/xinxi_news/images/0.png" width="100"> | 新喜报 | 1 | 0 | &nbsp; | [xinxi_news](../emoji/xinxi_news) | 2024-07-26 |
 | 74 | <img src="../emoji/s_ninja/images/0.png" width="100"> | S忍、 s忍 | 1 | 0 | &nbsp; | [s_ninja](../emoji/s_ninja) | 2024-07-26 |
-| 75 | <img src="../emoji/youzi_question_mark/images/0.png" width="100"> | 震惊柚子厨 | 1 | 0 | &nbsp; | [youzi_question_mark](../emoji/youzi_question_mark) | 2024-07-26 |
-| 76 | <img src="../emoji/mihoyo_genshin_impact_op/images/0.png" width="100"> | OP、 op、 Op、 oP | 1 | 0 | &nbsp; | [mihoyo_genshin_impact_op](../emoji/mihoyo_genshin_impact_op) | 2024-07-26 |
-| 77 | <img src="../emoji/mahiro_fuck/images/0.png" width="100"> | 真寻中指、 中指、 🖕🏻 | 1 | 0 | &nbsp; | [mahiro_fuck](../emoji/mahiro_fuck) | 2024-07-26 |
-| 78 | <img src="../emoji/together_two/images/0.jpg" width="100"> | 在一起 | 2 | &nbsp; | &nbsp; | [together_two](../emoji/together_two) | 2023-03-16 |
-| 79 | <img src="../emoji/deer_help/images/0.jpg" width="100"> | 帮鹿、 帮🦌 | 2 | &nbsp; | &nbsp; | [deer_help](../emoji/deer_help) | 2023-03-16 |
-| 80 | <img src="../emoji/mihoyo_elysia_come/images/0.png" width="100"> | 爱莉希雅降临 | 2 | &nbsp; | &nbsp; | [mihoyo_elysia_come](../emoji/mihoyo_elysia_come) | 2023-03-16 |
-| 81 | <img src="../emoji/swimsuit_group_photo/images/0.png" width="100"> | 泳衣合影 | 2 | &nbsp; | &nbsp; | [swimsuit_group_photo](../emoji/swimsuit_group_photo) | 2023-03-16 |
+| 75 | <img src="../emoji/mihoyo_genshin_impact_op/images/0.png" width="100"> | OP、 op、 Op、 oP | 1 | 0 | &nbsp; | [mihoyo_genshin_impact_op](../emoji/mihoyo_genshin_impact_op) | 2024-07-26 |
+| 76 | <img src="../emoji/mahiro_fuck/images/0.png" width="100"> | 真寻中指、 中指、 🖕🏻 | 1 | 0 | &nbsp; | [mahiro_fuck](../emoji/mahiro_fuck) | 2024-07-26 |
+| 77 | <img src="../emoji/together_two/images/0.jpg" width="100"> | 在一起 | 2 | &nbsp; | &nbsp; | [together_two](../emoji/together_two) | 2023-03-16 |
+| 78 | <img src="../emoji/deer_help/images/0.jpg" width="100"> | 帮鹿、 帮🦌 | 2 | &nbsp; | &nbsp; | [deer_help](../emoji/deer_help) | 2023-03-16 |
+| 79 | <img src="../emoji/mihoyo_elysia_come/images/0.png" width="100"> | 爱莉希雅降临 | 2 | &nbsp; | &nbsp; | [mihoyo_elysia_come](../emoji/mihoyo_elysia_come) | 2023-03-16 |
+| 80 | <img src="../emoji/swimsuit_group_photo/images/0.png" width="100"> | 泳衣合影 | 2 | &nbsp; | &nbsp; | [swimsuit_group_photo](../emoji/swimsuit_group_photo) | 2023-03-16 |

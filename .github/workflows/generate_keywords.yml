@@ -1,0 +1,47 @@
+name: Generate Meme Keywords
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install --upgrade pip
+
+      - name: Run meme_emoji_keywords.py
+        run: python meme_emoji_keywords.py
+
+      - name: Check if meme_emoji_keywords.md changed
+        id: check_diff
+        run: |
+          git add docs/meme_emoji_keywords.md
+          if git diff --cached --quiet; then
+            echo "No changes detected."
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "Changes detected."
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.check_diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "🤖 Auto-generate meme_emoji_keywords.md"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/anyliew/meme_emoji.git
+          git push origin master

@@ -13,7 +13,7 @@ img_dir = Path(__file__).parent / "images"
 default_text = "丛雨讨厌这个"
 
 
-def congyu_dislike(images: list[BuildImage], texts: list[str], args):
+def yuzu_soft_murasame_dislike(images: list[BuildImage], texts: list[str], args):
     text = texts[0] if texts else default_text
     frame = BuildImage.open(img_dir / "0.png")
     try:
@@ -36,8 +36,8 @@ def congyu_dislike(images: list[BuildImage], texts: list[str], args):
 
 
 add_meme(
-    "congyu_dislike",
-    congyu_dislike,
+    "yuzu_soft_murasame_dislike",
+    yuzu_soft_murasame_dislike,
     min_images=1,
     max_images=1,
     min_texts=0,
@@ -45,6 +45,7 @@ add_meme(
     default_texts=[default_text],
     keywords=["丛雨讨厌"],
     tags=["丛雨","讨厌"],
-    date_created=datetime(2022, 5, 10),
-    date_modified=datetime(2023, 2, 14),
+    tags=MemeTags.yuzu_soft,
+    date_created=datetime(2025, 5, 25),
+    date_modified=datetime(2025, 5, 25),
 )

@@ -6,11 +6,12 @@ from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
+from meme_generator.tags import MemeTags
 
 img_dir = Path(__file__).parent / "images"
 
 
-def funina_finger(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+def mihoyo_funina_finger(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
 
     ta = "她"
@@ -42,13 +43,14 @@ def funina_finger(images: list[BuildImage], texts: list[str], args: MemeArgsMode
 
 
 add_meme(
-    "funina_finger",
-    funina_finger,
+    "mihoyo_funina_finger",
+    mihoyo_funina_finger,
     min_images=1,
     max_images=1,
     min_texts=0,
     max_texts=1,
-    keywords=["芙芙指"],
-    date_created=datetime(2024, 7, 26),
-    date_modified=datetime(2024, 7, 26),
+    keywords=["芙芙指","芙宁娜指","芙芙酱指"],
+    tags=MemeTags.genshin,
+    date_created=datetime(2025, 5, 25),
+    date_modified=datetime(2025, 5, 25),
 )

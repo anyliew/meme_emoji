@@ -94,7 +94,7 @@ def main():
     # 按创建时间倒序
     modules_info.sort(key=lambda x: x[1]["date_created"] or datetime.min, reverse=True)
     meme_count = len(modules_info)
-    header = f"# ✨Meme Emoji Keywords\n\n**🎈总表情数：{meme_count}**\n"
+    header = f"# ✨meme_emoji 表情列表清单\n\n**🎈总表情数：{meme_count}**\n"
     markdown_table = generate_markdown_table(modules_info, previews_by_module)
     markdown = header + "\n\n" + markdown_table
 

@@ -22,7 +22,7 @@ def mihoyo_funina_card (images, texts: list[str], args):
             max_fontsize=120,
             min_fontsize=30,
             lines_align="center",
-            font_families=["FZKaTong-M19S"],
+            font_families=["FZShaoEr-M11S"],
         )
     except ValueError:
         raise TextOverLength(text)

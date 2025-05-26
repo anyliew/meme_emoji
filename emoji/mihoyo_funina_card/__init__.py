@@ -10,7 +10,7 @@ from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
 
 
-def mihoyo_funina__hold_sigh (images, texts: list[str], args):
+def mihoyo_funina_card (images, texts: list[str], args):
     text = texts[0]
     frame = BuildImage.open(img_dir / "0.png")
     try:
@@ -22,7 +22,7 @@ def mihoyo_funina__hold_sigh (images, texts: list[str], args):
             max_fontsize=120,
             min_fontsize=30,
             lines_align="center",
-            font_families=["FZSJ-QINGCRJ"],
+            font_families=["FZKaTong-M19S"],
         )
     except ValueError:
         raise TextOverLength(text)
@@ -30,13 +30,13 @@ def mihoyo_funina__hold_sigh (images, texts: list[str], args):
 
 
 add_meme(
-    "mihoyo_funina__hold_sigh",
-    mihoyo_funina__hold_sigh,
+    "mihoyo_funina_card",
+    mihoyo_funina_card,
     min_texts=1,
     max_texts=1,
     default_texts=["曾经我是戴上假面的演员，只想要掩饰真相…"],
-    keywords=["芙芙举牌","芙宁娜举牌","芙芙酱举牌"],
+    keywords=["芙芙卡片","芙宁娜卡片","芙芙酱卡片"],
     tags=MemeTags.genshin,
     date_created=datetime(2025, 5, 17),
-    date_modified=datetime(2025, 5, 17),
+    date_modified=datetime(2025, 5, 26),
 )

@@ -81,10 +81,10 @@ meme_dirs = ["/opt/meme_emoji/emoji"]  # 加载其他位置的表情包，填写
 ## 鸣谢
 
 
-感谢以下开发者作出的贡献：
+感谢以下开发者对 meme_emoji 仓库作出的贡献：
 
 <a href="https://github.com/anyliew/meme_emoji/graphs/contributors">
-  <img src="./picture/info.png" />
+  <img src="./picture/partner.jpg" />
 </a>
 
 
@@ -97,7 +97,7 @@ meme_dirs = ["/opt/meme_emoji/emoji"]  # 加载其他位置的表情包，填写
 
 ### meme_emoji 交流群 743103809 
 
-> 欢迎进来投稿高清素材，看到一些有趣的素材图片会制作成表情更新到本仓库
+> 欢迎进来投稿高清素材，看到一些有趣的素材图片会制作成表情更新到本仓库！
 
 ## 声明
 

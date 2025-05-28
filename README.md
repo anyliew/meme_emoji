@@ -18,6 +18,7 @@
 ## 表情包扩展仓库 meme_emoji 
 
 🚀 基于 [meme-generator](https://github.com/MemeCrafters/meme-generator) 做的扩展表情包仓库
+
 *✨* 为你的聊天机器人添加更多趣味表情生成！
 
 ## 特性
@@ -27,21 +28,26 @@
 - 🔄 **搭配使用** 需要搭配 [meme-generator](https://github.com/MemeCrafters/meme-generator) 一起使用
 
 - ✨**搭配演示架构图所示(仅供参考)：**
-![架构图](./picture/meme_emoji.jpg)
+
+<img src="./picture/meme_emoji.jpg" alt="架构图" style="zoom:30%;" />
 
 
 
 ## 已实现表情示例
 
 ### 简略清单
+
 - 杯子系列 `[夏日琉璃子、琉璃子、圣修女、纪念版圣修女、限定版圣修女、对魔忍、偶像心跳、杰士邦、空气玩法]`
 
-### 完整表情包清单列表
+### 完整清单
+
 表情详细信息、表情预览等可以在 [--> 表情列表 <--](https://github.com/anyliew/meme_emoji/blob/main/docs/meme_emoji_keywords.md) 查看
 
 ### 参考预览图：
-<img src="./picture/Phone.png" alt="image-20250312190444844" style="zoom:50%;" />
+<img src="./picture/Phone.png" alt="image-20250312190444844" style="zoom:30%;" />
 
+
+## 配置信息
 
 ### 仓库文件信息
 
@@ -71,15 +77,10 @@ load_builtin_memes = true  # 是否加载内置表情包
 meme_dirs = ["/opt/meme_emoji/emoji"]  # 加载其他位置的表情包，填写文件夹路径
 ```
 
-## 相关链接
-
-- [meme-generator](https://github.com/MemeCrafters/meme-generator) 的Wiki：[--> Wiki <--](https://github.com/MemeCrafters/meme-generator/wiki)
-
-- [MemeCrafters/meme-generator-contrib](https://github.com/MemeCrafters/meme-generator-contrib) meme-generator 额外表情仓库
 
 
-## 鸣谢
 
+## 鸣谢仓库贡献者
 
 感谢以下开发者对 meme_emoji 仓库作出的贡献：
 
@@ -89,15 +90,23 @@ meme_dirs = ["/opt/meme_emoji/emoji"]  # 加载其他位置的表情包，填写
 
 
 ## 反馈
-单个表情有问题反馈请附带日志和截图
+### issues
 
+单个表情有问题反馈请附带日志和截图
 答复受限网络没那么快及时处理
 
 > issues https://github.com/anyliew/meme_emoji/issues 
 
-### meme_emoji 交流群 743103809 
-
+### 投稿
+> 🚧QQ group 743103809 
 > 欢迎进来投稿高清素材，看到一些有趣的素材图片会制作成表情更新到本仓库！
+> 亦可以通过issues中的模板 “投稿素材” 进行投稿，如果能Pr则更加完美，实在是泰裤辣~
+
+## 相关链接
+
+- [meme-generator](https://github.com/MemeCrafters/meme-generator) 的Wiki：[--> Wiki <--](https://github.com/MemeCrafters/meme-generator/wiki)
+
+- [MemeCrafters/meme-generator-contrib](https://github.com/MemeCrafters/meme-generator-contrib) meme-generator 额外表情仓库
 
 ## 声明
 

@@ -28,9 +28,7 @@ add_meme(
     jd_takeout,
     min_images=1,
     max_images=1,
-    min_texts=0,
-    max_texts=1,
     keywords=["京东外卖"],
-    date_created=datetime(2024, 7, 26),
-    date_modified=datetime(2024, 7, 26),
+    date_created=datetime(2025, 5, 29),
+    date_modified=datetime(2025, 5, 29),
 )

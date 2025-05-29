@@ -46,37 +46,72 @@
 ### 参考预览图：
 <img src="./picture/Phone.png" alt="image-20250312190444844" style="zoom:30%;" />
 
+### 目录文件信息
 
-## 配置信息
+| Name                   | Attribute | Tags | Info                                                         |
+| ---------------------- | --------- | ---- | ------------------------------------------------------------ |
+| .github                | folder    | 忽略 | GitHub 平台相关的配置文件                                    |
+| auto_powershell        | folder    | 忽略 | 开发者的优化批量脚本                                         |
+| docker                 | folder    | 忽略 | Dcoker相关的编排部署配置文件                                 |
+| docs                   | folder    | 必看 | 存放表情清单以及相关文档文件                                 |
+| emoji                  | folder    | 必看 | 存放表情包素材和代码                                         |
+| picture                | folder    | 忽略 | 仓库文档文件搭配的图片存放                                   |
+| .gitignore             | file      | 忽略 | Git 版本控制系统中使用的配置文件，用于指定哪些文件或目录应该被 Git 忽略 |
+| LICENSE                | file      | 忽略 | 最宽松，允许任意使用、修改、分发，只需保留原许可证和版权声明 |
+| meme_emoji_keywords.py | file      | 忽略 | 处理表情包文档菜单的关键词映射或匹配Python脚本。             |
+| README.md              | file      | 必看 | 仓库文档文件，通常用于说明项目的基本信息、使用方法、安装步骤等 |
 
-### 仓库文件信息
 
-| Name      | Info                   |
-| --------- | ---------------------- |
-| ----      |                        |
-| docker    | docker compose编排文件 |
-| emoji     | 表情包文件             |
-| picture   | 文档引用图片           |
-| LICENSE   | 许可文件               |
-| README.md | 说明文档               |
+## 使用教程
+
+> [!CAUTION]
+>
+> 目前仅提供linux 简略教程
+
+------
+
+### 下载
+
+> [!TIP]
+>
+> 推荐下载在 linux系统的 /opt 目录下 亦可以自行调整
 
 
-### Windows Config:
-> 文件参考路径 C:\Users\liew\AppData\Roaming\meme_generator\config.toml
-```bash
-[meme]
-load_builtin_memes = true  # 是否加载内置表情包
-meme_dirs = ["D:/meme_emoji/emoji"] # 加载其他位置的表情包，填写文件夹路径
+```
+git clone https://github.com/anyliew/meme_emoji /opt
+```
+> [!TIP]
+>
+> 网络不好推荐这个
+```
+git clone https://ghfast.top/https://github.com/anyliew/meme_emoji /opt
 ```
 
-### Linux Config:
-> 文件参考路径 /root/.config/meme_generator/config.toml
-```bash
+
+
+### 添加配置文件
+> [!IMPORTANT]
+> 文件名以及路径 : /root/.config/meme_generator/config.toml
+>
+> 我默认使用root账户的，非root用户请自行判断
+>
+>  [meme-generator](https://github.com/MemeCrafters/meme-generator) 第一次运行会生成这个文件，没有的话自行手动创建
+
+config.toml 配置内容如下：
+
+```
 [meme]
 load_builtin_memes = true  # 是否加载内置表情包
 meme_dirs = ["/opt/meme_emoji/emoji"]  # 加载其他位置的表情包，填写文件夹路径
 ```
-
+### 更新 
+> [!CAUTION]
+> 通过Git 版本控制系统中一个常用的命令，用于从远程仓库获取最新代码并合并到本地
+> 从而到达更新获取最新的 meme_emoji 表情包内容
+```
+cd /opt/meme_emoji/ && git pull
+```
+------
 
 
 ## 鸣谢

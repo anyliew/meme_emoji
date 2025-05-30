@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://upload-bbs.miyoushe.com/upload/2025/05/08/365152535/0a154b759159adf6beb79d1582528fae_4082085489423633137.png" width=200 />
+<img src="./picture/logo.png" width=200 />
 
 # meme_emoji 
 
@@ -15,11 +15,29 @@
 </p>
 </div>
 
-## 表情包扩展仓库 meme_emoji 
+## meme_emoji 表情包扩展仓库 
 
 🚀 基于 [meme-generator](https://github.com/MemeCrafters/meme-generator) 做的扩展表情包仓库
 
 *✨* 为你的聊天机器人添加更多趣味表情生成！
+
+> [!NOTE]
+>
+> 请注意，本仓库的内容仅支持以下特定版本的依赖库：
+>
+> - `meme_generator == 0.1.13`（最高兼容版本）
+> - `nonebot-plugin-memes == 0.7.12`（最高兼容版本）
+>
+> 为确保功能正常运行，请勿使用高于指定版本的依赖库。若您已安装更高版本，建议使用以下命令进行版本调整：
+>
+> ```
+> pip install meme_generator==0.1.13
+> ```
+> 
+> Nonebot请使用：
+> ```
+> nb install nonebot-plugin-memes==0.7.12
+> ```
 
 ## 特性
 
@@ -33,7 +51,7 @@
 
 
 
-## 已实现表情示例
+## 表情示例
 
 ### 简略清单
 
@@ -93,7 +111,7 @@ git clone https://ghfast.top/https://github.com/anyliew/meme_emoji /opt
 > [!IMPORTANT]
 > 文件名以及路径 : /root/.config/meme_generator/config.toml
 >
-> 我默认使用root账户的，非root用户请自行判断
+> 我默认使用root账户的，非root用户请自行判断替换
 >
 >  [meme-generator](https://github.com/MemeCrafters/meme-generator) 第一次运行会生成这个文件，没有的话自行手动创建
 

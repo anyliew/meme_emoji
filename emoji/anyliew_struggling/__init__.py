@@ -29,7 +29,7 @@ add_meme(
     min_images=1,
     max_images=1,
     min_texts=0,
-    max_texts=1,
+    max_texts=0,
     keywords=["挣扎"],
     date_created=datetime(2025, 5, 26),
     date_modified=datetime(2025, 5, 26),

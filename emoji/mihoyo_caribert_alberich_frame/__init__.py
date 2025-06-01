@@ -11,26 +11,26 @@ from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
 
 
-def mihoyo_klee_frame (images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+def mihoyo_caribert_alberich_frame (images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
 
     def make(imgs: list[BuildImage]) -> BuildImage:
         #头像尺寸
-        img = imgs[0].convert("RGBA").circle().resize((245, 245))
+        img = imgs[0].convert("RGBA").circle().resize((490, 490))
         #头像坐标
-        return frame.copy().paste(img, (36, 42), alpha=True,below=True)
+        return frame.copy().paste(img, (72, 80), alpha=True,below=True)
 
     return make_png_or_gif(images, make)
 
 
 add_meme(
-    "mihoyo_klee_frame",
-    mihoyo_klee_frame ,
+    "mihoyo_caribert_alberich_frame",
+    mihoyo_caribert_alberich_frame ,
     min_images=1,
     max_images=1,
     min_texts=0,
     max_texts=0,
-    keywords=["可莉相框"],
+    keywords=["卡利贝尔相框"],
     tags=MemeTags.genshin,
     date_created=datetime(2025, 6, 1),
     date_modified=datetime(2025, 6, 1),

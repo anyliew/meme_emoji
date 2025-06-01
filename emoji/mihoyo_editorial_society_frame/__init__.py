@@ -11,7 +11,7 @@ from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
 
 
-def mihoyo_klee_frame (images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+def mihoyo_editorial_society_frame (images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
 
     def make(imgs: list[BuildImage]) -> BuildImage:
@@ -24,13 +24,13 @@ def mihoyo_klee_frame (images: list[BuildImage], texts: list[str], args: MemeArg
 
 
 add_meme(
-    "mihoyo_klee_frame",
-    mihoyo_klee_frame ,
+    "mihoyo_editorial_society_frame",
+    mihoyo_editorial_society_frame ,
     min_images=1,
     max_images=1,
     min_texts=0,
     max_texts=0,
-    keywords=["可莉相框"],
+    keywords=["编辑协会相框"],
     tags=MemeTags.genshin,
     date_created=datetime(2025, 6, 1),
     date_modified=datetime(2025, 6, 1),

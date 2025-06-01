@@ -22,7 +22,7 @@ def yuzu_soft_murasame_say(images, texts: list[str], args):
             allow_wrap=True,
             max_fontsize=150,
             min_fontsize=20,
-            lines_align="right",
+            lines_align="left",
             font_families=["FZKaTong-M19S"],
         )
     except ValueError:

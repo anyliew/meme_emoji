@@ -31,6 +31,7 @@ def yuzu_soft_murasame_finger(images: list[BuildImage], texts: list[str], args: 
             max_fontsize=100,
             min_fontsize=20,
             valign="bottom",
+            font_families=["FZKaTong-M19S"],
         )
     except ValueError:
         raise TextOverLength(name)

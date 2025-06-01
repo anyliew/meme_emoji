@@ -33,6 +33,7 @@ def contract(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
             max_fontsize=100,
             min_fontsize=10,
             valign="bottom",
+            font_families=["FZKaTong-M19S"],
         )
         # 旋转文本图像7度
         text_img = text_img.rotate(7, expand=True)

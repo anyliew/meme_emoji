@@ -11,7 +11,7 @@ from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
 
 
-def yuzu_soft_murasame_blackboard(images, texts: list[str], args):
+def kurogames_gugu_blowfish_small_classes(images, texts: list[str], args):
     text = texts[0]
     frame = BuildImage.open(img_dir / "0.jpg")
     try:
@@ -31,8 +31,8 @@ def yuzu_soft_murasame_blackboard(images, texts: list[str], args):
 
 
 add_meme(
-    "yuzu_soft_murasame_blackboard",
-    yuzu_soft_murasame_blackboard,
+    "kurogames_gugu_blowfish_small_classes",
+    kurogames_gugu_blowfish_small_classes,
     min_texts=1,
     max_texts=1,
     default_texts=["松伦哥,不要再涩涩了"],

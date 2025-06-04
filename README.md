@@ -89,8 +89,8 @@
 > 目前仅提供linux 简略教程
 
 ------
-
-### 下载
+### Linux 系统使用教程
+#### 下载
 
 > [!TIP]
 >
@@ -109,7 +109,7 @@ git clone https://ghfast.top/https://github.com/anyliew/meme_emoji /opt
 
 
 
-### 添加配置文件
+#### 添加配置文件
 > [!IMPORTANT]
 > 文件名以及路径 : /root/.config/meme_generator/config.toml
 >
@@ -124,12 +124,56 @@ config.toml 配置内容如下：
 load_builtin_memes = true  # 是否加载内置表情包
 meme_dirs = ["/opt/meme_emoji/emoji"]  # 加载其他位置的表情包，填写文件夹路径
 ```
-### 更新 
+#### 更新 
 > [!CAUTION]
 > 通过Git 版本控制系统中一个常用的命令，用于从远程仓库获取最新代码并合并到本地
 > 从而到达更新获取最新的 meme_emoji 表情包内容
 ```
 cd /opt/meme_emoji/ && git pull
+```
+
+### Windows 系统使用教程
+
+#### 下载
+
+> [!TIP]
+>
+> 推荐下载在 Windows 系统的 C盘 目录下 亦可以自行调整
+
+
+```
+git clone https://github.com/anyliew/meme_emoji C:\meme_emoji
+```
+> [!TIP]
+>
+> 网络不好推荐这个
+```
+git clone https://ghfast.top/https://github.com/anyliew/meme_emoji C:\meme_emoji
+```
+
+
+
+#### 添加配置文件
+> [!IMPORTANT]
+> 文件名以及路径 : C:\Users\Administrator\AppData\Roaming\meme_generator\config.toml
+>
+> 我默认使用Administrator账户的，非Administrator用户请自行判断替换
+>
+>  [meme-generator](https://github.com/MemeCrafters/meme-generator) 第一次运行会生成这个文件，没有的话自行手动创建
+
+config.toml 配置内容如下：
+
+```
+[meme]
+load_builtin_memes = true  # 是否加载内置表情包
+meme_dirs = ["C:/meme_emoji/emoji"]  # 加载其他位置的表情包，填写文件夹路径
+```
+#### 更新 
+> [!CAUTION]
+> 通过Git 版本控制系统中一个常用的命令，用于从远程仓库获取最新代码并合并到本地
+> 从而到达更新获取最新的 meme_emoji 表情包内容
+```
+cd C:\meme_emoji\ && git pull
 ```
 ------
 

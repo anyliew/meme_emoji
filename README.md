@@ -38,7 +38,7 @@
 >
 > Nonebot请使用：
 > ```
-> nb install nonebot-plugin-memes==0.7.12
+> pip install nonebot-plugin-memes==0.7.12
 > ```
 
 ## 特性

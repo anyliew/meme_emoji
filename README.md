@@ -36,10 +36,15 @@
 > pip install meme_generator==0.1.13
 > ```
 >
-> Nonebot请使用：
+> Nonebot用户请使用：
 > ```
 > pip install nonebot-plugin-memes==0.7.12
 > ```
+> Nonebot的目录下pyproject.toml文件新增添加：
+> ```
+> plugins = ["nonebot_plugin_memes"]
+> ```
+> 
 
 ## 特性
 

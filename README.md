@@ -89,10 +89,6 @@
 
 ## 使用教程
 
-> [!CAUTION]
->
-> 目前仅提供linux 简略教程
-
 ------
 ### Linux 系统使用教程
 #### 下载
@@ -103,13 +99,13 @@
 
 
 ```
-git clone https://github.com/anyliew/meme_emoji /opt
+git clone https://github.com/anyliew/meme_emoji /opt/meme_emoji/
 ```
 > [!TIP]
 >
 > 网络不好推荐这个
 ```
-git clone https://ghfast.top/https://github.com/anyliew/meme_emoji /opt
+git clone https://ghfast.top/https://github.com/anyliew/meme_emoji /opt/meme_emoji/
 ```
 
 

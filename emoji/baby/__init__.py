@@ -15,10 +15,10 @@ def baby (images: list[BuildImage], texts: list[str], args: MemeArgsModel):
 
     def make(imgs: list[BuildImage]) -> BuildImage:
         #头像尺寸
-        img = imgs[0].convert("RGBA").resize((210, 210))
-        img = img.rotate(-5, expand=True)
+        img = imgs[0].convert("RGBA").resize((235, 235))
+        img = img.rotate(-8, expand=True)
         #头像坐标
-        return frame.copy().paste(img, (165, 495), alpha=True,below=True)
+        return frame.copy().paste(img, (140, 480), alpha=True,below=True)
 
     return make_jpg_or_gif(images, make)
 

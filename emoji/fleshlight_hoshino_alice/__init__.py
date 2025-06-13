@@ -48,10 +48,8 @@ add_meme(
     min_images=1,
     max_images=1,
     min_texts=0,
-    max_texts=1,
-    keywords=["拉拉队偶像"],
+    max_texts=0,
+    keywords=["啦啦队偶像","拉拉队偶像"],
     date_created=datetime(2025, 3, 13),
-    #time 2025年3月13日 16:50:41
-    #By Anyliew
-    date_modified=datetime(2025, 3, 13),
+    date_modified=datetime(2025, 6, 13),
 )

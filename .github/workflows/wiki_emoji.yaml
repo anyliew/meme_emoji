@@ -59,7 +59,7 @@ jobs:
       - name: Install fonts
         run: |
           # 安装必要的字体和图形库
-          sudo apt install fonts-noto-color-emoji libgl1-mesa-glx libgl1-mesa-dri
+          sudo apt install fonts-noto-color-emoji libgl1 libglx-mesa0 libgl1-mesa-dri
           # 创建自定义字体目录并复制字体文件
           sudo mkdir /usr/share/fonts/myfonts
           sudo cp main/resources/fonts/* /usr/share/fonts/myfonts/

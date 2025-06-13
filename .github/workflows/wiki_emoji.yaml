@@ -1,0 +1,81 @@
+# 工作流名称：更新 memes.md 文件
+name: Update meme_emoji list.md
+
+# 触发条件配置
+on:
+  push:  # 当有代码推送时触发
+    branches:  # 仅针对 main 分支
+      - "main"
+    paths:  # 仅当 emoji/ 目录下的文件有变更时触发
+      - "emoji/**"
+
+# 定义工作流程
+jobs:
+  # 任务名称：更新并推送
+  update-and-push:
+    # 指定运行环境为最新版 Ubuntu
+    runs-on: ubuntu-latest
+    
+    # 任务步骤
+    steps:
+      # 步骤1：检出当前仓库代码
+      - uses: actions/checkout@v4
+
+      # 步骤2：检出当前仓库的 wiki 部分
+      - name: Checkout wiki repo
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}.wiki  # 仓库的 wiki 部分
+          path: wiki  # 检出到 wiki 目录
+
+      # 步骤3：检出 meme-generator 主仓库
+      - name: Checkout main repo
+        uses: actions/checkout@v4
+        with:
+          repository: MeetWq/meme-generator  # 指定仓库
+          path: main  # 检出到 main 目录
+
+      # 步骤4：设置 Python 环境
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"  # 指定 Python 3.10 版本
+
+      # 步骤5：安装依赖
+      - name: Install dependencies
+        run: |
+          sudo apt install python3-pip  # 安装 pip
+          pip3 install -U meme_generator  # 安装 meme_generator 包
+
+      # 步骤6：安装字体和相关依赖
+      - name: Install fonts
+        run: |
+          # 安装必要的字体和图形库
+          sudo apt install fonts-noto-color-emoji libgl1-mesa-glx libgl1-mesa-dri
+          # 创建自定义字体目录并复制字体文件
+          sudo mkdir /usr/share/fonts/myfonts
+          sudo cp main/resources/fonts/* /usr/share/fonts/myfonts/
+          # 更新字体缓存
+          fc-cache -fv
+
+      # 步骤7：配置 meme_generator
+      - name: Change config
+        run: |
+          # 创建配置目录
+          mkdir -p ~/.config/meme_generator
+          # 生成配置文件，禁用内置 memes 并指定自定义 memes 目录
+          echo -e "[meme]\nload_builtin_memes = false\nmeme_dirs = [\"$GITHUB_WORKSPACE/emoji\"]" > ~/.config/meme_generator/config.toml
+
+      # 步骤8：更新 memes.md 文件
+      - name: Update memes.md
+        run: python3 wiki/update_meme_list.py  # 执行 Python 脚本更新列表
+
+      # 步骤9：提交并推送更改到 wiki
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          directory: "wiki"  # 操作 wiki 目录
+          repository: ${{ github.repository }}.wiki  # 目标仓库
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub token 认证
+          message: "update meme_emoji list"  # 提交信息
+          branch: "master"  # wiki 的标准分支

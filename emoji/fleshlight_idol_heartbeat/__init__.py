@@ -22,15 +22,16 @@ def fleshlight_idol_heartbeat(images: list[BuildImage], texts: list[str], args: 
         ta = "他" if info.gender == "male" else "她"
         name = info.name or ta
 
-    text = f"{name}の❤️最愛"
+    text = f"{name}の❤️最爱"
     #{name}挚爱❤️👩‍❤️‍💋‍👨{name}愛のカップ。
     try:
         frame.draw_text(
-            (53, 140, 811, 280),
+            (55, 135, 812, 282),
             text,
             max_fontsize=100,
             min_fontsize=20,
-            valign="bottom",
+            lines_align="left",
+            font_families=["FZShaoEr-M11S"],
         )
     except ValueError:
         raise TextOverLength(name)
@@ -51,7 +52,5 @@ add_meme(
     max_texts=1,
     keywords=["偶像心跳"],
     date_created=datetime(2024, 12, 21),
-    #time 2024年12月21日 21:31:25
-    #By Anyliew
-    date_modified=datetime(2024, 12, 21),
+    date_modified=datetime(2025, 6, 13),
 )

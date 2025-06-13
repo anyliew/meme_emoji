@@ -9,6 +9,14 @@ on:
     paths:  # 仅当 emoji/ 目录下的文件有变更时触发
       - "emoji/**"
 
+# 新增手动触发配置
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: '触发原因（可选）'
+        required: false
+        default: '手动触发更新'
+
 # 定义工作流程
 jobs:
   # 任务名称：更新并推送

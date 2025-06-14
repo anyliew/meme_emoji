@@ -61,11 +61,11 @@
 | 54 | <img src="../emoji/ikun_basketball/images/0.png" width="100"> | 篮球、 🏀 | 1 | &nbsp; | &nbsp; | [ikun_basketball](../emoji/ikun_basketball) | 2025-05-29 |
 | 55 | <img src="../emoji/oral_sex/images/0.png" width="100"> | 口 | 2 | &nbsp; | &nbsp; | [oral_sex](../emoji/oral_sex) | 2025-05-27 |
 | 56 | <img src="../emoji/huochailu/images/0.png" width="100"> | 火柴撸 | 1 | &nbsp; | &nbsp; | [huochailu](../emoji/huochailu) | 2025-05-27 |
-| 57 | <img src="../emoji/jerk_off/images/0.png" width="100"> | 导 | 1 | &nbsp; | &nbsp; | [jerk_off](../emoji/jerk_off) | 2025-05-27 |
-| 58 | <img src="../emoji/shuai/images/0.png" width="100"> | 甩 | 1 | &nbsp; | &nbsp; | [shuai](../emoji/shuai) | 2025-05-27 |
-| 59 | <img src="../emoji/duidi/images/0.png" width="100"> | 怼地、 怼 | 1 | &nbsp; | &nbsp; | [duidi](../emoji/duidi) | 2025-05-27 |
-| 60 | <img src="../emoji/chuini/images/0.png" width="100"> | 捶你 | 1 | &nbsp; | &nbsp; | [chuini](../emoji/chuini) | 2025-05-27 |
-| 61 | <img src="../emoji/chuanmama/images/0.png" width="100"> | 川妈妈 | 1 | &nbsp; | &nbsp; | [chuanmama](../emoji/chuanmama) | 2025-05-27 |
+| 57 | <img src="../emoji/shuai/images/0.png" width="100"> | 甩 | 1 | &nbsp; | &nbsp; | [shuai](../emoji/shuai) | 2025-05-27 |
+| 58 | <img src="../emoji/duidi/images/0.png" width="100"> | 怼地、 怼 | 1 | &nbsp; | &nbsp; | [duidi](../emoji/duidi) | 2025-05-27 |
+| 59 | <img src="../emoji/chuini/images/0.png" width="100"> | 捶你 | 1 | &nbsp; | &nbsp; | [chuini](../emoji/chuini) | 2025-05-27 |
+| 60 | <img src="../emoji/chuanmama/images/0.png" width="100"> | 川妈妈 | 1 | &nbsp; | &nbsp; | [chuanmama](../emoji/chuanmama) | 2025-05-27 |
+| 61 | <img src="../emoji/masturbate/images/0.png" width="100"> | 导、 打飞机 | 1 | &nbsp; | &nbsp; | [masturbate](../emoji/masturbate) | 2025-05-27 |
 | 62 | <img src="../emoji/mihoyo_lynette_holdsign/images/0.png" width="100"> | 琳妮特举牌 | &nbsp; | 1 | 林尼大笨蛋 | [mihoyo_lynette_holdsign](../emoji/mihoyo_lynette_holdsign) | 2025-05-26 |
 | 63 | <img src="../emoji/anyliew_struggling/images/0.png" width="100"> | 挣扎 | 1 | 0 | &nbsp; | [anyliew_struggling](../emoji/anyliew_struggling) | 2025-05-26 |
 | 64 | <img src="../emoji/anyliew_people_I_like/images/0.png" width="100"> | 挚爱 | 1 | 0 | &nbsp; | [anyliew_people_I_like](../emoji/anyliew_people_I_like) | 2025-05-26 |

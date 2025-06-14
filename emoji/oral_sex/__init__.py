@@ -8,7 +8,7 @@ from pil_utils import BuildImage
 
 img_dir = Path(__file__).parent / "images"
 
-def kou(images: list[BuildImage], texts, args):
+def oral_sex(images: list[BuildImage], texts, args):
     # 坐标参数保持不变
     self_locs = [(30, 37), (36, 42)]  # 己方头像位置 (x,y)
     user_locs = [(67, 99), (71, 98)]  # 对方头像位置 (x,y)
@@ -50,11 +50,11 @@ def kou(images: list[BuildImage], texts, args):
     return save_gif(frames, 0.05)  # 保持原帧率
 
 add_meme(
-    "kou",
-    kou,
+    "oral_sex",
+    oral_sex,
     min_images=2,
     max_images=2,
     keywords=["口"],
     date_created=datetime(2025, 5, 27),
-    date_modified=datetime(2025, 5, 27),
+    date_modified=datetime(2025, 6, 14),
 )

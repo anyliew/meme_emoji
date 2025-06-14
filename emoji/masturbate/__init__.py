@@ -10,7 +10,7 @@ from meme_generator.utils import save_gif
 img_dir = Path(__file__).parent / "images"
 
 
-def jerk_off(images: list[BuildImage], texts, args):
+def masturbate(images: list[BuildImage], texts, args):
     img = images[0].convert("RGBA").square().resize((110, 110)).circle()
     frames: list[IMG] = []
     locs = [
@@ -27,11 +27,11 @@ def jerk_off(images: list[BuildImage], texts, args):
 
 
 add_meme(
-    "jerk_off",
-    jerk_off,
+    "masturbate",
+    masturbate,
     min_images=1,
     max_images=1,
-    keywords=["导"],
+    keywords=["导","打飞机"],
     date_created=datetime(2025, 5, 27),
     date_modified=datetime(2025, 6, 14),
 )

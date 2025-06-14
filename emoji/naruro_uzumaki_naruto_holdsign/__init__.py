@@ -10,12 +10,12 @@ from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
 
 
-def kurogames_cartethyia_say(images, texts: list[str], args):
+def naruro_uzumaki_naruto_holdsign(images, texts: list[str], args):
     text = texts[0]
     frame = BuildImage.open(img_dir / "0.jpg")
     try:
         frame.draw_text(
-            (1, 1, 874, 393),
+            (281, 591, 858, 1001),
             text,
             fill=(72, 44, 41),
             allow_wrap=True,
@@ -30,13 +30,12 @@ def kurogames_cartethyia_say(images, texts: list[str], args):
 
 
 add_meme(
-    "kurogames_cartethyia_say",
-    kurogames_cartethyia_say,
+    "naruro_uzumaki_naruto_holdsign",
+    naruro_uzumaki_naruto_holdsign,
     min_texts=1,
     max_texts=1,
-    default_texts=["我不再是那个无力迷茫、只能等待你拯救的少女了，现在的我已能和你并肩而战，为你提供助益了。"],
-    keywords=["卡提说","卡提希娅说"],
-    tags=MemeTags.wuthering_waves,
-    date_created=datetime(2025, 6, 13),
-    date_modified=datetime(2025, 6, 13),
+    default_texts=["我才不要在这种时候放弃,即使当不成中忍,我也会通过其他的途径成为火影的,这就是我的忍道 "],
+    keywords=["鸣人举牌","漩涡鸣人举牌"],
+    date_created=datetime(2025, 6, 14),
+    date_modified=datetime(2025, 6, 14),
 )

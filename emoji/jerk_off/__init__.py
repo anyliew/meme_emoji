@@ -10,7 +10,7 @@ from meme_generator.utils import save_gif
 img_dir = Path(__file__).parent / "images"
 
 
-def dao(images: list[BuildImage], texts, args):
+def jerk_off(images: list[BuildImage], texts, args):
     img = images[0].convert("RGBA").square().resize((110, 110)).circle()
     frames: list[IMG] = []
     locs = [
@@ -27,11 +27,11 @@ def dao(images: list[BuildImage], texts, args):
 
 
 add_meme(
-    "dao",
-    dao,
+    "jerk_off",
+    jerk_off,
     min_images=1,
     max_images=1,
     keywords=["导"],
     date_created=datetime(2025, 5, 27),
-    date_modified=datetime(2025, 5, 27),
+    date_modified=datetime(2025, 6, 14),
 )

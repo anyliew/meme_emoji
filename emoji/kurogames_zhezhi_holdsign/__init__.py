@@ -13,9 +13,14 @@ img_dir = Path(__file__).parent / "images"
 def kurogames_zhezhi_holdsign (images, texts: list[str], args):
     text = texts[0]
     frame = BuildImage.open(img_dir / "0.png")
+    loc = (306, 417)
+    padding = 5
+    points = ((0, 100), (741, 22), (828, 566), (29, 688))
+    size = (550, 400)
+    text_img = BuildImage.new("RGBA", size)
     try:
-        frame.draw_text(
-            (319, 505, 1053, 993),
+        text_img.draw_text(
+            (padding, padding, size[0]-padding*2, size[1]-padding*2),
             text,
             fill=(0, 0, 0),
             allow_wrap=True,
@@ -26,6 +31,7 @@ def kurogames_zhezhi_holdsign (images, texts: list[str], args):
         )
     except ValueError:
         raise TextOverLength(text)
+    frame.paste(text_img.perspective(points), loc, alpha=True)
     return frame.save_jpg()
 
 

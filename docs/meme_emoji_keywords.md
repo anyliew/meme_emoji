@@ -81,7 +81,7 @@
 | 74 | <img src="../emoji/mihoyo_elysia_come/images/0.png" width="100"> | 爱莉希雅降临 | 2 | &nbsp; | &nbsp; | [mihoyo_elysia_come](../emoji/mihoyo_elysia_come) | 2025-05-25 |
 | 75 | <img src="../emoji/torture_yourself/images/0.png" width="100"> | 折磨自己 | 2 | &nbsp; | &nbsp; | [torture_yourself](../emoji/torture_yourself) | 2025-05-25 |
 | 76 | <img src="../emoji/deer_help/images/0.jpg" width="100"> | 帮鹿、 帮🦌 | 2 | &nbsp; | &nbsp; | [deer_help](../emoji/deer_help) | 2025-05-25 |
-| 77 | <img src="../emoji/kurogames_lingyang_holdsign/images/0.png" width="100"> | 凌阳举牌、 雪豹举牌 | &nbsp; | 1 | 你必定歪我 | [kurogames_lingyang_holdsign](../emoji/kurogames_lingyang_holdsign) | 2025-05-25 |
+| 77 | <img src="../emoji/kurogames_lingyang_holdsign/images/0.jpg" width="100"> | 凌阳举牌、 雪豹举牌 | &nbsp; | 1 | 我叫凌阳，比起我摘下狮头后的这幅模样，可能大家更习惯的，还是那位梅花桩上的“狮首”吧？希望相处之后，你能记住这个原原本本的我呀。 | [kurogames_lingyang_holdsign](../emoji/kurogames_lingyang_holdsign) | 2025-05-25 |
 | 78 | <img src="../emoji/yuzu_soft_murasame_like/images/0.png" width="100"> | 丛雨喜欢 | 1 | 0 | &nbsp; | [yuzu_soft_murasame_like](../emoji/yuzu_soft_murasame_like) | 2025-05-25 |
 | 79 | <img src="../emoji/atri_like/images/0.png" width="100"> | 亚托莉喜欢 | 1 | 0 | &nbsp; | [atri_like](../emoji/atri_like) | 2025-05-25 |
 | 80 | <img src="../emoji/kurogames_phoebe_ score_sheet/images/0.png" width="100"> | 菲比评分表、 评分表 | 1 | 0 | &nbsp; | [kurogames_phoebe_ score_sheet](../emoji/kurogames_phoebe_ score_sheet) | 2025-05-24 |

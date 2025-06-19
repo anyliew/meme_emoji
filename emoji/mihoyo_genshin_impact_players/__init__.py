@@ -54,7 +54,5 @@ add_meme(
     keywords=["原批","原神玩家"],
     date_created=datetime(2025, 3, 14),
     tags=MemeTags.genshin,
-    #time 2025年3月14日 20:18:58
-    #By Anyliew
     date_modified=datetime(2025, 3, 14),
 )

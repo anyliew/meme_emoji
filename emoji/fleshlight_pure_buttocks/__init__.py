@@ -52,7 +52,5 @@ add_meme(
     max_texts=1,
     keywords=["纯洁臀"],
     date_created=datetime(2025, 3, 13),
-    #time 2025年3月13日 16:50:41
-    #By Anyliew
     date_modified=datetime(2025, 3, 13),
 )

@@ -53,7 +53,5 @@ add_meme(
     max_texts=1,
     keywords=["紫域精灵"],
     date_created=datetime(2025, 3, 24),
-    #time 2025年3月24日 21:31:25
-    #By Anyliew
     date_modified=datetime(2025, 3, 24),
 )

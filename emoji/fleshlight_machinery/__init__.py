@@ -53,7 +53,5 @@ add_meme(
     max_texts=1,
     keywords=["机械龙女","机械龙女EVA","机械龙女eva"],
     date_created=datetime(2024, 12, 21),
-    #time 2024年12月21日 21:31:25
-    #By Anyliew
     date_modified=datetime(2024, 12, 21),
 )

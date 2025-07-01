@@ -52,7 +52,7 @@ add_meme(
     min_texts=0,
     max_texts=1,
     keywords=["死刑"],
-    date_created=datetime(2025, 3, 14),
     tags=MemeTags.genshin,
+    date_created=datetime(2025, 3, 14),
     date_modified=datetime(2025, 3, 14),
 )

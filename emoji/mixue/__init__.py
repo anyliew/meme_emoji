@@ -31,7 +31,6 @@ add_meme(
     min_texts=0,
     max_texts=0,
     keywords=["蜜雪冰城"],
-    tags=MemeTags.genshin,
     date_created=datetime(2025, 6, 20),
     date_modified=datetime(2025, 6, 20),
 )

@@ -23,7 +23,7 @@ def kurogames_songlun_finger(images: list[BuildImage], texts: list[str], args: M
         ta = "他" if info.gender == "male" else "她"
         name = info.name or ta
 
-    text = f"原来{name}是鸣潮玩家\n是潮批啊~\n原来你也喜欢玩鸣潮"
+    text = f"原来{name}是鸣潮玩家\n是潮批啊~"
     try:
         frame.draw_text(
             (3, 350, 482, 606),
@@ -53,5 +53,5 @@ add_meme(
     keywords=["松伦指","松伦哥指", "李松伦指","潮批"],
     tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 6, 20),
-    date_modified=datetime(2025, 6, 20),
+    date_modified=datetime(2025, 7, 1),
 )

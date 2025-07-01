@@ -28,6 +28,7 @@ def kurogames_songlun_finger(images: list[BuildImage], texts: list[str], args: M
         frame.draw_text(
             (3, 350, 482, 606),
             text,
+            fill=(0, 0, 0),
             max_fontsize=120,
             min_fontsize=35,
             lines_align="center",

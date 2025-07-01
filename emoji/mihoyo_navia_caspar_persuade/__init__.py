@@ -28,10 +28,11 @@ def mihoyo_navia_caspar_persuade(images: list[BuildImage], texts: list[str], arg
         frame.draw_text(
             (1, 492, 544, 616),
             text,
+            fill=(0, 0, 0),
             max_fontsize=100,
             min_fontsize=20,
-            lines_align="left",
-            font_families=["FZKaTong-M19S"],
+            lines_align="center",
+            font_families=["FZShaoEr-M11S"],
         )
     except ValueError:
         raise TextOverLength(name)

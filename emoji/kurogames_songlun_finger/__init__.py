@@ -12,7 +12,7 @@ img_dir = Path(__file__).parent / "images"
 
 
 def kurogames_songlun_finger(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
-    frame = BuildImage.open(img_dir / "0.png")
+    frame = BuildImage.open(img_dir / "0.jpg")
 
     ta = "他"
     name = ta
@@ -23,7 +23,7 @@ def kurogames_songlun_finger(images: list[BuildImage], texts: list[str], args: M
         ta = "他" if info.gender == "male" else "她"
         name = info.name or ta
 
-    text = f"难道说 \n {name}你是潮批?"
+    text = f"难道说 \n {name}是潮批?"
     try:
         frame.draw_text(
             (3, 350, 482, 606),
@@ -38,8 +38,8 @@ def kurogames_songlun_finger(images: list[BuildImage], texts: list[str], args: M
         raise TextOverLength(name)
 
     def make(imgs: list[BuildImage]) -> BuildImage:
-        img = imgs[0].convert("RGBA").circle().resize((300, 300)))
-        return frame.copy().paste(img, (100, 40)), alpha=True, below=True)
+        img = imgs[0].convert("RGBA").circle().resize((300, 300))
+        return frame.copy().paste(img, (100, 40), alpha=True)
 
     return make_jpg_or_gif(images, make)
 

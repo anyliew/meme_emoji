@@ -11,7 +11,7 @@
 | 4 | <img src="../emoji/nakano_yotsuba/images/0.png" width="100"> | 中野四叶 | 1 | 0 | &nbsp; | [nakano_yotsuba](../emoji/nakano_yotsuba) | 2025-07-02 |
 | 5 | <img src="../emoji/nakano_ltsuki/images/0.png" width="100"> | 中野五月 | 1 | 0 | &nbsp; | [nakano_ltsuki](../emoji/nakano_ltsuki) | 2025-07-02 |
 | 6 | <img src="../emoji/nakano_nino/images/0.png" width="100"> | 中野二乃 | 1 | 0 | &nbsp; | [nakano_nino](../emoji/nakano_nino) | 2025-07-02 |
-| 7 | <img src="../emoji/pineapples/images/0.png" width="100"> | 🍍、 菠萝 | 1 | 0 | &nbsp; | [pineapples](../emoji/pineapples) | 2025-07-02 |
+| 7 | <img src="../emoji/pineapples/images/0.png" width="100"> | 🍍、 菠萝头 | 1 | 0 | &nbsp; | [pineapples](../emoji/pineapples) | 2025-07-02 |
 | 8 | <img src="../emoji/scissor_seven_head/images/0.png" width="100"> | 伍六七、 阿七 | 1 | 0 | &nbsp; | [scissor_seven_head](../emoji/scissor_seven_head) | 2025-07-02 |
 | 9 | <img src="../emoji/azur_lane_cheshire_thumbs_up/images/0.jpg" width="100"> | 柴郡点赞、 柴郡猫点赞 | 1 | 0 | &nbsp; | [azur_lane_cheshire_thumbs_up](../emoji/azur_lane_cheshire_thumbs_up) | 2025-07-02 |
 | 10 | <img src="../emoji/laughing/images/0.jpg" width="100"> | 笑指 | 1 | 0 | &nbsp; | [laughing](../emoji/laughing) | 2025-07-02 |

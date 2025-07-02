@@ -31,7 +31,7 @@ add_meme(
     max_images=1,
     min_texts=0,
     max_texts=0,
-    keywords=["🍍","菠萝"],
+    keywords=["🍍","菠萝头"],
     tags=MemeTags.genshin,
     date_created=datetime(2025, 7, 2),
     date_modified=datetime(2025, 7, 2),

@@ -6,12 +6,11 @@ from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
-from meme_generator.tags import MemeTags
 
 img_dir = Path(__file__).parent / "images"
 
 
-def atri_finger(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+def laughing(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.jpg")
 
     ta = "他"
@@ -23,38 +22,35 @@ def atri_finger(images: list[BuildImage], texts: list[str], args: MemeArgsModel)
         ta = "他" if info.gender == "male" else "她"
         name = info.name or ta
 
-    text = f"{name},你和夏先生一样笨得可爱"
-
+    text = f"{name},你真是好搞笑呀🤣😂~"
     try:
         frame.draw_text(
-            (0, 588, 1171, 720),
+            (1, 1, 1495, 407),
             text,
-            fill=(0, 0, 0),
-            allow_wrap=True,
-            max_fontsize=150,
-            min_fontsize=15,
+            fill=(255, 255, 255),
+            max_fontsize=100,
+            min_fontsize=20,
             lines_align="left",
-            font_families=["FZShaoEr-M11S"],
+            font_families=["FZXS14"],
         )
     except ValueError:
         raise TextOverLength(name)
 
     def make(imgs: list[BuildImage]) -> BuildImage:
-        img = imgs[0].convert("RGBA").circle().resize((300, 300))
-        return frame.copy().paste(img, (600, 140), alpha=True)
+        img = imgs[0].convert("RGBA").circle().resize((400, 400))
+        return frame.copy().paste(img, (1097, 550), alpha=True)
 
     return make_jpg_or_gif(images, make)
 
 
 add_meme(
-    "atri_finger",
-    atri_finger,
+    "laughing",
+    laughing,
     min_images=1,
     max_images=1,
     min_texts=0,
     max_texts=1,
-    keywords=["亚托莉指"],
-    tags=MemeTags.atri,
-    date_created=datetime(2025, 3, 24),
-    date_modified=datetime(2025, 3, 24),
+    keywords=["笑指"],
+    date_created=datetime(2025, 7, 2),
+    date_modified=datetime(2025, 7, 2),
 )

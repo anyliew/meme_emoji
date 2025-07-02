@@ -6,13 +6,12 @@ from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
-from meme_generator.tags import MemeTags
 
 img_dir = Path(__file__).parent / "images"
 
 
-def atri_finger(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
-    frame = BuildImage.open(img_dir / "0.jpg")
+def pay_to_watch(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+    frame = BuildImage.open(img_dir / "0.png")
 
     ta = "他"
     name = ta
@@ -23,38 +22,35 @@ def atri_finger(images: list[BuildImage], texts: list[str], args: MemeArgsModel)
         ta = "他" if info.gender == "male" else "她"
         name = info.name or ta
 
-    text = f"{name},你和夏先生一样笨得可爱"
-
+    text = f"男主:旁边怎么有人傻乎乎站在那里？\n女主:{name}付钱让他站在那付费观看的"
     try:
         frame.draw_text(
-            (0, 588, 1171, 720),
+            (36, 5, 1051, 141),
             text,
             fill=(0, 0, 0),
-            allow_wrap=True,
-            max_fontsize=150,
-            min_fontsize=15,
+            max_fontsize=100,
+            min_fontsize=20,
             lines_align="left",
-            font_families=["FZShaoEr-M11S"],
+            font_families=["FZXS14"],
         )
     except ValueError:
         raise TextOverLength(name)
 
     def make(imgs: list[BuildImage]) -> BuildImage:
-        img = imgs[0].convert("RGBA").circle().resize((300, 300))
-        return frame.copy().paste(img, (600, 140), alpha=True)
+        img = imgs[0].convert("RGBA").resize((185, 185))
+        return frame.copy().paste(img, (150, 240), alpha=True, below=True)
 
     return make_jpg_or_gif(images, make)
 
 
 add_meme(
-    "atri_finger",
-    atri_finger,
+    "pay_to_watch",
+    pay_to_watch,
     min_images=1,
     max_images=1,
     min_texts=0,
     max_texts=1,
-    keywords=["亚托莉指"],
-    tags=MemeTags.atri,
-    date_created=datetime(2025, 3, 24),
-    date_modified=datetime(2025, 3, 24),
+    keywords=["付费观看"],
+    date_created=datetime(2025, 7, 2),
+    date_modified=datetime(2025, 7, 2),
 )

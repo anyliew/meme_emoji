@@ -21,7 +21,7 @@ def kurogames_camellya_holdsign(images, texts: list[str], args):
             allow_wrap=True,
             max_fontsize=120,
             min_fontsize=10,
-            lines_align="left",
+            lines_align="center",
             font_families=["FZSJ-QINGCRJ"],
         )
     except ValueError:

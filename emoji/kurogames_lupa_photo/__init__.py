@@ -16,7 +16,7 @@ def kurogames_lupa_photo(images: list[BuildImage], texts: list[str], args: MemeA
 
     def make(imgs: list[BuildImage]) -> BuildImage:
         #头像尺寸
-        img = imgs[0].convert("RGBA").circle().resize((579, 410))
+        img = imgs[0].convert("RGBA").resize((579, 410))
         img = img.rotate(-5, expand=True)
         #头像坐标
         return frame.copy().paste(img, (465, 680), alpha=True,below=True)

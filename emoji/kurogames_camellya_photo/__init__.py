@@ -16,10 +16,10 @@ def kurogames_camellya_photo(images: list[BuildImage], texts: list[str], args: M
 
     def make(imgs: list[BuildImage]) -> BuildImage:
         #头像尺寸
-        img = imgs[0].convert("RGBA").resize((310, 310))
+        img = imgs[0].convert("RGBA").resize((345, 310))
         img = img.rotate(-5, expand=True)
         #头像坐标
-        return frame.copy().paste(img, (185, 500), alpha=True,below=True)
+        return frame.copy().paste(img, (170, 500), alpha=True,below=True)
 
     return make_jpg_or_gif(images, make)
 

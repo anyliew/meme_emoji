@@ -10,19 +10,19 @@ from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
 
 
-def kurogames_phrolova_holdsign(images, texts: list[str], args):
+def kurogames_camellya_holdsign(images, texts: list[str], args):
     text = texts[0]
     frame = BuildImage.open(img_dir / "0.jpg")
     try:
         frame.draw_text(
-            (381, 509, 677, 867),
+            (179, 611, 538, 878),
             text,
             fill=(0, 0, 0),
             allow_wrap=True,
             max_fontsize=120,
-            min_fontsize=25,
-            lines_align="letf",
-            font_families=["FZShaoEr-M11S"],
+            min_fontsize=10,
+            lines_align="left",
+            font_families=["FZSJ-QINGCRJ"],
         )
     except ValueError:
         raise TextOverLength(text)
@@ -30,13 +30,13 @@ def kurogames_phrolova_holdsign(images, texts: list[str], args):
 
 
 add_meme(
-    "kurogames_phrolova_holdsign",
-    kurogames_phrolova_holdsign,
+    "kurogames_camellya_holdsign",
+    kurogames_camellya_holdsign,
     min_texts=1,
     max_texts=1,
-    default_texts=["我是残星会会监弗洛洛，安静、忧郁，似乎靠近我就会坠入无尽的忧伤之中。在生死之间，我谱写了一篇又一篇曲谱，不断构筑着我心中完美的世界。让我们一起，完成这场万众期待的演奏。"],
-    keywords=["弗洛洛举牌"],
+    default_texts=["尽情挣扎，别让我无聊！"],
+    keywords=["大傻椿举牌","傻椿举牌"],
     tags=MemeTags.wuthering_waves,
-    date_created=datetime(2025, 7, 1),
+    date_created=datetime(2025, 7, 4),
     date_modified=datetime(2025, 7, 4),
 )

@@ -13,13 +13,13 @@ img_dir = Path(__file__).parent / "images"
 def contract(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.jpg")
 
-    ta = "蔡徐坤"
+    ta = "他"
     name = ta
     if texts:
         name = texts[0]
     elif args.user_infos:
         info = args.user_infos[0]
-        ta = "蔡徐坤" if info.gender == "male" else "她"
+        ta = "他" if info.gender == "male" else "她"
         name = info.name or ta
 
     text = f"{name}⭐️💢契约"

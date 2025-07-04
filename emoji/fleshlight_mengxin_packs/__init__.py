@@ -27,6 +27,7 @@ def fleshlight_mengxin_packs(images: list[BuildImage], texts: list[str], args: M
         frame.draw_text(
             (43, 403, 328, 485),
             text,
+            fill=(255, 255, 255),
             max_fontsize=100,
             min_fontsize=20,
             lines_align="center",

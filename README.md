@@ -22,7 +22,7 @@
 >
 > 请注意，本仓库的内容仅支持以下特定版本的依赖库：
 >
-> - `meme_generator == 0.1.13`（最高兼容版本）
+> - `meme_generator == 0.1.14（最高兼容版本）
 > - `nonebot-plugin-memes == 0.7.12`（最高兼容版本）
 >
 > 为确保功能正常运行，请勿使用高于指定版本的依赖库。
@@ -30,12 +30,12 @@
 > 若您已安装更高版本，建议使用以下命令进行版本调整：
 >
 > ```
-> pip install meme_generator==0.1.13
+> pip install meme_generator==0.1.14
 > ```
 >
 > Nonebot用户请使用：
 > ```
-> pip install nonebot-plugin-memes==0.7.12
+> pip install nonebot-plugin-memes==0.7.12 && pip install meme_generator==0.1.14
 > ```
 > Nonebot的目录下pyproject.toml文件新增添加：
 > ```

@@ -10,7 +10,7 @@ from meme_generator.utils import make_png_or_gif
 img_dir = Path(__file__).parent / "images"
 
 
-def orange(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+def orange_head(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
 
     def make(imgs: list[BuildImage]) -> BuildImage:
@@ -23,13 +23,13 @@ def orange(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
 
 
 add_meme(
-    "orange",
-    orange,
+    "orange_head",
+    orange_head,
     min_images=1,
     max_images=1,
     min_texts=0,
     max_texts=1,
-    keywords=["🍊","橘","橘子"],
+    keywords=["橘子头"],
     date_created=datetime(2025, 5, 29),
-    date_modified=datetime(2025, 5, 29),
+    date_modified=datetime(2025, 7, 7),
 )

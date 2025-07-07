@@ -23,7 +23,7 @@ def kurogames_verina_finger(images: list[BuildImage], texts: list[str], args: Me
         ta = "他" if info.gender == "male" else "她"
         name = info.name or ta
 
-    text = f"维里奈:{name}抽卡又歪了\n维里奈:好消息,{name}歪的是我的共鸣连"
+    text = f"维里奈:坏消息\n维里奈:{name}抽卡又歪了\n维里奈:好消息\n维里奈:{name}歪的是我的共鸣链😆😁\n维里奈:哈哈哈ꉂ ೭(˵¯̴͒ꇴ¯̴͒˵)౨”"
     try:
         frame.draw_text(
             (1, 1, 1203, 257),

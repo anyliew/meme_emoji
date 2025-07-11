@@ -36,7 +36,7 @@ add_meme(
     max_texts=1,
     default_texts=["一份青枝月桂沙拉谢谢"],
     keywords=["卡提举牌", "卡提希娅举牌", "卡提西亚举牌"],
-    tags=MemeTags.bronya,
+    tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 5, 17),
     date_modified=datetime(2025, 5, 17),
 )

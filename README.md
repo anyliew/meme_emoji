@@ -83,7 +83,9 @@
 延续(copy) meme-generator 作者  MeetWq MIT 许可证 
 
 > MIT License https://github.com/MemeCrafters/meme-generator/blob/main/LICENSE
+> 
 > MIT License https://github.com/anyliew/meme_emoji/blob/main/LICENSE
+> 
 >chat.deepseek https://github.com/anyliew/meme_emoji/raw/main/docs/picture/chat.deepseek.png)
 
 

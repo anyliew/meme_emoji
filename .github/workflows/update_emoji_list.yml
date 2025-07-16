@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt install python3-pip
-          pip3 install -U meme_generator filetype
+          pip3 install -U "meme_generator<0.2.0"
 
       - name: Install fonts
         run: |

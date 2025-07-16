@@ -6,6 +6,7 @@ on:
       - "main"
     paths:
       - "emoji/**"
+  workflow_dispatch:  # 添加手动触发
 
 jobs:
   update-and-push:

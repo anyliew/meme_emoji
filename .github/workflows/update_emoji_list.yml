@@ -1,0 +1,60 @@
+name: Update memes.md
+
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "emoji/**"
+
+jobs:
+  update-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout wiki repo
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}.wiki
+          path: wiki
+
+      - name: Checkout main repo
+        uses: actions/checkout@v4
+        with:
+          repository: MeetWq/meme-generator
+          path: main
+
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          sudo apt install python3-pip
+          pip3 install -U meme_generator
+
+      - name: Install fonts
+        run: |
+          sudo apt install fonts-noto-color-emoji libgl1-mesa-glx libgl1-mesa-dri
+          sudo mkdir /usr/share/fonts/myfonts
+          sudo cp main/resources/fonts/* /usr/share/fonts/myfonts/
+          fc-cache -fv
+
+      - name: Change config
+        run: |
+          mkdir -p ~/.config/meme_generator
+          echo -e "[meme]\nload_builtin_memes = false\nmeme_dirs = [\"$GITHUB_WORKSPACE/emoji\"]" > ~/.config/meme_generator/config.toml
+
+      - name: Update memes.md
+        run: python3 wiki/update_meme_list.py
+
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          directory: "wiki"
+          repository: ${{ github.repository }}.wiki
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: "update meme list"
+          branch: "master"

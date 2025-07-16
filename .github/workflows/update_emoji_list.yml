@@ -34,11 +34,11 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt install python3-pip
-          pip3 install -U "meme_generator<0.2.0"
+          pip3 install -U "meme_generator<0.2.0" filetype pillow
 
       - name: Install fonts
         run: |
-          sudo apt install fonts-noto-color-emoji libgl1-mesa-dri libglx-mesa0
+          sudo apt install fonts-noto-color-emoji libgl1 libglx-mesa0 libgl1-mesa-dri libegl1 libegl-mesa0
           sudo mkdir /usr/share/fonts/myfonts
           sudo cp main/resources/fonts/* /usr/share/fonts/myfonts/
           fc-cache -fv

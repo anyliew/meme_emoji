@@ -14,7 +14,7 @@
 
 ## meme_emoji 表情包扩展仓库 
 
-🚀 基于 [meme-generator](https://github.com/MemeCrafters/meme-generator) 做的表情包扩展仓库~
+*🚀* 基于 [meme-generator](https://github.com/MemeCrafters/meme-generator) 做的表情包扩展仓库~
 
 *✨* 为你的聊天机器人添加更多趣味表情生成！
 
@@ -53,119 +53,41 @@
 
 <img src="./docs/picture/meme_emoji.jpg" alt="架构图" style="zoom:30%;" />
 
+## 🤠 表情示例
 
-
-## 🤣表情示例
-
-### 🖼参考预览图：
+### 🖼 参考预览图：
 
 <details><summary>🖼点击展开 预览图 "夏日琉璃子"</summary><p>
 <a><img src="./docs/picture/Phone.png"></a>
 </details>
 
-### 🖼简略清单
+### 😀 表情列表清单
 
-- 杯子系列 `[夏日琉璃子、琉璃子、圣修女、纪念版圣修女、限定版圣修女、对魔忍、偶像心跳、杰士邦、空气玩法]`
+#### 😉 名称排序  A-Z
 
-### 🖼完整清单
+* [表情列表](https://github.com/anyliew/meme_emoji/wiki/%E8%A1%A8%E6%83%85%E5%88%97%E8%A1%A8)
 
-表情详细信息、表情预览等可以在 [--> 表情列表 <--](./docs/meme_emoji_keywords.md) 查看
+#### 🥰 时间排序  新-旧
 
-
-## 📄使用教程
-
-------
-### 🐧Linux 系统使用教程
-#### 下载
-
-> [!TIP]
->
-> 推荐下载在 linux系统的 /opt 目录下 亦可以自行调整
-
-
-```
-git clone https://github.com/anyliew/meme_emoji /opt/meme_emoji/
-```
-> [!TIP]
->
-> 网络不好推荐这个
-```
-git clone https://ghfast.top/https://github.com/anyliew/meme_emoji /opt/meme_emoji/
-```
+* [表情列表](https://github.com/anyliew/meme_emoji/blob/main/docs/meme_emoji_keywords.md)
 
 
 
-#### 添加配置文件
-> [!IMPORTANT]
-> 文件名以及路径 : /root/.config/meme_generator/config.toml
->
-> 我默认使用root账户的，非root用户请自行判断替换
->
->  [meme-generator](https://github.com/MemeCrafters/meme-generator) 第一次运行会生成这个文件，没有的话自行手动创建
+## 📄 使用教程 
 
-config.toml 配置内容如下：
-
-```
-[meme]
-load_builtin_memes = true  # 是否加载内置表情包
-meme_dirs = ["/opt/meme_emoji/emoji"]  # 加载其他位置的表情包，填写文件夹路径
-```
-#### 更新 
-> [!CAUTION]
-> 通过Git 版本控制系统中一个常用的命令，用于从远程仓库获取最新代码并合并到本地
-> 从而到达更新获取最新的 meme_emoji 表情包内容
-```
-cd /opt/meme_emoji/ && git pull
-```
-
-### 🪟Windows 系统使用教程
-
-#### 下载
-
-> [!TIP]
->
-> 推荐下载在 Windows 系统的 C盘 目录下 亦可以自行调整
+- [meme_emoji wiki](https://github.com/anyliew/meme_emoji/wiki) 
 
 
-```
-git clone https://github.com/anyliew/meme_emoji C:\meme_emoji
-```
-> [!TIP]
->
-> 网络不好推荐这个
-```
-git clone https://ghfast.top/https://github.com/anyliew/meme_emoji C:\meme_emoji
-```
+## ⚖ 许可证
+
+延续(copy) meme-generator 作者  MeetWq MIT 许可证 
+
+> MIT License https://github.com/MemeCrafters/meme-generator/blob/main/LICENSE
+> MIT License https://github.com/anyliew/meme_emoji/blob/main/LICENSE
+>chat.deepseek https://github.com/anyliew/meme_emoji/raw/main/docs/picture/chat.deepseek.png)
 
 
-
-#### 添加配置文件
-> [!IMPORTANT]
-> 文件名以及路径 : C:\Users\Administrator\AppData\Roaming\meme_generator\config.toml
->
-> 我默认使用Administrator账户的，非Administrator用户请自行判断替换
->
->  [meme-generator](https://github.com/MemeCrafters/meme-generator) 第一次运行会生成这个文件，没有的话自行手动创建
-
-config.toml 配置内容如下：
-
-```
-[meme]
-load_builtin_memes = true  # 是否加载内置表情包
-meme_dirs = ["C:/meme_emoji/emoji"]  # 加载其他位置的表情包，填写文件夹路径
-```
-#### 更新 
-> [!CAUTION]
-> 通过Git 版本控制系统中一个常用的命令，用于从远程仓库获取最新代码并合并到本地
-> 从而到达更新获取最新的 meme_emoji 表情包内容
-```
-cd C:\meme_emoji\ && git pull
-```
-------
-
-
-
-## 💐鸣谢
+## 💐 鸣谢
 
 感谢以下开发者对 meme_emoji 仓库作出的贡献
 
@@ -175,7 +97,7 @@ cd C:\meme_emoji\ && git pull
 
 
 ## 📝 反馈
-### ⁉issues
+### 🤔 issues
 
 单个表情有问题反馈请附带日志和截图
 答复受限网络没那么快及时处理
@@ -183,14 +105,14 @@ cd C:\meme_emoji\ && git pull
 > issues https://github.com/anyliew/meme_emoji/issues 
 
 
-## 🗳投稿
+## 🥳 投稿
 
 > 🚧欢迎投稿高清素材，看到一些有趣的素材图片会制作成表情更新到本仓库！
 >
 > 通过issues中的模板 “投稿素材” 进行投稿，如果能Pr则更加完美，实在是泰裤辣~
 
 
-## 🔗相关链接
+## 🔗 相关链接
 
 ### meme-generator
 - [meme-generator](https://github.com/MemeCrafters/meme-generator) 
@@ -206,6 +128,6 @@ cd C:\meme_emoji\ && git pull
 - [meme-generator-jj](https://github.com/jinjiao007/meme-generator-jj) 
 
 
-## 📌声明
+## 📌 免责声明
 
 本仓库的表情素材等均来自网络，如有侵权请通过issues联系作者删除

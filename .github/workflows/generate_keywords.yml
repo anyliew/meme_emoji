@@ -24,7 +24,7 @@ jobs:
         run: pip install --upgrade pip
 
       - name: Run meme_emoji_keywords.py
-        run: python meme_emoji_keywords.py
+        run: python /docs/meme_emoji_keywords.py
 
       - name: Check if meme_emoji_keywords.md changed
         id: check_diff

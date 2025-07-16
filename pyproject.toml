@@ -1,0 +1,59 @@
+[tool.poetry]
+name = "meme-generator"
+version = "0.1.14"
+description = "Python package for making fun pictures"
+authors = ["meetwq <meetwq@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/MemeCrafters/meme-generator"
+repository = "https://github.com/MemeCrafters/meme-generator"
+exclude = [
+    "meme_generator/memes/**/*.jpg",
+    "meme_generator/memes/**/*.png",
+    "meme_generator/memes/**/*.gif",
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+httpx = ">=0.20.0,<1.0.0"
+loguru = ">=0.6.0,<1.0.0"
+pil-utils = "^0.2.0"
+Pillow = "^10.0.0"
+toml = "^0.10.2"
+fastapi = ">=0.93.0,<1.0.0"
+uvicorn = ">=0.20.0,<1.0.0"
+python-multipart = ">=0.0.9,<0.1.0,!=0.0.13,!=0.0.14"
+filetype = "^1.2.0"
+rich = "^13.0.0"
+dateparser = "^1.2.0"
+qrcode = "^8.0"
+typing-extensions = ">=4.4.0,<5.0.0"
+arclet-alconna = "^1.8.23,!=1.8.27"
+arclet-alconna-tools = "^0.7.9"
+skia-python = ">=138.0"
+
+[tool.poetry.group.dev.dependencies]
+
+[tool.poetry.scripts]
+meme = "meme_generator.cli:main"
+
+[tool.pyright]
+pythonVersion = "3.9"
+pythonPlatform = "All"
+typeCheckingMode = "basic"
+defineConstant = { PYDANTIC_V2 = true }
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "UP", "C", "T", "PYI", "PT", "Q", "I"]
+ignore = ["E402", "E501", "E711", "C901", "UP037"]
+
+[tool.ruff.lint.isort]
+detect-same-package = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

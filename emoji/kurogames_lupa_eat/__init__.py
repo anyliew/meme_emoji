@@ -46,6 +46,7 @@ add_meme(
     min_images=1,  # 需要的最小图片数量
     max_images=1,  # 需要的最大图片数量
     keywords=["露帕吃"],  # 搜索关键词
+    tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 7, 20),  # 创建日期
     date_modified=datetime(2025, 7, 20),  # 修改日期
 )

@@ -10,7 +10,7 @@ from meme_generator.utils import make_jpg_or_gif
 img_dir = Path(__file__).parent / "images"
 
 
-def fleshlight_jissbon(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+def fleshlight_kuileishushi(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
 
     ta = "他"
@@ -22,36 +22,35 @@ def fleshlight_jissbon(images: list[BuildImage], texts: list[str], args: MemeArg
         ta = "他" if info.gender == "male" else "她"
         name = info.name or ta
 
-    text = f"{name}の深情❤️推荐"
-    #{name}挚爱❤️👩‍❤️‍💋‍👨{name}愛のカップ。
+    text = f"{name}の❤️最愛"
     try:
         frame.draw_text(
-            (261, 31, 758, 91),
+            (566, 606, 764, 644),
             text,
             fill=(0, 0, 0),
-            max_fontsize=120,
+            max_fontsize=100,
             min_fontsize=20,
             lines_align="left",
-            font_families=["FZXS14"],
+            font_families=["FZShaoEr-M11S"],
         )
     except ValueError:
         raise TextOverLength(name)
 
     def make(imgs: list[BuildImage]) -> BuildImage:
-        img = imgs[0].convert("RGBA").circle().resize((180, 180))
-        return frame.copy().paste(img, (475, 180), alpha=True)
+        img = imgs[0].convert("RGBA").resize((65, 65))
+        return frame.copy().paste(img, (499, 611), alpha=True, below=True)
 
     return make_jpg_or_gif(images, make)
 
 
 add_meme(
-    "fleshlight_jissbon",
-    fleshlight_jissbon,
+    "fleshlight_kuileishushi",
+    fleshlight_kuileishushi,
     min_images=1,
     max_images=1,
     min_texts=0,
     max_texts=1,
-    keywords=["杰士邦"],
-    date_created=datetime(2024, 12, 21),
-    date_modified=datetime(2024, 12, 21),
+    keywords=["白丝壁女"],
+    date_created=datetime(2025, 7, 20),
+    date_modified=datetime(2025, 7, 20),
 )

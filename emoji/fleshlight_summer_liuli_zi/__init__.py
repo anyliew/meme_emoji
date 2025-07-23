@@ -30,7 +30,8 @@ def fleshlight_summer_liuli_zi(images: list[BuildImage], texts: list[str], args:
             text,
             max_fontsize=100,
             min_fontsize=20,
-            valign="bottom",
+            lines_align="left",
+            font_families=["FZShaoEr-M11S"],
         )
     except ValueError:
         raise TextOverLength(name)
@@ -51,5 +52,5 @@ add_meme(
     max_texts=1,
     keywords=["夏日琉璃子"],
     date_created=datetime(2024, 12, 21),
-    date_modified=datetime(2024, 12, 21),
+    date_modified=datetime(2025, 7, 23),
 )

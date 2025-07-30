@@ -45,7 +45,7 @@ add_meme(
     kurogames_iuno_play,  # 处理函数
     min_images=1,  # 需要的最小图片数量
     max_images=1,  # 需要的最大图片数量
-    keywords=["尤诺玩"],  # 搜索关键词
+    keywords=["尤诺玩", "优诺玩"],  # 搜索关键词
     tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 7, 30),  # 创建日期
     date_modified=datetime(2025, 7, 30),  # 修改日期

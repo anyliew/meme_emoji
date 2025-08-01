@@ -5,7 +5,7 @@
 
 | # | 预览 | 关键词 | 图片数 | 文字数 | 默认文字 | 模块 | 创建日期 |
 |---|------|--------|-----------|--------|--------|------------|------|
-| 1 | <img src="../emoji/doro_trampoline/images/1.png" width="100"> | doro蹦床、 桃乐丝蹦床、 doro跳床、 桃乐丝跳床 | 1 | &nbsp; | &nbsp; | [doro_trampoline](../emoji/doro_trampoline) | 2025-08-01 |
+| 1 | <img src="../emoji/doro_trampoline/images/1.png" width="100"> | 跳床、 蹦床、 doro蹦床、 桃乐丝蹦床、 doro跳床、 桃乐丝跳床 | 1 | &nbsp; | &nbsp; | [doro_trampoline](../emoji/doro_trampoline) | 2025-08-01 |
 | 2 | <img src="../emoji/kurogames_iuno_kick/images/1.png" width="100"> | 尤诺踢、 优诺踢 | 1 | &nbsp; | &nbsp; | [kurogames_iuno_kick](../emoji/kurogames_iuno_kick) | 2025-07-31 |
 | 3 | <img src="../emoji/kurogames_iuno_play/images/1.png" width="100"> | 尤诺玩、 优诺玩 | 1 | &nbsp; | &nbsp; | [kurogames_iuno_play](../emoji/kurogames_iuno_play) | 2025-07-30 |
 | 4 | <img src="../emoji/kurogames_lupa_eat/images/1.png" width="100"> | 露帕吃 | 1 | &nbsp; | &nbsp; | [kurogames_lupa_eat](../emoji/kurogames_lupa_eat) | 2025-07-20 |

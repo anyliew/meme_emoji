@@ -48,7 +48,6 @@ add_meme(
     min_images=1,  # 需要的最小图片数量
     max_images=1,  # 需要的最大图片数量
     keywords=["doro蹦床","桃乐丝蹦床","doro跳床","桃乐丝跳床"],  # 搜索关键词
-    tags=MemeTags.wuthering_waves,
-    date_created=datetime(2025, 7, 15),  # 创建日期
-    date_modified=datetime(2025, 7, 15),  # 修改日期
+    date_created=datetime(2025, 8, 1),  # 创建日期
+    date_modified=datetime(2025, 8, 1),  # 修改日期
 )

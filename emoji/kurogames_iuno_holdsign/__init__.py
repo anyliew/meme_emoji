@@ -26,21 +26,21 @@ def kurogames_iuno_holdsign(images, texts: list[str], args):
                 fill=(0, 0, 0),
                 allow_wrap=True,
                 max_fontsize=120,
-                min_fontsize=30,
-                lines_align="center",
-                font_families=["FZSJ-QINGCRJ"],
+                min_fontsize=15,
+                lines_align="left",
+                font_families=["FZKaTong-M19S"],
             )
         else:
             # 第二张图片的文字坐标
             frame.draw_text(
-                (273, 521, 729, 980),  # 第二张图片的文字区域坐标（请根据实际图片调整）
+                (273, 521, 726, 906),  # 第二张图片的文字区域坐标（请根据实际图片调整）
                 text,
                 fill=(0, 0, 0),
                 allow_wrap=True,
                 max_fontsize=120,
-                min_fontsize=30,
-                lines_align="center",
-                font_families=["FZSJ-QINGCRJ"],
+                min_fontsize=15,
+                lines_align="left",
+                font_families=["FZKaTong-M19S"],
             )
     except ValueError:
         raise TextOverLength(text)

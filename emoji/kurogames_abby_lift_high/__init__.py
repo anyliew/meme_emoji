@@ -12,7 +12,7 @@ from meme_generator.utils import save_gif  # 导入保存GIF的函数
 # 获取当前文件所在目录的路径，并拼接images子目录路径
 img_dir = Path(__file__).parent / "images"
 
-def kurogames_abby_weeping(images: list[BuildImage], texts, args):
+def kurogames_abby_lift_high(images: list[BuildImage], texts, args):
 
     user_head = images[0].resize((170, 156)).convert("RGBA") #.circle()
     
@@ -42,8 +42,8 @@ def kurogames_abby_weeping(images: list[BuildImage], texts, args):
     return save_gif(frames, 0.15)
 
 add_meme(
-    "kurogames_abby_weeping",  # 模板的唯一标识符
-    kurogames_abby_weeping,  # 处理函数
+    "kurogames_abby_lift_high",  # 模板的唯一标识符
+    kurogames_abby_lift_high,  # 处理函数
     min_images=1,  # 需要的最小图片数量
     max_images=1,  # 需要的最大图片数量
     keywords=["举高高"],  # 搜索关键词

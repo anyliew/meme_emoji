@@ -1,0 +1,150 @@
+name: Weekly Status Update
+
+on:
+  schedule:
+    - cron: '0 10 * * 1'  # 每周一上午10点（UTC时间）
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  status-update:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+    steps:
+      - name: Update Stale Issues
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              sort: 'updated',
+              direction: 'asc',
+              per_page: 50
+            });
+            
+            const now = new Date();
+            let updatedCount = 0;
+            
+            for (const issue of issues) {
+              // 跳过PR
+              if (issue.pull_request) continue;
+              
+              const lastUpdated = new Date(issue.updated_at);
+              const daysSinceUpdate = Math.floor((now - lastUpdated) / (1000 * 60 * 60 * 24));
+              const daysSinceCreated = Math.floor((now - new Date(issue.created_at)) / (1000 * 60 * 60 * 24));
+              
+              const hasStaleLabel = issue.labels.some(label => label.name === 'stale');
+              const hasNeedsResponseLabel = issue.labels.some(label => label.name === 'needs-response');
+              const isPriorityHigh = issue.labels.some(label => label.name === 'priority/high');
+              
+              // 7天无更新且不是高优先级的issue
+              if (daysSinceUpdate >= 7 && !hasStaleLabel && !isPriorityHigh) {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  body: `👋 这个issue已经一周没有更新了。
+                  
+                  如果问题仍然存在，请提供更多信息：
+                  - 是否还能复现？
+                  - 有没有新的错误信息？
+                  - 是否尝试了其他解决方案？
+                  
+                  如果问题已解决，欢迎关闭此issue。如果30天内没有响应，此issue将被自动关闭。`
+                });
+                
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  labels: ['stale']
+                });
+                
+                updatedCount++;
+              }
+              
+              // 30天无更新的stale issue自动关闭
+              else if (daysSinceUpdate >= 30 && hasStaleLabel) {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  body: `🤖 此issue因长期无响应被自动关闭。
+                  
+                  如果问题仍然存在，请创建新的issue并提供详细信息。感谢您的理解！`
+                });
+                
+                await github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  state: 'closed',
+                  state_reason: 'not_planned'
+                });
+                
+                updatedCount++;
+              }
+              
+              // 需要回复的issue提醒
+              else if (daysSinceUpdate >= 3 && hasNeedsResponseLabel) {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  body: `⏰ 提醒：此issue等待回复已超过3天。
+                  
+                  我们会尽快处理，感谢您的耐心等待！`
+                });
+                
+                updatedCount++;
+              }
+            }
+            
+            console.log(`Updated ${updatedCount} issues`);
+      
+      - name: Generate Weekly Report
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const oneWeekAgo = new Date();
+            oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+            
+            // 获取本周的issues
+            const { data: newIssues } = await github.rest.search.issuesAndPullRequests({
+              q: `repo:${context.repo.owner}/${context.repo.repo} is:issue created:>=${oneWeekAgo.toISOString().split('T')[0]}`,
+              sort: 'created',
+              order: 'desc'
+            });
+            
+            // 获取本周的PRs
+            const { data: newPRs } = await github.rest.search.issuesAndPullRequests({
+              q: `repo:${context.repo.owner}/${context.repo.repo} is:pr created:>=${oneWeekAgo.toISOString().split('T')[0]}`,
+              sort: 'created',
+              order: 'desc'
+            });
+            
+            // 获取本周关闭的issues
+            const { data: closedIssues } = await github.rest.search.issuesAndPullRequests({
+              q: `repo:${context.repo.owner}/${context.repo.repo} is:issue closed:>=${oneWeekAgo.toISOString().split('T')[0]}`,
+              sort: 'updated',
+              order: 'desc'
+            });
+            
+            const report = `📊 **本周活动报告** (${oneWeekAgo.toISOString().split('T')[0]} ~ ${new Date().toISOString().split('T')[0]})
+            
+            ## 📈 统计数据
+            - 🎯 新增 Issues: ${newIssues.total_count}
+            - 🔀 新增 PRs: ${newPRs.total_count}  
+            - ✅ 关闭 Issues: ${closedIssues.total_count}
+            
+            ## 🏷️ Issue 分类
+            ${newIssues.items.length > 0 ? newIssues.items.slice(0, 5).map(issue => 
+              \`- [\${issue.title}](\${issue.html_url}) - \${issue.labels.map(l => l.name).join(', ') || '未分类'}\`
+            ).join('\\n') : '本周暂无新issue'}
+            
+            感谢所有贡献者的参与！ 🙏`;
+            
+            console.log(report);

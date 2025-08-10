@@ -8,7 +8,8 @@
   <img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="Python">
   <a href="https://pypi.org/project/meme-generator">
     <img src="https://badgen.net/pypi/v/meme-generator" alt="pypi">
-  </a>
+  <a href="https://qm.qq.com/q/KZFZGdWmyG">
+    <img src="https://img.shields.io/badge/QQ%E7%BE%A4-660451080-orange" alt="qq group">
 </p>
 </div>
 
@@ -41,7 +42,6 @@
 > ```
 > plugins = ["nonebot_plugin_memes"]
 > ```
-> 
 
 ## ✨特性
 
@@ -58,11 +58,9 @@
 
 
 ### 🖼 参考预览图：
-
 <details><summary>🖼点击展开 预览图 "夏日琉璃子"</summary><p>
 <a><img src="./docs/picture/Phone.png"></a>
 </details>
-
 
 ### 😀 表情列表清单
 
@@ -74,7 +72,7 @@
 
 * [表情列表](https://github.com/anyliew/meme_emoji/blob/main/docs/meme_emoji_keywords.md)
 
-
+  
 
 ## 📄 使用教程 
 
@@ -109,6 +107,19 @@
 单个表情有问题反馈请附带日志和截图
 答复受限网络没那么快及时处理
 
+### 🐧QQ Group
+
+* [进群注意须知事项](https://github.com/anyliew/meme_emoji/wiki/qq_group)
+
+
+
+
+
+<a href="https://qm.qq.com/q/KZFZGdWmyG">
+  <img src="./docs/picture/qq_group.jpg" />
+</a>
+
+
 ## 🥳 投稿
 
 > 🚧欢迎投稿高清素材，看到一些有趣的素材图片会制作成表情更新到本仓库！
@@ -133,5 +144,6 @@
 
 ## 📌 免责声明
 
-本仓库的表情素材等均来自网络
-如有侵权请通过issues联系作者删除
+- 本仓库的表情素材等均来自网络，非商用
+- 如有侵权请通过issues联系作者删除
+

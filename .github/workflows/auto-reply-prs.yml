@@ -1,0 +1,94 @@
+name: Auto Reply to Pull Requests
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  auto-reply:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+    steps:
+      - name: Reply to PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = context.issue.number;
+            const prTitle = context.payload.pull_request.title;
+            const prAuthor = context.payload.pull_request.user.login;
+            const prFiles = context.payload.pull_request.changed_files;
+            
+            let replyMessage = `🎉 Hi @${prAuthor}! 
+            
+            感谢您的贡献！您的Pull Request已经提交，我们会尽快进行代码审核。
+            
+            ## 📋 审核清单
+            期间请确保以下项目已完成：
+            - [ ] 代码符合项目规范和风格
+            - [ ] 已测试新功能或修复
+            - [ ] 更新了相关文档（如有需要）
+            - [ ] 提交信息清晰明确
+            
+            ## 📊 PR 统计
+            - 📁 修改文件数：${prFiles}
+            - 🏷️ PR类型：${prTitle.toLowerCase().includes('fix') ? '🐛 Bug修复' : 
+                            prTitle.toLowerCase().includes('feat') ? '✨ 新功能' :
+                            prTitle.toLowerCase().includes('doc') ? '📖 文档更新' :
+                            prTitle.toLowerCase().includes('refactor') ? '♻️ 重构' : '🔧 其他改进'}
+            
+            ## 🔄 下一步
+            我们会在1-3个工作日内完成初步审核。如有问题会及时与您沟通。
+            
+            再次感谢您对项目的贡献！ 🙏`;
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body: replyMessage
+            });
+      
+      - name: Add PR Labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prTitle = context.payload.pull_request.title.toLowerCase();
+            const labels = [];
+            
+            // 根据PR标题自动添加标签
+            if (prTitle.includes('fix') || prTitle.includes('修复')) {
+              labels.push('bug');
+            }
+            if (prTitle.includes('feat') || prTitle.includes('功能') || prTitle.includes('add')) {
+              labels.push('enhancement');
+            }
+            if (prTitle.includes('doc') || prTitle.includes('文档')) {
+              labels.push('documentation');
+            }
+            if (prTitle.includes('refactor') || prTitle.includes('重构')) {
+              labels.push('refactor');
+            }
+            if (prTitle.includes('test') || prTitle.includes('测试')) {
+              labels.push('test');
+            }
+            
+            // 根据文件数量添加大小标签
+            const fileCount = context.payload.pull_request.changed_files;
+            if (fileCount <= 3) {
+              labels.push('size/small');
+            } else if (fileCount <= 10) {
+              labels.push('size/medium');
+            } else {
+              labels.push('size/large');
+            }
+            
+            if (labels.length > 0) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                labels: labels
+              });
+            }

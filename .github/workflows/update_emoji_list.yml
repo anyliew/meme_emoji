@@ -1,4 +1,4 @@
-name: Update memes.md
+name: Update wiki_emoji_list.md
 
 permissions:  # 添加权限配置
   contents: write  # 允许推送更改
@@ -13,7 +13,7 @@ on:
 
 jobs:
   update-and-push:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
 

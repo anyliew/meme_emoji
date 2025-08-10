@@ -1,0 +1,81 @@
+name: Auto Reply to Issues
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  auto-reply:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+    steps:
+      - name: Reply to Issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueNumber = context.issue.number;
+            const issueTitle = context.payload.issue.title;
+            const issueAuthor = context.payload.issue.user.login;
+            
+            // 根据标题关键词判断类型
+            let replyMessage = '';
+            let emoji = '👋';
+            
+            if (issueTitle.toLowerCase().includes('bug') || issueTitle.toLowerCase().includes('错误') || issueTitle.toLowerCase().includes('问题')) {
+              emoji = '🐛';
+              replyMessage = `${emoji} Hi @${issueAuthor}! 
+              
+              感谢您报告这个bug！我们已经收到您的反馈，会尽快调查并修复。
+              
+              为了更好地帮助您解决问题，请确保提供：
+              - [ ] 详细的问题描述
+              - [ ] 复现步骤
+              - [ ] 运行环境信息
+              - [ ] 相关的错误日志
+              
+              我们会尽快回复您！`;
+            } else if (issueTitle.toLowerCase().includes('feature') || issueTitle.toLowerCase().includes('功能') || issueTitle.toLowerCase().includes('建议')) {
+              emoji = '🚀';
+              replyMessage = `${emoji} Hi @${issueAuthor}! 
+              
+              感谢您的功能建议！我们很高兴收到新的想法和建议。
+              
+              我们会仔细评估您的建议：
+              - [ ] 评估技术可行性
+              - [ ] 分析对现有功能的影响
+              - [ ] 确定开发优先级
+              
+              如果您有更多细节或使用场景，欢迎补充！`;
+            } else if (issueTitle.toLowerCase().includes('doc') || issueTitle.toLowerCase().includes('文档') || issueTitle.toLowerCase().includes('说明')) {
+              emoji = '📖';
+              replyMessage = `${emoji} Hi @${issueAuthor}! 
+              
+              感谢您关注文档改进！清晰的文档对项目非常重要。
+              
+              我们会：
+              - [ ] 审查当前文档内容
+              - [ ] 补充缺失的说明
+              - [ ] 优化文档结构
+              
+              您的反馈很有价值！`;
+            } else {
+              replyMessage = `${emoji} Hi @${issueAuthor}! 
+              
+              感谢您提交issue！我们已经收到您的反馈。
+              
+              我们会尽快处理您的请求：
+              - [ ] 分析问题内容
+              - [ ] 确定处理方案
+              - [ ] 及时反馈进展
+              
+              如有任何疑问，随时与我们联系！`;
+            }
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              body: replyMessage
+            });

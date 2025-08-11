@@ -1,5 +1,6 @@
 from datetime import datetime
 from pathlib import Path
+import random
 
 from pil_utils import BuildImage
 
@@ -12,10 +13,21 @@ img_dir = Path(__file__).parent / "images"
 
 def kurogames_roccia_holdsign(images, texts: list[str], args):
     text = texts[0]
-    frame = BuildImage.open(img_dir / "0.jpg")
+    
+    # 随机选择一张图片
+    img_index = random.randint(0, 2)
+    frame = BuildImage.open(img_dir / f"{img_index}.jpg")
+    
+    # 为每张图片设置不同的文字区域坐标
+    text_areas = [
+        (313, 548, 623, 902),   # 图片0的坐标
+        (272, 477, 723, 812),    # 图片1的坐标
+        (339, 611, 717, 891)     # 图片2的坐标
+    ]
+    
     try:
         frame.draw_text(
-            (313, 548, 623, 902),
+            text_areas[img_index],
             text,
             fill=(0, 0, 0),
             allow_wrap=True,
@@ -34,7 +46,7 @@ add_meme(
     kurogames_roccia_holdsign,
     min_texts=1,
     max_texts=1,
-    default_texts=["草我"],
+    default_texts=["佩洛肚皮空空，灵感快来快来"],
     keywords=["洛可可举牌"],
     tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 8, 10),

@@ -109,11 +109,7 @@
 
 ### 🐧QQ Group
 
-* [进群注意须知事项](https://github.com/anyliew/meme_emoji/wiki/qq_group)
-
-
-
-
+* [进群注意事项](https://github.com/anyliew/meme_emoji/wiki/qq_group)
 
 <a href="https://qm.qq.com/q/KZFZGdWmyG">
   <img src="./docs/picture/qq_group.jpg" />

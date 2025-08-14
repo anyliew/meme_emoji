@@ -38,6 +38,7 @@ def widow(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
 
     def make(imgs: list[BuildImage]) -> BuildImage:
         img = imgs[0].convert("RGBA").resize((210, 215))
+        img = img.convert("L").convert("RGBA")  # 添加黑白滤镜
         img = img.rotate(21, expand=True)
         return frame.copy().paste(img, (162, 200), alpha=True,below=True)
 

@@ -20,7 +20,7 @@ def kurogames_verina_holdsign(images, texts: list[str], args):
     
     text_areas = [
         (475, 525, 790, 775),   # 图片0的坐标
-        (369, 623, 632, 912),    # 图片1的坐标
+        (369, 623, 630, 912),    # 图片1的坐标
     ]
     try:
         frame.draw_text(

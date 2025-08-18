@@ -1,6 +1,5 @@
 from datetime import datetime
 from pathlib import Path
-import random
 
 from pil_utils import BuildImage
 
@@ -13,18 +12,16 @@ img_dir = Path(__file__).parent / "images"
 
 def kurogames_verina_holdsign(images, texts: list[str], args):
     text = texts[0]
-    # frame = BuildImage.open(img_dir / "0.png")
-    
-    img_index = random.randint(0, 1)
-    frame = BuildImage.open(img_dir / f"{img_index}.png")
+    frame = BuildImage.open(img_dir / "0.png")
     
     text_areas = [
-        (475, 525, 790, 775),   # 图片0的坐标
-        (369, 623, 632, 912),    # 图片1的坐标
+        (313, 548, 623, 902),   # 图片0的坐标
+        (272, 477, 723, 812),    # 图片1的坐标
+        (339, 611, 717, 891)     # 图片2的坐标
     ]
     try:
         frame.draw_text(
-            text_areas[img_index],
+            (475, 525, 790, 775),
             text,
             fill=(0, 0, 0),
             allow_wrap=True,
@@ -44,7 +41,7 @@ add_meme(
     min_texts=1,
     max_texts=1,
     default_texts=["不可以色色"],
-    keywords=["小维举牌", "维里奈举牌", "奈奈举牌"],
+    keywords=["小维举牌", "维里奈举牌"],
     tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 5, 17),
     date_modified=datetime(2025, 5, 17),

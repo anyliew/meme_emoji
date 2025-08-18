@@ -15,12 +15,12 @@ def kurogames_verina_holdsign(images, texts: list[str], args):
     text = texts[0]
     # frame = BuildImage.open(img_dir / "0.png")
     
-    img_index = random.randint(0, 1)
+    img_index = random.randint(0, 2)
     frame = BuildImage.open(img_dir / f"{img_index}.png")
     
     text_areas = [
         (475, 525, 790, 775),   # 图片0的坐标
-        (369, 623, 632, 912),    # 图片1的坐标
+        (369, 623, 624, 912),    # 图片1的坐标
     ]
     try:
         frame.draw_text(

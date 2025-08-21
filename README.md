@@ -19,9 +19,13 @@
 
 *✨* 为你的聊天机器人添加更多趣味表情生成！
 
+> [!TIP]
+>
+> 部分表情移至[meme_emoji_nsfw](https://github.com/anyliew/meme_emoji_nsfw) 
+
 > [!NOTE]
 >
-> 请注意，本仓库的内容仅支持以下特定版本的依赖库：
+> 请注意，本仓库的内容不支持Rust，仅支持以下特定版本的依赖库：
 >
 > - `meme_generator == 0.1.14`（最高兼容版本）
 > - `nonebot-plugin-memes == 0.7.12`（最高兼容版本）

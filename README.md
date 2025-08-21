@@ -58,7 +58,7 @@
 
 
 ### 🖼 参考预览图：
-<details><summary>🖼点击展开 预览图 "夏日琉璃子"</summary><p>
+<details><summary>🖼点击展开 预览图 "狗耳帽"</summary><p>
 <a><img src="./docs/picture/Phone.png"></a>
 </details>
 
@@ -136,6 +136,7 @@
 - [meme-generator-contrib](https://github.com/MemeCrafters/meme-generator-contrib) 
 - [meme_emoji](https://github.com/anyliew/meme_emoji) 
 - [meme-generator-jj](https://github.com/jinjiao007/meme-generator-jj) 
+- [meme_emoji_nsfw](https://github.com/anyliew/meme_emoji_nsfw) 
 
 
 ## 📌 免责声明

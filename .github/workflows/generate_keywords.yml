@@ -1,5 +1,6 @@
 name: Generate Meme Keywords
-
+permissions:  # 添加权限配置
+  contents: write  # 允许推送更改
 on:
   push:
     branches:

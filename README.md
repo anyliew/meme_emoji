@@ -74,7 +74,7 @@
 
 #### 🥰 时间排序  新-旧
 
-* [表情列表](https://github.com/anyliew/meme_emoji/blob/main/docs/meme_emoji_keywords.md)
+* [表情列表](https://github.com/anyliew/meme_emoji/wiki/emoji_list.md)
 
   
 

@@ -3,17 +3,18 @@ name: Generate Meme Keywords
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write 
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 获取完整的 git 历史
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -23,14 +24,25 @@ jobs:
       - name: Install dependencies
         run: pip install --upgrade pip
 
-      - name: Run meme_emoji_keywords.py
-        run: python ./docs/meme_emoji_keywords.py
+      - name: Backup current meme_keywords.md if exists
+        run: |
+          if [ -f docs/meme_keywords.md ]; then
+            cp docs/meme_keywords.md docs/meme_keywords.md.backup
+            echo "Backed up existing meme_keywords.md"
+          else
+            echo "No existing meme_keywords.md found"
+          fi
 
-      - name: Check if meme_emoji_keywords.md changed
+      - name: Run meme_keywords.py
+        run: python meme_keywords.py
+
+      - name: Check if meme_keywords.md changed
         id: check_diff
         run: |
-          git add docs/meme_emoji_keywords.md
-          if git diff --cached --quiet; then
+          if [ ! -f docs/meme_keywords.md.backup ]; then
+            echo "No backup file, this is a new file."
+            echo "changed=true" >> $GITHUB_OUTPUT
+          elif cmp -s docs/meme_keywords.md docs/meme_keywords.md.backup; then
             echo "No changes detected."
             echo "changed=false" >> $GITHUB_OUTPUT
           else
@@ -38,15 +50,65 @@ jobs:
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
-      - name: Commit and push changes
+      - name: Update GitHub Wiki
         if: steps.check_diff.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "
-          🤖 Github-actions[bot] 自动提交变更;
-          检测到表情和素材新增或者修改🧐~ 
-          😆自动更新同步表情包清单列表✨;
-          😋Auto-generate meme_emoji_keywords.md;"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/anyliew/meme_emoji.git
-          git push origin main
+          
+          # 检查 Wiki 仓库是否存在
+          if git ls-remote https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/anyliew/meme_emoji.wiki.git &>/dev/null; then
+            echo "Wiki repository exists, proceeding with update"
+            
+            # 克隆 Wiki 仓库
+            git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/anyliew/meme_emoji.wiki.git wiki
+            cd wiki
+            
+            # 在 Wiki 仓库中设置 Git 用户配置
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            
+            # 列出当前 Wiki 中的文件
+            echo "Current files in wiki:"
+            ls -la
+            
+            # 复制生成的文档到 Wiki，使用中文文件名
+            cp ../docs/meme_keywords.md "emoji_list.md"
+            echo "Copied meme_keywords.md to emoji_list.md"
+            
+            # 显示文件内容的前几行进行调试
+            echo "First 10 lines of emoji_list.md:"
+            head -10 "emoji_list.md"
+            
+            # 添加文件到 git
+            git add "emoji_list.md"
+            
+            # 检查 git 状态
+            echo "Git status:"
+            git status
+            
+            # 检查是否有变化
+            if git diff --cached --quiet; then
+              echo "No changes in wiki after staging"
+            else
+              echo "Changes detected, committing..."
+              git commit -m "🤖 Auto-update emoji_list"
+              git push origin master
+              echo "Wiki updated successfully"
+            fi
+          else
+            echo "⚠️ Wiki repository does not exist yet."
+            echo "Please create a Wiki page manually first by:"
+            echo "1. Go to your GitHub repository"
+            echo "2. Click on 'Wiki' tab"
+            echo "3. Create a new page called 'emoji_list'"
+            echo "4. The workflow will automatically update it on the next run"
+          fi
+
+      - name: Cleanup backup file
+        if: always()
+        run: |
+          if [ -f docs/meme_keywords.md.backup ]; then
+            rm docs/meme_keywords.md.backup
+            echo "Cleaned up backup file"
+          fi

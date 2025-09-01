@@ -34,7 +34,7 @@ jobs:
           fi
 
       - name: Run meme_keywords.py
-        run: python /docs/meme_keywords.py
+        run: python ./docs/meme_keywords.py
 
       - name: Check if meme_keywords.md changed
         id: check_diff

@@ -4,7 +4,10 @@ from datetime import datetime
 
 MEMES_DIR = "./emoji"
 OUTPUT_DIR = "./docs"
-OUTPUT_FILE = os.path.join(OUTPUT_DIR, "meme_emoji_keywords.md")
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, "meme_keywords.md")
+
+# GitHub 仓库信息 - 用于 Wiki 链接
+GITHUB_REPO = os.getenv("GITHUB_REPOSITORY", "anyliew/meme_emoji")
 
 
 def extract_meme_info(file_path):
@@ -56,17 +59,17 @@ def find_first_image_path(subdir):
 
 def generate_markdown_table(modules_info, previews_by_module):
     lines = [
-        "| # | 预览 | 关键词 | 图片数 | 文字数 | 默认文字 | 模块 | 创建日期 |",
-        "|---|------|--------|-----------|--------|--------|------------|------|"
+        "| # | 预览 | 关键词 | 图片 | 文字 | 默认文字 | 模块 | 创建日期 |",
+        "|:--:|:----:|:------:|:---------:|:------:|:------:|:----------:|:----:|"
     ]
     for idx, (module, info) in enumerate(modules_info, 1):
-        kw_str = "、 ".join(info["keywords"]) if info["keywords"] else "&nbsp;"
-        module_link = f"[{module}](.{MEMES_DIR}/{module})"
+        kw_str = "</br>".join(info["keywords"]) if info["keywords"] else "&nbsp;"
+        module_link = f"[{module}](https://github.com/{GITHUB_REPO}/tree/master/memes/{module})"
         date_str = info["date_created"].strftime("%Y-%m-%d") if info["date_created"] else "&nbsp;"
         image_count = str(info.get("min_images")) if info.get("min_images") is not None else "&nbsp;"
         text_count = str(info.get("min_texts")) if info.get("min_texts") is not None else "&nbsp;"
-        default_texts = "、 ".join(t.replace("\n", "") for t in info["default_texts"]) if info["default_texts"] else "&nbsp;"
-        preview = f'<img src="{previews_by_module.get(module)}" width="100">' if module in previews_by_module else "&nbsp;"
+        default_texts = "</br>".join(t.replace("\n", "</br>") for t in info["default_texts"]) if info["default_texts"] else "&nbsp;"
+        preview = f'<div style="text-align:center"><img src="{previews_by_module.get(module)}" height="50"></div>' if module in previews_by_module else "&nbsp;"
         lines.append(f"| {idx} | {preview} | {kw_str} | {image_count} | {text_count} | {default_texts} | {module_link} | {date_str} |")
     return "\n".join(lines)
 
@@ -88,13 +91,14 @@ def main():
                 modules_info.append((folder, info))
                 image_path = find_first_image_path(subdir)
                 if image_path:
-                    relative_path = os.path.relpath(image_path, OUTPUT_DIR).replace("\\", "/")
-                    previews_by_module[folder] = relative_path
+                    # 使用 GitHub raw 链接，让 Wiki 能正确显示图片
+                    github_raw_path = f"https://raw.githubusercontent.com/{GITHUB_REPO}/master/{image_path}"
+                    previews_by_module[folder] = github_raw_path
 
     # 按创建时间倒序
     modules_info.sort(key=lambda x: x[1]["date_created"] or datetime.min, reverse=True)
     meme_count = len(modules_info)
-    header = f"# ✨meme_emoji 表情列表清单\n\n**🎈总表情数：{meme_count}**\n"
+    header = f"# ✨Meme Keywords\n\n**🎈总表情数：{meme_count}**\n"
     markdown_table = generate_markdown_table(modules_info, previews_by_module)
     markdown = header + "\n\n" + markdown_table
 

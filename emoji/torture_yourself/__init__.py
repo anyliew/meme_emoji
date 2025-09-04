@@ -11,11 +11,11 @@ def torture_yourself(images: list[BuildImage], texts, args):
     frame = BuildImage.open(img_dir / "0.png")
     #
     frame.paste(
-        #被打人747, 822
-        images[1].convert("RGBA").circle().resize((200, 200)), (725, 780), alpha=True
+        #被动人
+        images[1].convert("RGBA").resize((175, 175)), (722, 752), alpha=True, below=True
     ).paste(
-        #主人70, 283
-        images[0].convert("RGBA").resize((400, 400)), (70, 283), alpha=True, below=True
+        #主人
+        images[0].convert("RGBA").resize((380, 410)), (63, 278), alpha=True, below=True
     )
     return frame.save_jpg()
 
@@ -27,5 +27,5 @@ add_meme(
     max_images=2,
     keywords=["折磨自己"],
     date_created=datetime(2025, 5, 25),
-    date_modified=datetime(2025, 5, 25),
+    date_modified=datetime(2025, 9, 4),
 )

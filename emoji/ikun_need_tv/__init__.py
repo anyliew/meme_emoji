@@ -22,17 +22,17 @@ def ikun_need_tv(images: list[BuildImage], texts: list[str], args: MemeArgsModel
         ta = "他" if info.gender == "male" else "她"
         name = info.name or ta
 
-    text = f"坤坤好喜欢\n想要一个{name}❤️~"
+    text = f"坤坤好喜欢{name}\n想要一个{name}❤️~"
     try:
         frame.draw_text(
-            (1, 1, 572, 250),
+            (2, 2, 572, 250),
             text,
             fill=(255, 255, 255),
-            allow_wrap=True,
-            max_fontsize=100,
-            min_fontsize=10,
-            lines_align="center",
-            font_families=["FZShaoEr-M11S"],
+            #allow_wrap=True,
+            max_fontsize=50,
+            min_fontsize=5,
+            lines_align="left",
+            font_families=["FZXS14"],
         )
     except ValueError:
         raise TextOverLength(name)

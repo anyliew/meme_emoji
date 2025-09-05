@@ -12,23 +12,20 @@ from meme_generator.utils import save_gif  # 导入保存GIF的函数
 # 获取当前文件所在目录的路径，并拼接images子目录路径
 img_dir = Path(__file__).parent / "images"
 
-def capoo_fished_out(images: list[BuildImage], texts, args):
+def capoo_smash_egg(images: list[BuildImage], texts, args):
 
-    user_head = images[0].resize((95, 95)).convert("RGBA") #.circle()
+    user_head = images[0].resize((65, 65)).convert("RGBA") #.circle()
     
     # 初始化帧列表，用于存储每一帧图像
     frames: list[IMG] = []
 
     positions = [
-        (1, 1), (1, 1), (1, 1), (1, 1), (1, 1),  # 1-5
-        (1, 1), (1, 1), (1, 1), (1, 1), (1, 1),  # 6-10
-        (1, 1), (1, 1), (1, 1), (1, 1), (1, 1),  # 11-15
-        (57, 84), (35, 117), (21, 102), (27, 112), (28, 112),  # 16-20
+        (24, 57), (23, 95), (29, 116),   # 1-3
     ]
 
     # 处理所有帧
-    for i in range(20):
-        frame_num = (i % 20) + 1
+    for i in range(3):
+        frame_num = (i % 3) + 1
         frame = BuildImage.open(img_dir / f"{frame_num}.png").convert("RGBA")
         
         # 创建一个新的图像，首先粘贴用户头像作为背景
@@ -40,16 +37,16 @@ def capoo_fished_out(images: list[BuildImage], texts, args):
         
         frames.append(new_frame.image)
 
-    # 将所有帧保存为GIF，动图平均帧率: 0.10
-    return save_gif(frames, 0.10)
+    # 将所有帧保存为GIF，动图平均帧率: 0.11
+    return save_gif(frames, 0.11)
 
 add_meme(
-    "capoo_fished_out",  # 模板的唯一标识符
-    capoo_fished_out,  # 处理函数
+    "capoo_smash_egg",  # 模板的唯一标识符
+    capoo_smash_egg,  # 处理函数
     min_images=1,  # 需要的最小图片数量
     max_images=1,  # 需要的最大图片数量
-    keywords=["咖波掏"],  # 搜索关键词
+    keywords=["咖波砸蛋"],  # 搜索关键词
     tags=MemeTags.capoo,
-    date_created=datetime(2025, 9, 4),  # 创建日期
+    date_created=datetime(2025, 9, 5),  # 创建日期
     date_modified=datetime(2025, 9, 5),  # 修改日期
 )

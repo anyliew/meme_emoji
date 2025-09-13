@@ -16,9 +16,9 @@ def deer_time (images: list[BuildImage], texts: list[str], args: MemeArgsModel):
 
     def make(imgs: list[BuildImage]) -> BuildImage:
         #头像尺寸
-        img = imgs[0].convert("RGBA").resize((286, 286))
+        img = imgs[0].convert("RGBA").resize((305, 305))
         #头像坐标
-        return frame.copy().paste(img, (107, 50), alpha=True,below=True)
+        return frame.copy().paste(img, (281, 222), alpha=True,below=True)
 
     return make_png_or_gif(images, make)
 
@@ -32,5 +32,5 @@ add_meme(
     max_texts=0,
     keywords=["鹿管时间"],
     date_created=datetime(2025, 7, 2),
-    date_modified=datetime(2025, 7, 2),
+    date_modified=datetime(2025, 9, 13),
 )

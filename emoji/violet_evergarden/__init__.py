@@ -50,7 +50,7 @@ add_meme(
     max_images=1,
     min_texts=0,
     max_texts=1,
-    keywords=["未亡人"],
-    date_created=datetime(2025, 8, 13),
-    date_modified=datetime(2025, 8, 13),
+    keywords=["薇尔莉特"],
+    date_created=datetime(2025, 9, 17),
+    date_modified=datetime(2025, 9, 17),
 )

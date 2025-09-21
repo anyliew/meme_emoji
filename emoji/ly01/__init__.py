@@ -22,7 +22,7 @@ add_meme(
     ly01,
     min_images=2,
     max_images=2,
-    keywords=["ly01","ly-1","LY-1","舰载激光武器"],
+    keywords=["ly01","ly-1","LY-1"],
     date_created=datetime(2025, 9, 4),
-    date_modified=datetime(2025, 9, 4),
+    date_modified=datetime(2025, 9, 21),
 )

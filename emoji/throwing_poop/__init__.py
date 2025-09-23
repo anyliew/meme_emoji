@@ -10,7 +10,7 @@ from meme_generator.utils import make_jpg_or_gif
 img_dir = Path(__file__).parent / "images"
 
 
-def github(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+def throwing_poop(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
 
     def make(imgs: list[BuildImage]) -> BuildImage:
@@ -23,7 +23,7 @@ def github(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
         result = result.paste(img2, (310, 553), alpha=True, below=True)
         
         # 第三个头像尺寸和坐标（更小，放在另一个位置）
-        img3 = imgs[0].convert("RGBA").resize((108, 108)).rotate(15, expand=True)
+        img3 = imgs[0].convert("RGBA").resize((108, 108)).rotate(20, expand=True)
         result = result.paste(img3, (297, 1003), alpha=True, below=True)
         
         return result
@@ -32,13 +32,13 @@ def github(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
 
 
 add_meme(
-    "github",
-    github,
+    "throwing_poop",
+    throwing_poop,
     min_images=1,
     max_images=1,
     min_texts=0,
     max_texts=0,
-    keywords=["Github", "github"],
+    keywords=["扔史"],
     date_created=datetime(2025, 9, 21),
-    date_modified=datetime(2025, 9, 21),
+    date_modified=datetime(2025, 9, 23),
 )

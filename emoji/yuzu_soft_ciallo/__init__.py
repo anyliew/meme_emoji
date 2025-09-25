@@ -8,6 +8,15 @@ from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
 from meme_generator.tags import MemeTags
 
+from meme_generator import (
+    CommandShortcut,
+    MemeArgsModel,
+    MemeArgsType,
+    ParserArg,
+    ParserOption,
+    add_meme,
+)
+
 img_dir = Path(__file__).parent / "images"
 
 
@@ -30,8 +39,20 @@ add_meme(
     max_images=1,
     min_texts=0,
     max_texts=0,
-    keywords=["Ciallo～(∠・ω< )⌒★","Ciallo","ciallo","Ciallo~","ciallo~","Ciallo～(∠・ω< )⌒☆"],
+    keywords=["ciallo","ciallo~"],
+    shortcuts=[
+        CommandShortcut(
+            key=r"(?i)ciallo",
+            args=[],
+            humanized="ciallo",
+        ),
+        CommandShortcut(
+            key=r"(?i)ciallo～\(∠・ω< \)⌒[★☆]",
+            args=[],
+            humanized="ciallo～(∠・ω< )⌒★",
+        )
+    ],
     tags=MemeTags.yuzu_soft,
     date_created=datetime(2025, 9, 5),
-    date_modified=datetime(2025, 9, 5),
+    date_modified=datetime(2025, 9, 25),
 )

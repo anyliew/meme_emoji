@@ -2,7 +2,7 @@ from datetime import datetime
 from pathlib import Path
 
 from pil_utils import BuildImage
-
+from PIL import ImageEnhance
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
@@ -13,13 +13,13 @@ img_dir = Path(__file__).parent / "images"
 def jd_delivery_person(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
 
-    ta = "蔡徐坤"
+    ta = "他"
     name = ta
     if texts:
         name = texts[0]
     elif args.user_infos:
         info = args.user_infos[0]
-        ta = "蔡徐坤" if info.gender == "male" else "她"
+        ta = "他" if info.gender == "male" else "她"
         name = info.name or ta
 
     text = f"{name}"
@@ -29,7 +29,7 @@ def jd_delivery_person(images: list[BuildImage], texts: list[str], args: MemeArg
         text_img.draw_text(
             (0, 0, text_img.width, text_img.height),
             text,
-            fill=(0, 0, 0),
+            fill=(58, 60, 73),
             allow_wrap=True,
             max_fontsize=60,
             min_fontsize=45,
@@ -42,6 +42,15 @@ def jd_delivery_person(images: list[BuildImage], texts: list[str], args: MemeArg
 
     def make(imgs: list[BuildImage]) -> BuildImage:
         img = imgs[0].convert("RGBA").circle().resize((630, 630))
+
+        # 调整头像亮度（变暗）
+        # 使用 PIL 的 ImageEnhance.Brightness
+        enhancer = ImageEnhance.Brightness(img.image)
+        img_darkened = enhancer.enhance(0.8)  # 0.8表示亮度调整为原来的80%
+
+        # 重新创建 BuildImage 对象
+        img = BuildImage(img_darkened)
+
         img = img.rotate(-20, expand=True)
         return frame.copy().paste(img, (420, 1000), alpha=True,below=True)
 
@@ -57,5 +66,5 @@ add_meme(
     max_texts=1,
     keywords=["京东外卖骑手","京东外卖工牌"],
     date_created=datetime(2025, 3, 24),
-    date_modified=datetime(2025, 3, 24),
+    date_modified=datetime(2025, 9, 25),
 )

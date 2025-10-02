@@ -64,7 +64,7 @@ add_meme(
     min_images=1,  # 需要的最小图片数量
     max_images=1,  # 需要的最大图片数量
     keywords=["心海爱心"],  # 搜索关键词
-    tags=MemeTags.genshin
+    tags=MemeTags.genshin,
     date_created=datetime(2025, 10, 2),  # 创建日期
     date_modified=datetime(2025, 10, 2),  # 修改日期
 )

@@ -10,7 +10,7 @@ from meme_generator.utils import make_jpg_or_gif
 img_dir = Path(__file__).parent / "images"
 
 
-def anyliew_people_i_like(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+def beloveds(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
 
     ta = "他"
@@ -44,13 +44,13 @@ def anyliew_people_i_like(images: list[BuildImage], texts: list[str], args: Meme
 
 
 add_meme(
-    "anyliew_people_i_like",
-    anyliew_people_i_like,
+    "beloveds",
+    beloveds,
     min_images=1,
     max_images=1,
     min_texts=0,
     max_texts=1,
     keywords=["挚爱"],
     date_created=datetime(2025, 5, 26),
-    date_modified=datetime(2025, 5, 26),
+    date_modified=datetime(2025, 10, 4),
 )

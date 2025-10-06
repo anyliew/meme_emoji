@@ -1,10 +1,9 @@
 from datetime import datetime
 from pathlib import Path
+import random
 
 from pil_utils import BuildImage
 from pydantic import Field
-
-from meme_generator.tags import MemeTags
 
 from meme_generator import (
     MemeArgsModel,
@@ -97,7 +96,6 @@ add_meme(
     default_texts=["希望你开心哦"],
     args_type=args_type,
     keywords=["小维举牌", "维里奈举牌"],
-    tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 10, 5),
     date_modified=datetime(2025, 10, 5),
 )

@@ -13,7 +13,7 @@ img_dir = Path(__file__).parent / "images"
 
 def kurogames_verina_say(images, texts: list[str], args):
     text = texts[0]
-    image = random.choice(["0.png"])
+    image = random.choice(["0.png", "1.png"])
     frame = BuildImage.open(img_dir / image)
     try:
         if image == "0.png":
@@ -23,10 +23,22 @@ def kurogames_verina_say(images, texts: list[str], args):
                 fill=(0, 0, 0),
                 allow_wrap=True,
                 max_fontsize=120,
-                min_fontsize=30,
+                min_fontsize=10,
                 lines_align="center",
                 font_families=["FZShaoEr-M11S"],
             )
+        else:
+            frame.draw_text(
+                (30, 70, 230, 410),
+                text,
+                fill=(0, 0, 0),
+                allow_wrap=True,
+                max_fontsize=120,
+                min_fontsize=10,
+                lines_align="center",
+                font_families=["FZShaoEr-M11S"],
+            )
+            
     except ValueError:
         raise TextOverLength(text)
     return frame.save_png()

@@ -23,7 +23,7 @@ def kurogames_verina_holdsign(images, texts: list[str], args):
                 fill=(0, 0, 0),
                 allow_wrap=True,
                 max_fontsize=120,
-                min_fontsize=30,
+                min_fontsize=10,
                 lines_align="center",
                 font_families=["FZShaoEr-M11S"],
             )
@@ -34,7 +34,7 @@ def kurogames_verina_holdsign(images, texts: list[str], args):
                 fill=(0, 0, 0),
                 allow_wrap=True,
                 max_fontsize=120,
-                min_fontsize=30,
+                min_fontsize=10,
                 lines_align="center",
                 font_families=["FZShaoEr-M11S"],
             )
@@ -45,7 +45,7 @@ def kurogames_verina_holdsign(images, texts: list[str], args):
                 fill=(0, 0, 0),
                 allow_wrap=True,
                 max_fontsize=120,
-                min_fontsize=30,
+                min_fontsize=10,
                 lines_align="center",
                 stroke_fill=(255, 255, 255),
                 font_families=["FZShaoEr-M11S"],

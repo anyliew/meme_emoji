@@ -11,25 +11,14 @@ from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
 
 
-def kurogames_verina_holdsign(images, texts: list[str], args):
+def kurogames_verina_say(images, texts: list[str], args):
     text = texts[0]
-    image = random.choice(["0.png", "1.png", "2.png"])
+    image = random.choice(["0.png", "1.png"])
     frame = BuildImage.open(img_dir / image)
     try:
         if image == "0.png":
             frame.draw_text(
-                (475, 525, 790, 775),
-                text,
-                fill=(0, 0, 0),
-                allow_wrap=True,
-                max_fontsize=120,
-                min_fontsize=10,
-                lines_align="center",
-                font_families=["FZShaoEr-M11S"],
-            )
-        elif image == "1.png":
-            frame.draw_text(
-                (345, 730, 645, 960),
+                (520, 30, 735, 375),
                 text,
                 fill=(0, 0, 0),
                 allow_wrap=True,
@@ -40,28 +29,28 @@ def kurogames_verina_holdsign(images, texts: list[str], args):
             )
         else:
             frame.draw_text(
-                (50, 650, 710, 760),
+                (30, 70, 230, 410),
                 text,
                 fill=(0, 0, 0),
                 allow_wrap=True,
                 max_fontsize=120,
                 min_fontsize=10,
                 lines_align="center",
-                stroke_fill=(255, 255, 255),
                 font_families=["FZShaoEr-M11S"],
             )
+            
     except ValueError:
         raise TextOverLength(text)
     return frame.save_png()
 
 
 add_meme(
-    "kurogames_verina_holdsign",
-    kurogames_verina_holdsign,
+    "kurogames_verina_say",
+    kurogames_verina_say,
     min_texts=1,
     max_texts=1,
     default_texts=["希望你开心哦"],
-    keywords=["小维举牌", "维里奈举牌"],
+    keywords=["小维说", "维里奈说"],
     tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 10, 5),
     date_modified=datetime(2025, 10, 5),

@@ -111,39 +111,46 @@ jobs:
           script: |
             const oneWeekAgo = new Date();
             oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+            const startDate = oneWeekAgo.toISOString().split('T')[0];
+            const endDate = new Date().toISOString().split('T')[0];
             
-            // 获取本周的issues
-            const { data: newIssues } = await github.rest.search.issuesAndPullRequests({
-              q: `repo:${context.repo.owner}/${context.repo.repo} is:issue created:>=${oneWeekAgo.toISOString().split('T')[0]}`,
-              sort: 'created',
-              order: 'desc'
-            });
+            // 获取数据
+            const [newIssues, newPRs, closedIssues] = await Promise.all([
+              github.rest.search.issuesAndPullRequests({
+                q: `repo:${context.repo.owner}/${context.repo.repo} is:issue created:>=${startDate}`,
+                sort: 'created',
+                order: 'desc'
+              }),
+              github.rest.search.issuesAndPullRequests({
+                q: `repo:${context.repo.owner}/${context.repo.repo} is:pr created:>=${startDate}`,
+                sort: 'created',
+                order: 'desc'
+              }),
+              github.rest.search.issuesAndPullRequests({
+                q: `repo:${context.repo.owner}/${context.repo.repo} is:issue closed:>=${startDate}`,
+                sort: 'updated',
+                order: 'desc'
+              })
+            ]);
             
-            // 获取本周的PRs
-            const { data: newPRs } = await github.rest.search.issuesAndPullRequests({
-              q: `repo:${context.repo.owner}/${context.repo.repo} is:pr created:>=${oneWeekAgo.toISOString().split('T')[0]}`,
-              sort: 'created',
-              order: 'desc'
-            });
+            // 构建issue列表
+            let issueList = '本周暂无新issue';
+            if (newIssues.data.items.length > 0) {
+              issueList = newIssues.data.items.slice(0, 5).map(issue => {
+                const labels = issue.labels.map(l => l.name).join(', ') || '未分类';
+                return `- [${issue.title}](${issue.html_url}) - ${labels}`;
+              }).join('\n');
+            }
             
-            // 获取本周关闭的issues
-            const { data: closedIssues } = await github.rest.search.issuesAndPullRequests({
-              q: `repo:${context.repo.owner}/${context.repo.repo} is:issue closed:>=${oneWeekAgo.toISOString().split('T')[0]}`,
-              sort: 'updated',
-              order: 'desc'
-            });
-            
-            const report = `📊 **本周活动报告** (${oneWeekAgo.toISOString().split('T')[0]} ~ ${new Date().toISOString().split('T')[0]})
+            const report = `📊 **本周活动报告** (${startDate} ~ ${endDate})
             
             ## 📈 统计数据
-            - 🎯 新增 Issues: ${newIssues.total_count}
-            - 🔀 新增 PRs: ${newPRs.total_count}  
-            - ✅ 关闭 Issues: ${closedIssues.total_count}
+            - 🎯 新增 Issues: ${newIssues.data.total_count}
+            - 🔀 新增 PRs: ${newPRs.data.total_count}  
+            - ✅ 关闭 Issues: ${closedIssues.data.total_count}
             
             ## 🏷️ Issue 分类
-            ${newIssues.items.length > 0 ? newIssues.items.slice(0, 5).map(issue => 
-              \`- [\${issue.title}](\${issue.html_url}) - \${issue.labels.map(l => l.name).join(', ') || '未分类'}\`
-            ).join('\\n') : '本周暂无新issue'}
+            ${issueList}
             
             感谢所有贡献者的参与！ 🙏`;
             

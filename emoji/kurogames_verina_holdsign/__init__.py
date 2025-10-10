@@ -17,7 +17,7 @@ from meme_generator.exception import TextOverLength, MemeFeedback
 img_dir = Path(__file__).parent / "images"
 
 
-help_text = "图片编号，范围为 1~3"
+help_text = "图片编号，范围为 1~5"
 
 
 class Model(MemeArgsModel):
@@ -39,9 +39,9 @@ args_type = MemeArgsType(
 def kurogames_verina_holdsign(images, texts: list[str], args: Model):
     text = texts[0]
     
-    total_num = 3
+    total_num = 5
     if args.number == 0:
-        image = random.choice(["0.png", "1.png", "2.png"])
+        image = random.choice(["0.png", "1.png", "2.png", "3.png"]) # "4.png" 不从随机中出
     elif 1 <= args.number <= total_num:
         image = f"{args.number - 1}.png"
     else:
@@ -71,9 +71,33 @@ def kurogames_verina_holdsign(images, texts: list[str], args: Model):
                 lines_align="center",
                 font_families=["FZShaoEr-M11S"],
             )
-        else:
+        elif image == "2.png":
             frame.draw_text(
                 (50, 650, 710, 760),
+                text,
+                fill=(0, 0, 0),
+                allow_wrap=True,
+                max_fontsize=120,
+                min_fontsize=10,
+                lines_align="center",
+                stroke_fill=(255, 255, 255),
+                font_families=["FZShaoEr-M11S"],
+            )
+        elif image == "3.png":
+            frame.draw_text(
+                (380, 660, 670, 890),
+                text,
+                fill=(0, 0, 0),
+                allow_wrap=True,
+                max_fontsize=120,
+                min_fontsize=10,
+                lines_align="center",
+                stroke_fill=(255, 255, 255),
+                font_families=["FZShaoEr-M11S"],
+            )
+        elif image == "4.png":
+            frame.draw_text(
+                (330, 680, 670, 950),
                 text,
                 fill=(0, 0, 0),
                 allow_wrap=True,

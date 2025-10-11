@@ -50,7 +50,7 @@ add_meme(
     capoo_take_sleep,  # 处理函数
     min_images=1,  # 需要的最小图片数量
     max_images=1,  # 需要的最大图片数量
-    keywords=["咖波睡觉","睡觉",],  # 搜索关键词
+    keywords=["咖波睡觉","睡觉"],  # 搜索关键词
     tags=MemeTags.capoo,
     date_created=datetime(2025, 9, 27),  # 创建日期
     date_modified=datetime(2025, 9, 27),  # 修改日期

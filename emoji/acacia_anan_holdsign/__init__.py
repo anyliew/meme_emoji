@@ -15,7 +15,7 @@ def acacia_anan_holdsign(images, texts: list[str], args):
     text = texts[0]
     
     # 随机选择一张图片
-    img_index = random.randint(0, 2)
+    img_index = random.randint(0, 0)
     frame = BuildImage.open(img_dir / f"{img_index}.png")
     
     # 为每张图片设置不同的文字区域坐标

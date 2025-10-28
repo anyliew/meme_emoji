@@ -15,12 +15,13 @@ def acacia_anan_holdsign(images, texts: list[str], args):
     text = texts[0]
     
     # 随机选择一张图片
-    img_index = random.randint(0, 0)
+    img_index = random.randint(0, 1)
     frame = BuildImage.open(img_dir / f"{img_index}.png")
     
     # 为每张图片设置不同的文字区域坐标
     text_areas = [
         (147, 810, 736, 1105),   # 图片0的坐标
+        (179, 344, 464, 413),   # 图片1的坐标
     ]
     
     try:
@@ -32,7 +33,7 @@ def acacia_anan_holdsign(images, texts: list[str], args):
             max_fontsize=120,
             min_fontsize=30,
             lines_align="center",
-            font_families=["FZSJ-QINGCRJ"],
+            font_families=["FZShaoEr-M11S"],
         )
     except ValueError:
         raise TextOverLength(text)
@@ -48,5 +49,5 @@ add_meme(
     keywords=["安安举牌", "夏目安安举牌"],
     tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 10, 27),
-    date_modified=datetime(2025, 10, 27),
+    date_modified=datetime(2025, 10, 28),
 )

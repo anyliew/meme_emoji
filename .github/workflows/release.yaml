@@ -1,0 +1,43 @@
+name: Create Release with Zip
+
+on:
+  push:
+    tags:
+      - 'v*'  # 当推送 v 开头的标签时触发
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Create ZIP package
+      run: |
+        # 创建临时目录用于打包，排除 .github 文件夹
+        mkdir -p temp_package
+        # 复制所有文件，排除 .github 目录
+        rsync -av --exclude='.github' --exclude='temp_package' ./ temp_package/
+        
+        # 获取标签名作为版本号
+        VERSION=${GITHUB_REF#refs/tags/}
+        
+        # 创建 ZIP 文件，文件名包含版本号
+        zip -r "meme_emoji-${VERSION}.zip" temp_package/
+        
+        # 清理临时目录
+        rm -rf temp_package
+        
+        # 显示创建的 ZIP 文件信息
+        ls -la "meme_emoji-${VERSION}.zip"
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          meme_emoji-*.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

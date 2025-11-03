@@ -23,6 +23,8 @@ on:
 jobs:
   check-emoji-changes:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     outputs:
       has_emoji_changes: ${{ steps.filter.outputs.emoji }}
     steps:

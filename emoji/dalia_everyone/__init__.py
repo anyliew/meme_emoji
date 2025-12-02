@@ -25,7 +25,7 @@ def dalia_everyone(images: list[BuildImage], texts: list[str], args: MemeArgsMod
     text = f"所有人，给我{name}生成黄图"
     try:
         frame.draw_text(
-            (163, 0, 850, 106),
+            (211, 0, 1060, 132),
             text,
             fill=(255, 255, 255),
             max_fontsize=60,
@@ -37,8 +37,8 @@ def dalia_everyone(images: list[BuildImage], texts: list[str], args: MemeArgsMod
         raise TextOverLength(name)
 
     def make(imgs: list[BuildImage]) -> BuildImage:
-        img = imgs[0].convert("RGBA").resize((58, 58)).rotate(-5, expand=True)
-        return frame.copy().paste(img, (545, 263), alpha=True, below=True) #, below=True
+        img = imgs[0].convert("RGBA").resize((95, 95)).rotate(-5, expand=True)
+        return frame.copy().paste(img, (611, 387), alpha=True, below=True) #, below=True
     return make_jpg_or_gif(images, make)
 
 
@@ -51,5 +51,5 @@ add_meme(
     max_texts=1,
     keywords=["所有人"],
     date_created=datetime(2025, 12, 1),
-    date_modified=datetime(2025, 12, 1),
+    date_modified=datetime(2025, 12, 2),
 )

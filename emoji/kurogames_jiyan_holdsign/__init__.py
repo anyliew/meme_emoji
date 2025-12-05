@@ -10,12 +10,12 @@ from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
 
 
-def kurogames_lingyang_holdsign(images, texts: list[str], args):
+def kurogames_jiyan_holdsign(images, texts: list[str], args):
     text = texts[0]
     frame = BuildImage.open(img_dir / "0.png")
     try:
         frame.draw_text(
-            (342, 436, 679, 762),
+            (166, 441, 500, 738),
             text,
             fill=(0, 0, 0),
             allow_wrap=True,
@@ -30,13 +30,13 @@ def kurogames_lingyang_holdsign(images, texts: list[str], args):
 
 
 add_meme(
-    "kurogames_lingyang_holdsign",
-    kurogames_lingyang_holdsign,
+    "kurogames_jiyan_holdsign",
+    kurogames_jiyan_holdsign,
     min_texts=1,
     max_texts=1,
-    default_texts=["我叫凌阳，比起我摘下狮头后的这幅模样，可能大家更习惯的，还是那位梅花桩上的“狮首”吧？希望相处之后，你能记住这个原原本本的我呀。"],
-    keywords=["凌阳举牌", "雪豹举牌"],
+    default_texts=["气势确有提升，想来你对练兵之道也颇有研究？"],
+    keywords=["忌炎举牌"],
     tags=MemeTags.wuthering_waves,
-    date_created=datetime(2025, 5, 25),
+    date_created=datetime(2025, 12, 5),
     date_modified=datetime(2025, 12, 5),
 )

@@ -25,7 +25,11 @@
 
 > [!NOTE]
 >
-> 请注意，本仓库的内容不支持Rust，仅支持以下特定版本的依赖库：
+> 请注意，本仓库的内容不支持Rust
+>
+> Rust的用户请移步[meme_emoji_rust](https://github.com/anyliew/meme_emoji_rust) 
+>
+> 仅支持以下特定版本的依赖库：
 >
 > - `meme_generator == 0.1.14`（最高兼容版本）
 > - `nonebot-plugin-memes == 0.7.12`（最高兼容版本）
@@ -59,8 +63,6 @@
 
 ## 🤠 表情示例
 
-
-
 ### 🖼 参考预览图：
 <details><summary>🖼点击展开 预览图 "狗耳帽"</summary><p>
 <a><img src="./docs/picture/Phone.png"></a>
@@ -76,31 +78,10 @@
 
 * [表情列表](https://github.com/anyliew/meme_emoji/wiki/emoji_list)
 
-  
 
 ## 📄 使用教程 
 
 - [meme_emoji wiki](https://github.com/anyliew/meme_emoji/wiki) 
-
-
-## ⚖ 许可证
-
-延续(copy) meme-generator 作者  MeetWq MIT 许可证 
-
-> MIT License https://github.com/MemeCrafters/meme-generator/blob/main/LICENSE
-> 
-> MIT License https://github.com/anyliew/meme_emoji/blob/main/LICENSE
-> 
->chat.deepseek https://github.com/anyliew/meme_emoji/raw/main/docs/picture/chat.deepseek.png)
-
-
-## 💐 鸣谢
-
-感谢以下开发者对 meme_emoji 仓库作出的贡献
-
-<a href="https://github.com/anyliew/meme_emoji/graphs/contributors">
-  <img src="./docs/picture/partner.jpg" />
-</a>
 
 ## 📝 反馈
 
@@ -125,6 +106,19 @@
 > 🚧欢迎投稿高清素材，看到一些有趣的素材图片会制作成表情更新到本仓库！
 >
 > 通过issues中的模板 “投稿素材” 进行投稿，如果能Pr则更加完美，实在是泰裤辣~
+> 
+
+
+## ⚖ 许可
+
+延续(copy) meme-generator 作者  MeetWq MIT 许可证 
+
+> MIT License https://github.com/MemeCrafters/meme-generator/blob/main/LICENSE
+> 
+> MIT License https://github.com/anyliew/meme_emoji/blob/main/LICENSE
+> 
+>chat.deepseek https://github.com/anyliew/meme_emoji/raw/main/docs/picture/chat.deepseek.png)
+
 
 ## 🔗 相关链接
 
@@ -135,13 +129,26 @@
 - [meme-generator wiki](https://github.com/MemeCrafters/meme-generator/wiki)
 - [meme_emoji wiki](https://github.com/anyliew/meme_emoji/wiki)
 
-### 额外表情仓库
 
-- [meme-generator-contrib](https://github.com/MemeCrafters/meme-generator-contrib) 
-- [meme_emoji](https://github.com/anyliew/meme_emoji) 
-- [meme-generator-jj](https://github.com/jinjiao007/meme-generator-jj) 
-- [meme_emoji_nsfw](https://github.com/anyliew/meme_emoji_nsfw) 
-- [tudou-meme](https://github.com/LRZ9712/tudou-meme) 
+## 💐 鸣谢
+
+感谢以下开发者对 meme_emoji 仓库作出的贡献
+
+<a href="https://github.com/anyliew/meme_emoji/graphs/contributors">
+  <img src="./docs/picture/partner.jpg" />
+</a>
+
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 
 ## 📌 免责声明

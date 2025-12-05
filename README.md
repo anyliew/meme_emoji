@@ -125,7 +125,7 @@
 ### meme-generator
 - [meme-generator](https://github.com/MemeCrafters/meme-generator) 
 
-### wiki 文档
+### WIKI 文档
 - [meme-generator wiki](https://github.com/MemeCrafters/meme-generator/wiki)
 - [meme_emoji wiki](https://github.com/anyliew/meme_emoji/wiki)
 
@@ -139,20 +139,14 @@
 </a>
 
 
-## Contributors
+## ⭐ 支持本项目
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+如果你觉得本项目对你有帮助，请给本项目点一个star，你的鼓励是我们不断前进的动力。
 
 
-## 📌 免责声明
+## 💬 免责声明
 
-- 本仓库的表情素材等均来自网络，非商用
-- 如有侵权请通过issues联系作者删除
+- 本项目仅供学习和交流使用，禁止用于任何商业用途及违法用途。
+
+- 项目中的图片等资源均来自互联网，如有侵权请及时联系开发者，我们会尽快处理删除相关内容。
 

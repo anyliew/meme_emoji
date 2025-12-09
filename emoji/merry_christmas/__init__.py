@@ -13,18 +13,18 @@ img_dir = Path(__file__).parent / "images"
 
 def merry_christmas(images: list[BuildImage], texts, args):
 
-    user_head = images[0].resize((118, 89)).convert("RGBA") #.circle()
+    user_head = images[0].resize((93, 77)).convert("RGBA") #.circle()
     
     # 初始化帧列表，用于存储每一帧图像
     frames: list[IMG] = []
 
     positions = [
-        (70, 120), (70, 120), (70, 120),   # 1-3
+        (60, 90), (60, 90), (60, 90), (60, 90), (60, 90), (60, 90), (60, 90), (60, 90), 
     ]
 
     # 处理所有帧
-    for i in range(3):
-        frame_num = (i % 3) + 1
+    for i in range(8):
+        frame_num = (i % 8) + 1
         frame = BuildImage.open(img_dir / f"{frame_num}.png").convert("RGBA")
         
         # 创建一个新的图像，首先粘贴用户头像作为背景
@@ -36,8 +36,8 @@ def merry_christmas(images: list[BuildImage], texts, args):
         
         frames.append(new_frame.image)
 
-    # 将所有帧保存为GIF，帧间隔为0.5秒
-    return save_gif(frames, 0.5)
+    # 将所有帧保存为GIF，帧间隔为0.1秒
+    return save_gif(frames, 0.1)
 
 add_meme(
     "merry_christmas",  # 模板的唯一标识符
@@ -45,6 +45,6 @@ add_meme(
     min_images=1,  # 需要的最小图片数量
     max_images=1,  # 需要的最大图片数量
     keywords=["圣诞快乐","圣诞节快乐"],  # 搜索关键词
-    date_created=datetime(2025, 8, 18),  # 创建日期
-    date_modified=datetime(2025, 8, 18),  # 修改日期
+    date_created=datetime(2025, 12, 9),  # 创建日期
+    date_modified=datetime(2025, 12, 9),  # 修改日期
 )

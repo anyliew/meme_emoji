@@ -11,20 +11,20 @@ from meme_generator.utils import save_gif  # 导入保存GIF的函数
 # 获取当前文件所在目录的路径，并拼接images子目录路径
 img_dir = Path(__file__).parent / "images"
 
-def look_leg(images: list[BuildImage], texts, args):
+def christmas_eve(images: list[BuildImage], texts, args):
 
-    user_head = images[0].resize((73, 73)).convert("RGBA") #.circle()
+    user_head = images[0].resize((118, 89)).convert("RGBA") #.circle()
     
     # 初始化帧列表，用于存储每一帧图像
     frames: list[IMG] = []
 
     positions = [
-        (30, 51), (30, 51), (30, 51), (30, 51), (30, 51), (30, 51), (30, 51), 
+        (70, 120), (70, 120), (70, 120),   # 1-3
     ]
 
     # 处理所有帧
-    for i in range(7):
-        frame_num = (i % 7) + 1
+    for i in range(3):
+        frame_num = (i % 3) + 1
         frame = BuildImage.open(img_dir / f"{frame_num}.png").convert("RGBA")
         
         # 创建一个新的图像，首先粘贴用户头像作为背景
@@ -36,15 +36,15 @@ def look_leg(images: list[BuildImage], texts, args):
         
         frames.append(new_frame.image)
 
-    # 将所有帧保存为GIF，帧间隔为0.03秒
-    return save_gif(frames, 0.03)
+    # 将所有帧保存为GIF，帧间隔为0.5秒
+    return save_gif(frames, 0.5)
 
 add_meme(
-    "look_leg",  # 模板的唯一标识符
-    look_leg,  # 处理函数
+    "christmas_eve",  # 模板的唯一标识符
+    christmas_eve,  # 处理函数
     min_images=1,  # 需要的最小图片数量
     max_images=1,  # 需要的最大图片数量
-    keywords=["看看腿","看看脚"],  # 搜索关键词
-    date_created=datetime(2025, 12, 6),  # 创建日期
-    date_modified=datetime(2025, 12, 6),  # 修改日期
+    keywords=["平安夜","平安夜快乐"],  # 搜索关键词
+    date_created=datetime(2025, 8, 18),  # 创建日期
+    date_modified=datetime(2025, 12, 9),  # 修改日期
 )

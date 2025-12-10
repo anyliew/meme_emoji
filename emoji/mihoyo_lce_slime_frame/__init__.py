@@ -16,9 +16,9 @@ def mihoyo_lce_slime_frame (images: list[BuildImage], texts: list[str], args: Me
 
     def make(imgs: list[BuildImage]) -> BuildImage:
         #头像尺寸
-        img = imgs[0].convert("RGBA").circle().resize((245, 245))
+        img = imgs[0].convert("RGBA").circle().resize((434, 427))
         #头像坐标
-        return frame.copy().paste(img, (40, 38), alpha=True,below=True)
+        return frame.copy().paste(img, (84, 83), alpha=True,below=True)
 
     return make_png_or_gif(images, make)
 

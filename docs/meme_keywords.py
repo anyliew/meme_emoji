@@ -7,7 +7,7 @@ OUTPUT_DIR = "./docs"
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "meme_keywords.md")
 
 # GitHub 仓库信息 - 用于 Wiki 链接
-GITHUB_REPO = os.getenv("GITHUB_REPOSITORY", "jinjiao007/meme-generator-jj")
+GITHUB_REPO = os.getenv("GITHUB_REPOSITORY", "anyliew/meme_emoji")
 # 表格列宽配置
 # 格式: "列名": {"type": "width/max-width", "value": "数值"} 或 None (自适应)
 TABLE_COLUMN_WIDTHS = {

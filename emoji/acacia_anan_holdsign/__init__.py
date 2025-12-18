@@ -6,7 +6,6 @@ from pil_utils import BuildImage
 
 from meme_generator import add_meme
 from meme_generator.exception import TextOverLength
-from meme_generator.tags import MemeTags
 
 img_dir = Path(__file__).parent / "images"
 
@@ -45,9 +44,8 @@ add_meme(
     acacia_anan_holdsign,
     min_texts=1,
     max_texts=1,
-    default_texts=["宝宝求你去看看医生吧\n吾辈没法同时做你的\n心理医生、妈妈\n最好的朋友、性玩具\n最坏的敌人和人生导师"],
+    default_texts=["快说吾辈可爱"],
     keywords=["安安举牌", "夏目安安举牌"],
-    tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 10, 27),
-    date_modified=datetime(2025, 10, 28),
+    date_modified=datetime(2025, 12, 18),
 )

@@ -99,11 +99,11 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
           # 检查Wiki仓库是否存在
-          if git ls-remote https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/jinjiao007/meme-generator-jj.wiki.git &>/dev/null; then
+          if git ls-remote https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/anyliew/meme_emoji.wiki.git &>/dev/null; then
             echo "Wiki repository exists, proceeding with update"
             
             # 克隆Wiki仓库到本地
-            git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/jinjiao007/meme-generator-jj.wiki.git wiki
+            git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/anyliew/meme_emoji.wiki.git wiki
             cd wiki
             
             # 在Wiki仓库中再次配置git用户信息

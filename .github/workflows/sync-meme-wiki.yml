@@ -1,0 +1,185 @@
+# 工作流名称：表情包Wiki同步
+name: Sync Meme Wiki
+
+# 权限配置：定义工作流所需的权限
+permissions:
+  # 允许写入内容，用于推送更改到仓库和Wiki
+  contents: write
+
+# 触发条件配置：定义何时启动此工作流
+on:
+  # 当发生推送事件时触发
+  push:
+    # 指定分支：仅main分支的推送会触发
+    branches:
+      - "main"
+    # 指定路径：仅emoji目录下的文件变更会触发
+    paths:
+      - "emoji/**"
+  # 添加手动触发：允许在GitHub Actions界面手动运行此工作流
+  workflow_dispatch:
+
+# 作业定义：工作流包含一个名为build的作业
+jobs:
+  # 作业名称：build
+  build:
+    # 指定运行环境：使用最新版的Ubuntu系统
+    runs-on: ubuntu-latest
+
+    # 步骤定义：作业包含多个顺序执行的步骤
+    steps:
+      # 步骤1：检出主仓库代码
+      - name: Checkout main repository
+        # 使用官方checkout动作，版本v4
+        uses: actions/checkout@v4
+        with:
+          # 获取完整的git历史记录，便于比较文件变化
+          fetch-depth: 0
+
+      # 步骤2：检出Wiki仓库
+      - name: Checkout wiki repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}.wiki
+          path: wiki
+
+      # 步骤3：设置Python环境
+      - name: Set up Python
+        # 使用官方setup-python动作，版本v4
+        uses: actions/setup-python@v5
+        with:
+          # 指定Python版本为3.10
+          python-version: '3.10'
+
+      # 步骤4：安装系统依赖
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-color-emoji libgl1 libglx-mesa0 libgl1-mesa-dri libegl1 libegl-mesa0
+          # 安装字体
+          sudo mkdir -p /usr/share/fonts/myfonts
+          sudo cp resources/fonts/* /usr/share/fonts/myfonts/ 2>/dev/null || echo "No custom fonts found"
+          fc-cache -fv
+
+      # 步骤5：安装Python依赖
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          # 安装meme_generator（可选，如果需要）
+          # pip install -U "meme_generator<0.2.0" filetype pillow
+
+      # 步骤6：备份当前的关键词文件（如果存在）
+      - name: Backup current meme_keywords.md if exists
+        # 运行bash命令进行文件备份
+        run: |
+          # 检查文件是否存在
+          if [ -f docs/meme_keywords.md ]; then
+            # 存在则创建备份文件
+            cp docs/meme_keywords.md docs/meme_keywords.md.backup
+            echo "Backed up existing meme_keywords.md"
+          else
+            # 不存在则输出提示信息
+            echo "No existing meme_keywords.md found"
+          fi
+
+      # 步骤7：运行关键词生成脚本
+      - name: Run meme_keywords.py
+        # 运行Python脚本生成关键词文件
+        run: python ./docs/meme_keywords.py
+
+      # 步骤8：检查是否需要更新Wiki脚本
+      - name: Check for wiki update script
+        id: check_wiki_script
+        run: |
+          # 检查是否存在Wiki更新脚本
+          if [ -f wiki/update_meme_list.py ]; then
+            echo "wiki_update_script=true" >> $GITHUB_OUTPUT
+            echo "Found wiki update script"
+          else
+            echo "wiki_update_script=false" >> $GITHUB_OUTPUT
+            echo "No wiki update script found"
+          fi
+
+      # 步骤9：运行Wiki更新脚本（如果存在）
+      - name: Run wiki update script
+        if: steps.check_wiki_script.outputs.wiki_update_script == 'true'
+        run: |
+          cd wiki
+          python3 update_meme_list.py
+          cd ..
+
+      # 步骤10：检查关键词文件是否发生变化
+      - name: Check if meme_keywords.md changed
+        # 为此步骤设置ID，便于后续步骤引用
+        id: check_diff
+        run: |
+          # 检查备份文件是否存在
+          if [ ! -f docs/meme_keywords.md.backup ]; then
+            # 没有备份文件，说明是新文件，标记为有变化
+            echo "No backup file, this is a new file."
+            echo "changed=true" >> $GITHUB_OUTPUT
+          # 使用cmp命令比较新文件和备份文件
+          elif cmp -s docs/meme_keywords.md docs/meme_keywords.md.backup; then
+            # 文件相同，无变化
+            echo "No changes detected."
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            # 文件不同，有变化
+            echo "Changes detected."
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      # 步骤11：更新GitHub Wiki（仅当文件有变化时执行）
+      - name: Update GitHub Wiki
+        # 条件判断：只有检测到变化时才执行
+        if: steps.check_diff.outputs.changed == 'true' || steps.check_wiki_script.outputs.wiki_update_script == 'true'
+        run: |
+          # 配置git用户信息（使用GitHub Actions机器人账户）
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          cd wiki
+          
+          # 在Wiki仓库中再次配置git用户信息
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # 复制生成的文档到Wiki目录
+          if [ -f ../docs/meme_keywords.md ]; then
+            cp ../docs/meme_keywords.md "emoji_list.md"
+            echo "Copied meme_keywords.md to emoji_list.md"
+          fi
+          
+          # 列出当前Wiki目录中的文件（用于调试）
+          echo "Current files in wiki:"
+          ls -la
+          
+          # 检查是否有文件需要提交
+          if [ -n "$(git status --porcelain)" ]; then
+            # 有变化，添加所有文件
+            git add .
+            
+            # 检查git状态（用于调试）
+            echo "Git status:"
+            git status
+            
+            # 提交并推送
+            echo "Changes detected, committing..."
+            git commit -m "🤖 Auto-update 表情列表"
+            git push origin master
+            echo "Wiki updated successfully"
+          else
+            # 没有变化，输出提示
+            echo "No changes to commit in wiki"
+          fi
+
+      # 步骤12：清理备份文件（无论成功或失败都会执行）
+      - name: Cleanup backup file
+        # 使用always()条件，确保此步骤总是执行
+        if: always()
+        run: |
+          # 如果备份文件存在，则删除它
+          if [ -f docs/meme_keywords.md.backup ]; then
+            rm docs/meme_keywords.md.backup
+            echo "Cleaned up backup file"
+          fi

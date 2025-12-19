@@ -45,7 +45,7 @@ jobs:
 
       # 步骤3：设置Python环境
       - name: Set up Python
-        # 使用官方setup-python动作，版本v4
+        # 使用官方setup-python动作，版本v5
         uses: actions/setup-python@v5
         with:
           # 指定Python版本为3.10
@@ -65,8 +65,10 @@ jobs:
       - name: Install Python dependencies
         run: |
           pip install --upgrade pip
-          # 安装meme_generator（可选，如果需要）
-          # pip install -U "meme_generator<0.2.0" filetype pillow
+          # 安装meme_generator和其依赖
+          pip install "meme_generator<0.2.0" filetype pillow
+          # 额外安装可能的依赖
+          pip install requests numpy pandas
 
       # 步骤6：备份当前的关键词文件（如果存在）
       - name: Backup current meme_keywords.md if exists
@@ -104,7 +106,12 @@ jobs:
       - name: Run wiki update script
         if: steps.check_wiki_script.outputs.wiki_update_script == 'true'
         run: |
+          # 先安装wiki脚本可能需要的依赖
+          echo "Installing dependencies for wiki update script..."
+          pip install filetype pillow
+          
           cd wiki
+          echo "Running update_meme_list.py..."
           python3 update_meme_list.py
           cd ..
 

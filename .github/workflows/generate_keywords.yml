@@ -8,15 +8,14 @@ permissions:
 
 # 触发条件配置：定义何时启动此工作流
 on:
-  # 当发生推送事件时触发
-  push:
-    # 指定分支：仅main分支的推送会触发
-    branches:
-      - "main"
-    # 指定路径：仅emoji目录下的文件变更会触发
-    paths:
-      - "emoji/**"
-  # 添加手动触发：允许在GitHub Actions界面手动运行此工作流
+  # 1. 计划任务：每天凌晨4点自动运行
+  schedule:
+    # cron表达式：分 时 日 月 星期
+    # 每天UTC时间4:00运行（注意：GitHub Actions使用UTC时间）
+    # 对应北京时间：12:00（UTC+8）
+    - cron: '0 4 * * *'
+  
+  # 2. 手动触发：允许在GitHub Actions界面手动运行此工作流
   workflow_dispatch:
 
 # 作业定义：工作流包含一个名为build的作业

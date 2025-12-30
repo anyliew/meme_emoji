@@ -13,7 +13,7 @@ img_dir = Path(__file__).parent / "images"
 
 def christmas_gift(images: list[BuildImage], texts, args):
 
-    user_head = images[0].resize((300, 215)).convert("RGBA")
+    user_head = images[0].resize((300, 215), keep_ratio=True).convert("RGBA")
     
     # 初始化帧列表，用于存储每一帧图像
     frames: list[IMG] = []
@@ -58,5 +58,5 @@ add_meme(
     max_images=1,  # 需要的最大图片数量
     keywords=["圣诞礼物"],  # 搜索关键词
     date_created=datetime(2025, 12, 23),  # 创建日期
-    date_modified=datetime(2025, 12, 23),  # 修改日期
+    date_modified=datetime(2025, 12, 30),  # 修改日期
 )

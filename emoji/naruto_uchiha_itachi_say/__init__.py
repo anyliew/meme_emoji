@@ -22,7 +22,7 @@ def naruto_uchiha_itachi_say(images, texts: list[str], args):
             max_fontsize=300,
             min_fontsize=30,
             lines_align="left",
-            font_families=["PangMenZhengDao-Cu"],
+            font_families=["FZShaoEr-M11S"],
         )
     except ValueError:
         raise TextOverLength(text)

@@ -64,7 +64,7 @@ add_meme(
     please_waiting,  # 处理函数
     min_images=1,  # 需要的最小图片数量
     max_images=1,  # 需要的最大图片数量
-    keywords=["请稍后"],  # 搜索关键词
+    keywords=["请稍候"],  # 搜索关键词
     date_created=datetime(2026, 1, 9),  # 创建日期
     date_modified=datetime(2026, 1, 9),  # 修改日期
 )

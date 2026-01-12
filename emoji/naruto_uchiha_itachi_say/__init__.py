@@ -22,7 +22,6 @@ def naruto_uchiha_itachi_say(images, texts: list[str], args):
             max_fontsize=300,
             min_fontsize=30,
             lines_align="left",
-            font_families=["FZShaoEr-M11S"],
         )
     except ValueError:
         raise TextOverLength(text)
@@ -34,8 +33,8 @@ add_meme(
     naruto_uchiha_itachi_say,
     min_texts=1,
     max_texts=1,
-    default_texts=["鸣潮牛逼"],
+    default_texts=["伊邪那美"],
     keywords=["鼬说","宇智波鼬说"],
     date_created=datetime(2026, 1, 9),
-    date_modified=datetime(2026, 1, 9),
+    date_modified=datetime(2026, 1, 13),
 )

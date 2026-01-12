@@ -1,11 +1,2 @@
-nonebot-adapter-onebot
-fastapi
-httpx==0.27.2
-websockets
 meme_generator==0.1.14
 nonebot-plugin-memes==0.7.12
-nonebot-plugin-sticker-saver
-nonebot_plugin_imagetools
-nonebot-plugin-orm[default]
-nonebot-plugin-datastore
-nonebot-plugin-apscheduler

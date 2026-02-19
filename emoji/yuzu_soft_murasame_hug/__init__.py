@@ -17,7 +17,7 @@ def yuzu_soft_murasame_hug(images: list[BuildImage], texts, args):
     for i in range(0, 360, 10):
         frames.append(
             frame.copy()
-            .paste(img.rotate(-i).resize((352, 352)), (117, 429), below=True)
+            .paste(img.rotate(-i).resize((118, 118)), (20, 146), below=True)
             .image
         )
     return save_gif(frames, 0.05)

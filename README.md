@@ -21,7 +21,7 @@
 
 > [!TIP]
 >
-> 部分表情移至[meme_emoji_nsfw](https://github.com/anyliew/meme_emoji_nsfw) 
+> 部分表情移至[crazy_emoji](https://github.com/anyliew/crazy_emoji) 
 
 > [!NOTE]
 >

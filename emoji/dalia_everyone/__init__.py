@@ -37,7 +37,7 @@ def dalia_everyone(images: list[BuildImage], texts: list[str], args: MemeArgsMod
         raise TextOverLength(name)
 
     def make(imgs: list[BuildImage]) -> BuildImage:
-        img = imgs[0].convert("RGBA").resize((95, 95)).rotate(-5, expand=True)
+        img = imgs[0].convert("RGBA").resize((95, 95)).circle().rotate(-5, expand=True)
         return frame.copy().paste(img, (611, 387), alpha=True, below=True) #, below=True
     return make_jpg_or_gif(images, make)
 

@@ -9,7 +9,7 @@ from meme_generator import MemeArgsModel, add_meme
 from meme_generator.utils import make_png_or_gif
 
 
-def phantom_tank(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+def miragetank(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     if len(images) < 2:
         raise ValueError("需要至少两张图片作为上层和下层")
 
@@ -47,8 +47,8 @@ def phantom_tank(images: list[BuildImage], texts: list[str], args: MemeArgsModel
 
 
 add_meme(
-    "phantom_tank",
-    phantom_tank,
+    "miragetank",
+    miragetank,
     min_images=2,
     max_images=2,
     min_texts=0,

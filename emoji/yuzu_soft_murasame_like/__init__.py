@@ -29,8 +29,8 @@ def yuzu_soft_murasame_like(images: list[BuildImage], texts: list[str], args):
         raise TextOverLength(text)
 
     def make(imgs: list[BuildImage]) -> BuildImage:
-        img = imgs[0].convert("RGBA").resize((305, 235), keep_ratio=True)
-        return frame.copy().paste(img, (106, 72), below=True)
+        img = imgs[0].convert("RGBA").resize((275, 275), keep_ratio=True)
+        return frame.copy().paste(img, (47, 51), below=True)
 
     return make_jpg_or_gif(images, make)
 
@@ -46,5 +46,5 @@ add_meme(
     keywords=["丛雨喜欢"],
     tags=MemeTags.yuzu_soft,
     date_created=datetime(2025, 5, 25),
-    date_modified=datetime(2025, 5, 25),
+    date_modified=datetime(2026, 3, 31),
 )

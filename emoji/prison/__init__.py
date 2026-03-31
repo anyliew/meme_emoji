@@ -33,7 +33,7 @@ add_meme(
     prison,
     min_images=1,
     max_images=1,
-    keywords=["坐牢"],
+    keywords=["铁窗"],
     date_created=datetime(2026, 3, 30),
-    date_modified=datetime(2026, 3, 30),
+    date_modified=datetime(2026, 4, 1),
 )

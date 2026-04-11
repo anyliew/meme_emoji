@@ -2,61 +2,76 @@ from datetime import datetime
 from pathlib import Path
 
 from pil_utils import BuildImage
+from pydantic import Field
 
-from meme_generator import MemeArgsModel, add_meme
+from meme_generator import (
+    MemeArgsModel,
+    MemeArgsType,
+    ParserArg,
+    ParserOption,
+    add_meme,
+)
 from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
 
 img_dir = Path(__file__).parent / "images"
 
-def new_goodnews(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+help_text = "昵称（第一段文字）"
+
+
+class Model(MemeArgsModel):
+    name: str = Field("", description=help_text)
+
+
+args_type = MemeArgsType(
+    args_model=Model,
+    parser_options=[
+        ParserOption(
+            names=["-n", "--name"],
+            args=[ParserArg(name="name", value="str")],
+            help_text=help_text,
+        ),
+    ],
+)
+
+
+def new_goodnews(images: list[BuildImage], texts: list[str], args: Model):
     frame = BuildImage.open(img_dir / "0.png")
 
-    ta = "她"
-    name = ta
-    if texts:
-        name = texts[0]
-    elif args.user_infos:
-        info = args.user_infos[0]
-        ta = "他" if info.gender == "male" else "她"
-        name = info.name or ta
-
-    text = f"{name}"
-    #{name}喜报人名字❤️👩‍❤️‍💋‍👨
+    # 第一段文字（昵称）：只能通过 -n 参数传入，若未提供则使用默认值
+    name = args.name if args.name else "天命之人"
     try:
         frame.draw_text(
-            (235, 615, 478, 659),
-            text,
-            fill=(255, 223, 0),
+            (363, 910, 719, 985),
+            name,
+            fill=(28,28,28),
             max_fontsize=100,
             min_fontsize=10,
             lines_align="center",
-            font_families=["FZXS14"], 
+            font_families=["FZShaoEr-M11S"],
         )
     except ValueError:
         raise TextOverLength(name)
 
-    # 添加第二段文字
-    if len(texts) > 1:
-        try:
-            frame.draw_text(
-                (199, 708, 512, 923),  # 调整坐标区域以适应你的模板
-                texts[1],
-                fill=(255, 215, 0),
-                allow_wrap=True,
-                max_fontsize=60,
-                min_fontsize=10,
-                lines_align="center",
-                font_families=["FZXS14"], 
-            )
-        except ValueError:
-            raise TextOverLength(texts[1])
+    # 第二段文字（正文）：从 texts[0] 获取（min_texts=1 保证存在）
+    text2 = texts[0]
+    try:
+        frame.draw_text(
+            (297, 1055, 775, 1379),
+            text2,
+            fill=(249, 250, 161),
+            allow_wrap=True,
+            max_fontsize=60,
+            min_fontsize=10,
+            lines_align="center",
+            font_families=["FZXS14"],
+        )
+    except ValueError:
+        raise TextOverLength(text2)
 
     def make(imgs: list[BuildImage]) -> BuildImage:
-        #头像尺寸
-        img = imgs[0].convert("RGBA").circle().resize((300, 300))
-        #头像坐标
-        return frame.copy().paste(img, (210, 270), alpha=True, below=True )
+        img = imgs[0].convert("RGBA").resize((445, 445))
+        return frame.copy().paste(img, (319, 408), alpha=True, below=True)
 
     return make_jpg_or_gif(images, make)
 
@@ -66,10 +81,11 @@ add_meme(
     new_goodnews,
     min_images=1,
     max_images=1,
-    min_texts=0,
-    max_texts=2,
+    min_texts=1,          # 需要一个文本作为第二段文字
+    max_texts=1,          # 最多一个
     keywords=["新喜报"],
-    default_texts=["天命之人","喜报传佳讯\n福星高照\n满门庭"],
+    default_texts=["喜报传佳讯\n福星高照\n满门庭"],   # 第二段文字的默认值
+    args_type=args_type,
     date_created=datetime(2024, 7, 26),
-    date_modified=datetime(2025, 10, 3),
+    date_modified=datetime(2026, 4, 11),
 )

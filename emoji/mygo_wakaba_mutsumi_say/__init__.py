@@ -84,8 +84,8 @@ add_meme(
     min_texts=1,
     max_texts=1,
     default_texts=["我从没觉得玩乐队开心过……"],
-    keywords=["若叶睦说"],
+    keywords=["若叶睦说","睦子米说"],
     args_type=args_type,
     date_created=datetime(2026, 4, 11),
-    date_modified=datetime(2026, 4, 11),
+    date_modified=datetime(2026, 4, 13),
 )

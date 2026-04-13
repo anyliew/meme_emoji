@@ -26,18 +26,18 @@ def yuzu_soft_shocked(images: list[BuildImage], texts: list[str], args: MemeArgs
     text = f"{name},你是柚...柚子厨?!"
     try:
         frame.draw_text(
-            (34, 100, 257, 133),
+            (144, 423, 1080, 567),
             text,
-            max_fontsize=70,
+            max_fontsize=180,
             min_fontsize=20,
-            valign="bottom",
+            lines_align="left",
         )
     except ValueError:
         raise TextOverLength(name)
 
     def make(imgs: list[BuildImage]) -> BuildImage:
-        img = imgs[0].convert("RGBA").circle().resize((33, 33))
-        return frame.copy().paste(img, (0, 100), alpha=True)
+        img = imgs[0].convert("RGBA").circle().resize((144, 144))
+        return frame.copy().paste(img, (0, 423), alpha=True)
 
     return make_jpg_or_gif(images, make)
 
@@ -52,5 +52,5 @@ add_meme(
     keywords=["震惊柚子厨"],
     tags=MemeTags.yuzu_soft,
     date_created=datetime(2024, 7, 26),
-    date_modified=datetime(2025, 5, 25),
+    date_modified=datetime(2026, 4, 12),
 )

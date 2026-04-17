@@ -1,20 +1,6 @@
-<div align="center">
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-<img src="./docs/picture/logo.png" width=200 />
 
-# meme_emoji 
 
-<p align="center">
-  <img src="https://img.shields.io/github/license/MemeCrafters/meme-generator" alt="license">
-  <img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="Python">
-  <a href="https://pypi.org/project/meme-generator">
-    <img src="https://badgen.net/pypi/v/meme-generator" alt="pypi">
-  <a href="https://qm.qq.com/q/KZFZGdWmyG">
-    <img src="https://img.shields.io/badge/QQ%E7%BE%A4-660451080-orange" alt="qq group">
-</p>
-</div>
+![meme_emoji](https://socialify.git.ci/anyliew/meme_emoji/image?description=1&font=KoHo&forks=1&issues=1&language=1&logo=https%3A%2F%2Fgithub.com%2Fanyliew%2Fmeme_emoji%2Fraw%2Fmain%2Fdocs%2Fpicture%2Flogo.png&name=1&owner=1&pattern=Plus&pulls=1&stargazers=1&theme=Light)
 
 ## meme_emoji 表情包扩展仓库 
 
@@ -62,7 +48,7 @@
 
 - ✨**搭配演示架构图所示(仅供参考)：**
 
-<img src="./docs/picture/meme_emoji.jpg" alt="架构图" style="zoom:30%;" />
+<img src="D:\meme\meme_emoji\README.assets\meme_emoji.jpg" alt="架构图" style="zoom:30%;" />
 
 ## 🤠 表情示例
 
@@ -86,6 +72,32 @@
 
 - [meme_emoji wiki](https://github.com/anyliew/meme_emoji/wiki) 
 
+## 贡献者 ✨
+
+感谢这些了不起的人 ([emoji-key](https://allcontributors.org/emoji-key/#natural-language-processing)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://wangkailing151.com/"><img src="https://avatars.githubusercontent.com/u/97866915?v=4?s=100" width="100px;" alt="Loping151"/><br /><sub><b>Loping151</b></sub></a><br /><a href="https://github.com/anyliew/anyliew/meme_emoji/commits?author=Loping151" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/LRZ9712"><img src="https://avatars.githubusercontent.com/u/136188345?v=4?s=100" width="100px;" alt="tudou"/><br /><sub><b>tudou</b></sub></a><br /><a href="https://github.com/anyliew/anyliew/meme_emoji/commits?author=LRZ9712" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/xinghuan22"><img src="https://avatars.githubusercontent.com/xinghuan22?s=100" width="100px;" alt="xinghuan22"/><br /><sub><b>xinghuan22</b></sub></a><br /><a href="https://github.com/anyliew/anyliew/meme_emoji/commits?author=xinghuan22" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/MoonShadow1976"><img src="https://avatars.githubusercontent.com/MoonShadow1976?s=100" width="100px;" alt="MoonShadow1976"/><br /><sub><b>MoonShadow1976</b></sub></a><br /><a href="https://github.com/anyliew/anyliew/meme_emoji/issues?q=author%3AMoonShadow1976" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/KaedeharaLu"><img src="https://avatars.githubusercontent.com/KaedeharaLu?s=100" width="100px;" alt="KaedeharaLu"/><br /><sub><b>KaedeharaLu</b></sub></a><br /><a href="https://github.com/anyliew/anyliew/meme_emoji/commits?author=KaedeharaLu" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/AsadaFutaba"><img src="https://avatars.githubusercontent.com/AsadaFutaba?s=100" width="100px;" alt="AsadaFutaba"/><br /><sub><b>AsadaFutaba</b></sub></a><br /><a href="https://github.com/anyliew/anyliew/meme_emoji/commits?author=AsadaFutaba" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+本项目遵循 [all-contributors](https://github.com/all-contributors/all-contributors) 规范。
+
 ## 📝 反馈
 
 ### 🤔 issues
@@ -100,7 +112,7 @@
 * [进群注意事项](https://github.com/anyliew/meme_emoji/wiki/qq_group)
 
 <a href="https://qm.qq.com/q/KZFZGdWmyG">
-  <img src="./docs/picture/qq_group.jpg" />
+  <img src="D:\meme\meme_emoji\README.assets\qq_group.jpg" />
 </a>
 
 
@@ -109,7 +121,7 @@
 > 🚧欢迎投稿高清素材，看到一些有趣的素材图片会制作成表情更新到本仓库！
 >
 > 通过issues中的模板 “投稿素材” 进行投稿，如果能Pr则更加完美，实在是泰裤辣~
-> 
+>
 
 
 ## ⚖ 许可
@@ -117,10 +129,10 @@
 延续(copy) meme-generator 作者  MeetWq MIT 许可证 
 
 > MIT License https://github.com/MemeCrafters/meme-generator/blob/main/LICENSE
-> 
+>
 > MIT License https://github.com/anyliew/meme_emoji/blob/main/LICENSE
-> 
->chat.deepseek https://github.com/anyliew/meme_emoji/raw/main/docs/picture/chat.deepseek.png)
+>
+> chat.deepseek https://github.com/anyliew/meme_emoji/raw/main/docs/picture/chat.deepseek.png)
 
 
 ## 🔗 相关链接
@@ -131,16 +143,6 @@
 ### WIKI 文档
 - [meme-generator wiki](https://github.com/MemeCrafters/meme-generator/wiki)
 - [meme_emoji wiki](https://github.com/anyliew/meme_emoji/wiki)
-
-
-## 💐 鸣谢
-
-感谢以下开发者对 meme_emoji 仓库作出的贡献
-
-<a href="https://github.com/anyliew/meme_emoji/graphs/contributors">
-  <img src="./docs/picture/partner.jpg" />
-</a>
-
 
 ## ⭐ 支持本项目
 
@@ -153,35 +155,3 @@
 
 - 项目中的图片等资源均来自互联网，如有侵权请及时联系开发者，我们会尽快处理删除相关内容。
 
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://wangkailing151.com/"><img src="https://avatars.githubusercontent.com/u/97866915?v=4?s=100" width="100px;" alt="Loping151"/><br /><sub><b>Loping151</b></sub></a><br /><a href="https://github.com/anyliew/anyliew/meme_emoji/commits?author=Loping151" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/LRZ9712"><img src="https://avatars.githubusercontent.com/u/136188345?v=4?s=100" width="100px;" alt="tudou"/><br /><sub><b>tudou</b></sub></a><br /><a href="https://github.com/anyliew/anyliew/meme_emoji/commits?author=LRZ9712" title="Code">💻</a></td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td align="center" size="13px" colspan="7">
-        <img src="https://raw.githubusercontent.com/all-contributors/all-contributors-cli/1b8533af435da9854653492b1327a23a4dbd0a10/assets/logo-small.svg">
-          <a href="https://all-contributors.js.org/docs/en/bot/usage">Add your contributions</a>
-        </img>
-      </td>
-    </tr>
-  </tfoot>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

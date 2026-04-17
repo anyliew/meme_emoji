@@ -27,8 +27,45 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "xinghuan22",
+      "name": "xinghuan22",
+      "avatar_url": "https://avatars.githubusercontent.com/xinghuan22",
+      "profile": "https://github.com/xinghuan22",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "MoonShadow1976",
+      "name": "MoonShadow1976",
+      "avatar_url": "https://avatars.githubusercontent.com/MoonShadow1976",
+      "profile": "https://github.com/MoonShadow1976",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "KaedeharaLu",
+      "name": "KaedeharaLu",
+      "avatar_url": "https://avatars.githubusercontent.com/KaedeharaLu",
+      "profile": "https://github.com/KaedeharaLu",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "AsadaFutaba",
+      "name": "AsadaFutaba",
+      "avatar_url": "https://avatars.githubusercontent.com/AsadaFutaba",
+      "profile": "https://github.com/AsadaFutaba",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
-  "linkToUsage": true
+  "linkToUsage": true,
+  "badge": false
 }

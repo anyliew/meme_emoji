@@ -1,6 +1,6 @@
 <div align="center">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <img src="./docs/picture/logo.png" width=200 />
 
@@ -165,6 +165,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://wangkailing151.com/"><img src="https://avatars.githubusercontent.com/u/97866915?v=4?s=100" width="100px;" alt="Loping151"/><br /><sub><b>Loping151</b></sub></a><br /><a href="https://github.com/anyliew/anyliew/meme_emoji/commits?author=Loping151" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/LRZ9712"><img src="https://avatars.githubusercontent.com/u/136188345?v=4?s=100" width="100px;" alt="tudou"/><br /><sub><b>tudou</b></sub></a><br /><a href="https://github.com/anyliew/anyliew/meme_emoji/commits?author=LRZ9712" title="Code">💻</a></td>
     </tr>
   </tbody>
   <tfoot>

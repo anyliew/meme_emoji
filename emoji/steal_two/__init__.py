@@ -12,9 +12,9 @@ def steal_two(images: list[BuildImage], texts: list[str], args):
     img0 = images[0].convert("RGBA").circle().resize((131, 131))
     img1 = images[1].convert("RGBA").circle().resize((140, 140))
     img2 = images[2].convert("RGBA").circle().resize((125, 125))
-    frame.paste(img0, (253, 78), alpha=True)
-    frame.paste(img1, (11, 304), alpha=True)
-    frame.paste(img2, (532, 387), alpha=True)
+    frame.paste(img0, (253, 78), alpha=True, below=True)
+    frame.paste(img1, (11, 304), alpha=True, below=True)
+    frame.paste(img2, (532, 387), alpha=True, below=True)
     return frame.save_jpg()
 
 

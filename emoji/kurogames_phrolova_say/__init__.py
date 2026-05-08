@@ -1,21 +1,78 @@
 from datetime import datetime
 from pathlib import Path
+import random
 
 from pil_utils import BuildImage
+from pydantic import Field
 
 from meme_generator import add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.tags import MemeTags
+from meme_generator import (
+    MemeArgsModel,
+    MemeArgsType,
+    ParserArg,
+    ParserOption,
+)
 
 img_dir = Path(__file__).parent / "images"
 
+help_text = "图片编号，0=随机选择，1=第一张(1.png)，2=第二张(2.png)，3=第三张(3.png)，4=第四张(4.png)，5=第五张(5.png)"
 
-def kurogames_phrolova_say(images, texts: list[str], args):
+
+class Model(MemeArgsModel):
+    number: int = Field(0, description=help_text)
+
+
+args_type = MemeArgsType(
+    args_model=Model,
+    parser_options=[
+        ParserOption(
+            names=["-n", "--number"],
+            args=[ParserArg(name="number", value="int")],
+            help_text=help_text,
+        ),
+    ],
+)
+
+
+def kurogames_phrolova_say(images, texts: list[str], args: Model):
     text = texts[0]
-    frame = BuildImage.open(img_dir / "0.jpg")
+
+    # 图片文件列表（按索引顺序）
+    img_files = [
+        "1.png",  # 索引 0
+        "2.png",  # 索引 1
+        "3.png",  # 索引 2
+        "4.png",  # 索引 3
+        "5.png",  # 索引 4
+    ]
+    total_num = len(img_files)  # 5 张
+
+    # 根据参数选择图片编号
+    if args.number == 0:
+        img_index = random.randint(0, total_num - 1)
+    elif 1 <= args.number <= total_num:
+        img_index = args.number - 1
+    else:
+        raise ValueError(f"图片编号错误，请选择 1~{total_num} 或 0（随机）")
+
+    # 打开对应图片
+    frame = BuildImage.open(img_dir / img_files[img_index])
+
+    # 每张图片的文字区域坐标 (left, top, right, bottom)
+    text_areas = [
+        (1, 1, 990, 192),     # 1.png
+        (332, 60, 477, 144),  # 2.png
+        (322, 20, 478, 109),  # 3.png
+        (36, 20, 226, 110),   # 4.png
+        (0, 21, 248, 227),    # 5.png
+    ]
+
+    # 绘制文字
     try:
         frame.draw_text(
-            (1, 1, 990, 192),
+            text_areas[img_index],
             text,
             fill=(0, 0, 0),
             allow_wrap=True,
@@ -26,6 +83,7 @@ def kurogames_phrolova_say(images, texts: list[str], args):
         )
     except ValueError:
         raise TextOverLength(text)
+
     return frame.save_jpg()
 
 
@@ -37,6 +95,7 @@ add_meme(
     default_texts=["怪鸟在鸣啸，时间到了。"],
     keywords=["弗洛洛说"],
     tags=MemeTags.wuthering_waves,
+    args_type=args_type,
     date_created=datetime(2025, 6, 13),
-    date_modified=datetime(2025, 6, 13),
+    date_modified=datetime(2026, 5, 8),
 )

@@ -123,6 +123,13 @@
 > 通过issues中的模板 “投稿素材” 进行投稿，如果能Pr则更加完美，实在是泰裤辣~
 >
 
+## 💖 致谢
+
+感谢以下开源项目及作者的贡献：
+
+- **[meme-generator](https://github.com/MemeCrafters/meme-generator)** —— 表情包生成器
+- **[one-last-image](https://github.com/itorr/one-last-image)** —— 表情“卢浮宫”来源  
+- **[IdhagnBot](https://github.com/su226/IdhagnBot)** —— 表情“卢浮宫”代码参考
 
 ## ⚖ 许可
 

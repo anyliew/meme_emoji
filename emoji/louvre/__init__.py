@@ -22,7 +22,7 @@ from meme_generator.utils import make_png_or_gif
 
 """
 # 🧸 致谢 itorr/one-last-image 项目
-#
+# 🧸 致谢 su226/IdhagnBot 项目
 # 本项目参考并使用了 itorr/one-last-image 开源项目的算法和设计思路。
 # One Last Image 卢浮宫生成器是一个将赛璐珞风格动画截图或插画转换为 One Last Kiss
 # 封面风格的在线生成器，支持自定义线条处理方案、Kiss风格色彩映射、铅笔调子、水印等效果。
@@ -31,6 +31,7 @@ from meme_generator.utils import make_png_or_gif
 # 在线演示: https://lab.magiconch.com/one-last-image/
 #
 # 致谢 one-last-image 项目作者 itorr 卜卜口！
+# 感谢 su226/IdhagnBot 项目 提供了代码参考
 # 感谢 Q. 提供pycairo思路
 # 依赖说明：本插件需要安装 'pycairo' 库以生成 One Last Kiss 风格的彩色渐变。
 # 安装命令：pip install pycairo

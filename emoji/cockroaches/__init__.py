@@ -1,36 +1,51 @@
+# 导入必要的模块
 from datetime import datetime
 from pathlib import Path
 
-from pil_utils import BuildImage
-
-from meme_generator import MemeArgsModel, add_meme
-from meme_generator.exception import TextOverLength
-from meme_generator.utils import make_png_or_gif
+from PIL.Image import Image as IMG  # 导入PIL的Image类并重命名为IMG
+from pil_utils import BuildImage  # 导入用于构建和操作图像的BuildImage类
 from meme_generator.tags import MemeTags
 
+from meme_generator import add_meme  # 导入添加meme模板的函数
+from meme_generator.utils import save_gif  # 导入保存GIF的函数
+
+# 获取当前文件所在目录的路径，并拼接images子目录路径
 img_dir = Path(__file__).parent / "images"
 
+def cockroaches(images: list[BuildImage], texts, args):
 
-def cockroaches (images: list[BuildImage], texts: list[str], args: MemeArgsModel):
-    frame = BuildImage.open(img_dir / "0.png")
+    user_head = images[0].resize((115, 90), keep_ratio=True).convert("RGBA") #.circle()
+    
+    # 初始化帧列表，用于存储每一帧图像
+    frames: list[IMG] = []
 
-    def make(imgs: list[BuildImage]) -> BuildImage:
-        #头像尺寸
-        img = imgs[0].convert("RGBA").circle().resize((220, 168))
-        #头像坐标
-        return frame.copy().paste(img, (120, 78), alpha=True,below=True)
+    positions = [
+        (94, 95), (94, 95), (94, 95), (94, 95), (94, 95),  # 1-5
+    ]
 
-    return make_png_or_gif(images, make)
+    # 处理所有帧
+    for i in range(5):
+        frame_num = (i % 5) + 1
+        frame = BuildImage.open(img_dir / f"{frame_num}.png").convert("RGBA")
+        
+        # 创建一个新的图像，首先粘贴用户头像作为背景
+        new_frame = BuildImage.new("RGBA", frame.size)
+        new_frame.paste(user_head, positions[i], alpha=True)
+        
+        # 然后将原始帧内容粘贴到上面
+        new_frame.paste(frame, (0, 0), alpha=True)
+        
+        frames.append(new_frame.image)
 
+    # 将所有帧保存为GIF，帧间隔为0.06秒
+    return save_gif(frames, 0.09)
 
 add_meme(
-    "cockroaches",
-    cockroaches ,
-    min_images=1,
-    max_images=1,
-    min_texts=0,
-    max_texts=0,
-    keywords=["蟑螂","小强"],
+    "cockroaches",  # 模板的唯一标识符
+    cockroaches,  # 处理函数
+    min_images=1,  # 需要的最小图片数量
+    max_images=1,  # 需要的最大图片数量
+    keywords=["蟑螂","小强"],  # 搜索关键词
     date_created=datetime(2025, 7, 1),
-    date_modified=datetime(2025, 7, 1),
+    date_modified=datetime(2026, 6, 10),
 )

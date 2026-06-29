@@ -1,30 +1,20 @@
 from datetime import datetime
 from pathlib import Path
 import random
-
 from pil_utils import BuildImage
-
 from meme_generator import add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.tags import MemeTags
-
 img_dir = Path(__file__).parent / "images"
-
-
 def kurogames_roccia_holdsign(images, texts: list[str], args):
     text = texts[0]
-    
-    # 随机选择一张图片
     img_index = random.randint(0, 2)
     frame = BuildImage.open(img_dir / f"{img_index}.jpg")
-    
-    # 为每张图片设置不同的文字区域坐标
     text_areas = [
-        (313, 548, 623, 902),   # 图片0的坐标
-        (272, 477, 723, 812),    # 图片1的坐标
-        (339, 611, 717, 891)     # 图片2的坐标
+        (313, 548, 623, 902),   
+        (272, 477, 723, 812),    
+        (339, 611, 717, 891)     
     ]
-    
     try:
         frame.draw_text(
             text_areas[img_index],
@@ -39,8 +29,6 @@ def kurogames_roccia_holdsign(images, texts: list[str], args):
     except ValueError:
         raise TextOverLength(text)
     return frame.save_jpg()
-
-
 add_meme(
     "kurogames_roccia_holdsign",
     kurogames_roccia_holdsign,

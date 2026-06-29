@@ -5,16 +5,12 @@ from pil_utils import BuildImage
 from meme_generator.tags import MemeTags
 from meme_generator import add_meme
 from meme_generator.utils import save_gif
-
 img_dir = Path(__file__).parent / "images"
-
 def kurogames_roccia_draw(images: list[BuildImage], texts, args):
     user_head = images[0].convert("RGBA")
     frames: list[IMG] = []
-
     positions = [None] * 74
     resize_dimensions = [None] * 74
-
     positions[31] = (131, 265)
     positions[32] = (128, 262)
     positions[33] = (129, 261)
@@ -58,7 +54,6 @@ def kurogames_roccia_draw(images: list[BuildImage], texts, args):
     positions[71] = (172, 223)
     positions[72] = (172, 223)
     positions[73] = (172, 223)
-
     resize_dimensions[31] = (43, 35)
     resize_dimensions[32] = (49, 38)
     resize_dimensions[33] = (50, 39)
@@ -102,7 +97,6 @@ def kurogames_roccia_draw(images: list[BuildImage], texts, args):
     resize_dimensions[71] = (79, 55)
     resize_dimensions[72] = (79, 55)
     resize_dimensions[73] = (79, 55)
-
     for i in range(74):
         frame_num = i + 1
         frame = BuildImage.open(img_dir / f"{frame_num}.png").convert("RGBA")
@@ -113,7 +107,6 @@ def kurogames_roccia_draw(images: list[BuildImage], texts, args):
         new_frame.paste(frame, (0, 0), alpha=True)
         frames.append(new_frame.image)
     return save_gif(frames, 0.03)
-
 add_meme(
     "kurogames_roccia_draw",
     kurogames_roccia_draw,

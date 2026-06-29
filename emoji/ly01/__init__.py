@@ -1,12 +1,8 @@
 from datetime import datetime
 from pathlib import Path
-
 from meme_generator import add_meme
 from pil_utils import BuildImage
-
 img_dir = Path(__file__).parent / "images"
-
-
 def ly01(images: list[BuildImage], texts, args):
     frame = BuildImage.open(img_dir / "0.png")
     frame.paste(
@@ -15,8 +11,6 @@ def ly01(images: list[BuildImage], texts, args):
         images[0].convert("RGBA").circle().resize((235, 235)), (272, 243), alpha=True, below=True
     )
     return frame.save_jpg()
-
-
 add_meme(
     "ly01",
     ly01,

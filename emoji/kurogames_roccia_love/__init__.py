@@ -5,13 +5,10 @@ from pil_utils import BuildImage
 from meme_generator.tags import MemeTags
 from meme_generator import add_meme
 from meme_generator.utils import save_gif
-
 img_dir = Path(__file__).parent / "images"
-
 def kurogames_roccia_love(images: list[BuildImage], texts, args):
     user_head = images[0].convert("RGBA")
     frames: list[IMG] = []
-
     positions = [
         (106, 242), (105, 244), (103, 246), (102, 247), (101, 249),
         (100, 250), (99, 251), (98, 251), (98, 251), (97, 250),
@@ -21,7 +18,6 @@ def kurogames_roccia_love(images: list[BuildImage], texts, args):
         (111, 234), (111, 235), (111, 236), (110, 236), (109, 237),
         (108, 238), (107, 240), (106, 242)
     ]
-
     sizes = [
         (94, 57), (94, 56), (95, 54), (95, 53), (95, 51),
         (95, 50), (95, 49), (95, 49), (95, 49), (96, 50),
@@ -31,7 +27,6 @@ def kurogames_roccia_love(images: list[BuildImage], texts, args):
         (93, 61), (93, 61), (92, 60), (93, 60), (93, 60),
         (94, 59), (94, 58), (94, 57)
     ]
-
     for i in range(33):
         frame_num = i + 1
         frame = BuildImage.open(img_dir / f"{frame_num}.png").convert("RGBA")
@@ -41,9 +36,7 @@ def kurogames_roccia_love(images: list[BuildImage], texts, args):
         new_frame.paste(resized_head, positions[i], alpha=True)
         new_frame.paste(frame, (0, 0), alpha=True)
         frames.append(new_frame.image)
-
     return save_gif(frames, 0.03)
-
 add_meme(
     "kurogames_roccia_love",
     kurogames_roccia_love,

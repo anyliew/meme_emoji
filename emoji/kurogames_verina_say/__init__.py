@@ -1,16 +1,11 @@
 from datetime import datetime
 from pathlib import Path
-
 from pil_utils import BuildImage
-
 import random
 from meme_generator import add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.tags import MemeTags
-
 img_dir = Path(__file__).parent / "images"
-
-
 def kurogames_verina_say(images, texts: list[str], args):
     text = texts[0]
     image = random.choice(["0.png", "1.png"])
@@ -38,12 +33,9 @@ def kurogames_verina_say(images, texts: list[str], args):
                 lines_align="center",
                 font_families=["FZShaoEr-M11S"],
             )
-            
     except ValueError:
         raise TextOverLength(text)
     return frame.save_png()
-
-
 add_meme(
     "kurogames_verina_say",
     kurogames_verina_say,

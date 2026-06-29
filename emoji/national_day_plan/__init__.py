@@ -1,10 +1,8 @@
 from datetime import datetime
 from pathlib import Path
 import random
-
 from pil_utils import BuildImage
 from pydantic import Field
-
 from meme_generator import (
     MemeArgsModel,
     MemeArgsType,
@@ -15,17 +13,10 @@ from meme_generator import (
 from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
 from meme_generator.tags import MemeTags
-
 img_dir = Path(__file__).parent / "images"
-
-
 help_text = "图片编号，范围为 0~3，0为随机"
-
-
 class Model(MemeArgsModel):
     number: int = Field(0, description=help_text)
-
-
 args_type = MemeArgsType(
     args_model=Model,
     parser_options=[
@@ -36,9 +27,6 @@ args_type = MemeArgsType(
         ),
     ],
 )
-
-
-# 定义不同图片的参数配置
 frame_configs = [
     {
         "frame_file": "0.png",
@@ -48,43 +36,37 @@ frame_configs = [
         "font_families": ["FZXS14"]
     },
     {
-        "frame_file": "1.png",  # 鸣潮
+        "frame_file": "1.png",  
         "avatar_pos": (18, 12),
         "avatar_size": (125, 125),
         "text_bbox": (152, 12, 694, 137),
         "font_families": ["FZXS14"]
     },
     {
-        "frame_file": "2.png",  # 原神
+        "frame_file": "2.png",  
         "avatar_pos": (54, 25),
         "avatar_size": (220, 220),
         "text_bbox": (300, 25, 1000, 240),
         "font_families": ["FZXS14"]
     },
     {
-        "frame_file": "3.png",  # 使命召唤
+        "frame_file": "3.png",  
         "avatar_pos": (38, 16),
         "avatar_size": (118, 118),
         "text_bbox": (168, 16, 697, 133),
         "font_families": ["FZXS14"]
     }
 ]
-
-
 def national_day_plan(images: list[BuildImage], texts: list[str], args: Model):
-    total_num = len(frame_configs) - 1  # 0~3
-    
+    total_num = len(frame_configs) - 1  
     if args.number == 0:
-        # 随机选择配置
         config_index = random.randint(0, total_num)
     elif 1 <= args.number <= total_num + 1:
         config_index = args.number - 1
     else:
         from meme_generator.exception import MemeFeedback
         raise MemeFeedback(f"图片编号错误，请选择 0~{total_num + 1}")
-
     config = frame_configs[config_index]
-
     ta = "他"
     name = ta
     if texts:
@@ -93,14 +75,9 @@ def national_day_plan(images: list[BuildImage], texts: list[str], args: Model):
         info = args.user_infos[0]
         ta = "他" if info.gender == "male" else "她"
         name = info.name or ta
-
     text = f"{name}の国庆计划"
-
     def make(imgs: list[BuildImage]) -> BuildImage:
-        # 加载底图
         frame = BuildImage.open(img_dir / config["frame_file"])
-        
-        # 绘制文本
         try:
             frame.draw_text(
                 config["text_bbox"],
@@ -113,14 +90,9 @@ def national_day_plan(images: list[BuildImage], texts: list[str], args: Model):
             )
         except ValueError:
             raise TextOverLength(name)
-
-        # 处理头像
         img = imgs[0].convert("RGBA").circle().resize(config["avatar_size"])
         return frame.copy().paste(img, config["avatar_pos"], alpha=True)
-
     return make_jpg_or_gif(images, make)
-
-
 add_meme(
     "national_day_plan",
     national_day_plan,

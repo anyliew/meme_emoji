@@ -1,19 +1,13 @@
 from datetime import datetime
 from pathlib import Path
-
 from pil_utils import BuildImage
-
 from meme_generator import add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.tags import MemeTags
-
 img_dir = Path(__file__).parent / "images"
-
-
 def admission_letter(images, texts: list[str], args):
     text = texts[0]
     frame = BuildImage.open(img_dir / "0.png")
-    # frame.draw_rectangle((102, 195, 500, 217), outline=(255, 0, 0), width=2)
     try:
         frame.draw_text(
             (102, 195, 500, 217),
@@ -29,8 +23,6 @@ def admission_letter(images, texts: list[str], args):
     except ValueError:
         raise TextOverLength(text)
     return frame.save_jpg()
-
-
 add_meme(
     "admission_letter",
     admission_letter,

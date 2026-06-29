@@ -1,25 +1,19 @@
 from datetime import datetime
 from pathlib import Path
 import random
-
 from pil_utils import BuildImage
-
 from meme_generator import add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.tags import MemeTags
-
 img_dir = Path(__file__).parent / "images"
-
-
 def aima_say(images, texts: list[str], args):
     text = texts[0]
     img = random.choice(["0.jpg", "1.jpg"])
     frame = BuildImage.open(img_dir / img)
-    
     try:
         if img == "0.jpg":
             frame.draw_text(
-                (40, 35, 140, 210),  # 第一张图片的文字区域坐标
+                (40, 35, 140, 210),  
                 text,
                 fill=(0, 0, 0),
                 allow_wrap=True,
@@ -30,7 +24,7 @@ def aima_say(images, texts: list[str], args):
             )
         elif img == "1.jpg":
             frame.draw_text(
-                (360, 10, 490, 200),  # 第二张图片的文字区域坐标
+                (360, 10, 490, 200),  
                 text,
                 fill=(0, 0, 0),
                 allow_wrap=True,
@@ -42,8 +36,6 @@ def aima_say(images, texts: list[str], args):
     except ValueError:
         raise TextOverLength(text)
     return frame.save_jpg()
-
-
 add_meme(
     "aima_say",
     aima_say,

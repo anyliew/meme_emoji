@@ -1,18 +1,13 @@
 from datetime import datetime
 from pathlib import Path
-
 from pil_utils import BuildImage
 from PIL import ImageEnhance
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
-
 img_dir = Path(__file__).parent / "images"
-
-
 def jd_delivery_person(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
-
     ta = "他"
     name = ta
     if texts:
@@ -21,11 +16,9 @@ def jd_delivery_person(images: list[BuildImage], texts: list[str], args: MemeArg
         info = args.user_infos[0]
         ta = "他" if info.gender == "male" else "她"
         name = info.name or ta
-
     text = f"{name}"
     try:
-        # 先创建一个临时图片用于绘制旋转文本
-        text_img = BuildImage.new("RGBA", (930 - 353, 2104 - 1710))  # 计算文本框大小
+        text_img = BuildImage.new("RGBA", (930 - 353, 2104 - 1710))  
         text_img.draw_text(
             (0, 0, text_img.width, text_img.height),
             text,
@@ -35,28 +28,18 @@ def jd_delivery_person(images: list[BuildImage], texts: list[str], args: MemeArg
             min_fontsize=45,
             lines_align="left",
         )
-        text_img = text_img.rotate(-17, expand=True)  # 旋转 20°
-        frame.paste(text_img, (353, 1710), alpha=True)  # 粘贴到原图
+        text_img = text_img.rotate(-17, expand=True)  
+        frame.paste(text_img, (353, 1710), alpha=True)  
     except ValueError:
         raise TextOverLength(name)
-
     def make(imgs: list[BuildImage]) -> BuildImage:
         img = imgs[0].convert("RGBA").circle().resize((630, 630))
-
-        # 调整头像亮度（变暗）
-        # 使用 PIL 的 ImageEnhance.Brightness
         enhancer = ImageEnhance.Brightness(img.image)
-        img_darkened = enhancer.enhance(0.8)  # 0.8表示亮度调整为原来的80%
-
-        # 重新创建 BuildImage 对象
+        img_darkened = enhancer.enhance(0.8)  
         img = BuildImage(img_darkened)
-
         img = img.rotate(-20, expand=True)
         return frame.copy().paste(img, (420, 1000), alpha=True,below=True)
-
     return make_jpg_or_gif(images, make)
-
-
 add_meme(
     "jd_delivery_person",
     jd_delivery_person,

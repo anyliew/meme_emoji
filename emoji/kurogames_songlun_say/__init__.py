@@ -1,11 +1,8 @@
-# 文件: __init__.py
 from datetime import datetime
 from pathlib import Path
 import random
-
 from pil_utils import BuildImage
 from pydantic import Field
-
 from meme_generator import add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.tags import MemeTags
@@ -15,16 +12,10 @@ from meme_generator import (
     ParserArg,
     ParserOption,
 )
-
 img_dir = Path(__file__).parent / "images"
-
 help_text = "图片编号，0=随机选择，1=第一张(1.png)，2=第二张(2.png)"
-
-
 class Model(MemeArgsModel):
     number: int = Field(0, description=help_text)
-
-
 args_type = MemeArgsType(
     args_model=Model,
     parser_options=[
@@ -35,28 +26,21 @@ args_type = MemeArgsType(
         ),
     ],
 )
-
-
 def kurogames_songlun_say(images, texts: list[str], args: Model):
     text = texts[0]
-
     img_files = ["1.png", "2.png"]
     total_num = len(img_files)
-
     if args.number == 0:
         img_index = random.randint(0, total_num - 1)
     elif 1 <= args.number <= total_num:
         img_index = args.number - 1
     else:
         raise ValueError(f"图片编号错误，请选择 1~{total_num} 或 0（随机）")
-
     frame = BuildImage.open(img_dir / img_files[img_index])
-
     text_areas = [
         (283, 318, 760, 615),
         (280, 185, 942, 545),
     ]
-
     try:
         frame.draw_text(
             text_areas[img_index],
@@ -70,10 +54,7 @@ def kurogames_songlun_say(images, texts: list[str], args: Model):
         )
     except ValueError:
         raise TextOverLength(text)
-
     return frame.save_jpg()
-
-
 add_meme(
     "kurogames_songlun_say",
     kurogames_songlun_say,

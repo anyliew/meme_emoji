@@ -4,13 +4,10 @@ from PIL.Image import Image as IMG
 from pil_utils import BuildImage
 from meme_generator import add_meme
 from meme_generator.utils import save_gif
-
 img_dir = Path(__file__).parent / "images"
-
 def cockroaches_fly(images: list[BuildImage], texts, args):
     user_head = images[0].convert("RGBA")
     frames: list[IMG] = []
-
     positions = [
         (121, 307), (121, 307), (121, 307), (121, 306), (121, 306),
         (120, 304), (120, 304), (119, 302), (119, 302), (119, 298),
@@ -24,7 +21,6 @@ def cockroaches_fly(images: list[BuildImage], texts, args):
         (123, 115), (115, 108), (116, 108), (116, 99), (116, 99),
         (87, 71), (87, 71)
     ]
-
     sizes = [
         (4, 4), (4, 4), (4, 4), (5, 5), (5, 5),
         (6, 6), (6, 6), (9, 9), (9, 9), (9, 9),
@@ -38,24 +34,19 @@ def cockroaches_fly(images: list[BuildImage], texts, args):
         (203, 203), (220, 220), (220, 220), (220, 220), (220, 220),
         (277, 277), (277, 277)
     ]
-
     for i in range(61):
         frame_num = i + 1
         frame = BuildImage.open(img_dir / f"{frame_num}.png").convert("RGBA")
         new_frame = BuildImage.new("RGBA", frame.size)
-
         if 8 <= frame_num <= 59:
             idx = frame_num - 8
             pos = positions[idx]
             size = sizes[idx]
             resized_head = user_head.resize(size)
             new_frame.paste(resized_head, pos, alpha=True)
-
         new_frame.paste(frame, (0, 0), alpha=True)
         frames.append(new_frame.image)
-
     return save_gif(frames, 0.07)
-
 add_meme(
     "cockroaches_fly",
     cockroaches_fly,

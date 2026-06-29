@@ -1,19 +1,13 @@
 from datetime import datetime
 from pathlib import Path
-
 from pil_utils import BuildImage
-
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
 from meme_generator.tags import MemeTags
-
 img_dir = Path(__file__).parent / "images"
-
-
 def kurogames_songlun_finger(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.jpg")
-
     ta = "他"
     name = ta
     if texts:
@@ -22,7 +16,6 @@ def kurogames_songlun_finger(images: list[BuildImage], texts: list[str], args: M
         info = args.user_infos[0]
         ta = "他" if info.gender == "male" else "她"
         name = info.name or ta
-
     text = f"难道说 \n {name}是潮批?"
     try:
         frame.draw_text(
@@ -36,14 +29,10 @@ def kurogames_songlun_finger(images: list[BuildImage], texts: list[str], args: M
         )
     except ValueError:
         raise TextOverLength(name)
-
     def make(imgs: list[BuildImage]) -> BuildImage:
         img = imgs[0].convert("RGBA").circle().resize((300, 300))
         return frame.copy().paste(img, (100, 40), alpha=True)
-
     return make_jpg_or_gif(images, make)
-
-
 add_meme(
     "kurogames_songlun_finger",
     kurogames_songlun_finger,

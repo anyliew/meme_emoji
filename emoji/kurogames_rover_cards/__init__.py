@@ -1,18 +1,12 @@
 from datetime import datetime
 from pathlib import Path
-
 from pil_utils import BuildImage
-
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
-
 img_dir = Path(__file__).parent / "images"
-
-
 def kurogames_rover_cards(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
-
     ta = "他"
     name = ta
     if texts:
@@ -21,7 +15,6 @@ def kurogames_rover_cards(images: list[BuildImage], texts: list[str], args: Meme
         info = args.user_infos[0]
         ta = "他" if info.gender == "male" else "她"
         name = info.name or ta
-
     text = f"{name} 出来战斗吧"
     try:
         frame.draw_text(
@@ -35,15 +28,11 @@ def kurogames_rover_cards(images: list[BuildImage], texts: list[str], args: Meme
         )
     except ValueError:
         raise TextOverLength(name)
-
     def make(imgs: list[BuildImage]) -> BuildImage:
         img = imgs[0].convert("RGBA").resize((80, 80))
         img = img.rotate(30, expand=True)
         return frame.copy().paste(img, (417, 247), alpha=True, below=True)
-
     return make_jpg_or_gif(images, make)
-
-
 add_meme(
     "kurogames_rover_cards",
     kurogames_rover_cards,

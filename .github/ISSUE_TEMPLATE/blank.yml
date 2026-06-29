@@ -1,0 +1,12 @@
+name: 空白反馈
+description: 简洁的反馈模板
+title: "[反馈]: "
+labels: []
+body:
+  - type: textarea
+    id: content
+    attributes:
+      label: 内容
+      description: 请在此描述你的问题、建议或任何反馈
+    validations:
+      required: false

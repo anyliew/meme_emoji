@@ -1,24 +1,14 @@
-# 导入必要的模块
 from datetime import datetime
 from pathlib import Path
-
 from PIL.Image import Image as IMG
 from pil_utils import BuildImage
 from meme_generator.tags import MemeTags
-
 from meme_generator import add_meme
 from meme_generator.utils import save_gif
-
 img_dir = Path(__file__).parent / "images"
-
 def mihoyo_duantou(images: list[BuildImage], texts, args):
-    # 初始化帧列表
     frames: list[IMG] = []
-    
-    # 从输入图片获取用户头像
     user_img = images[0].convert("RGBA").circle()
-    
-    # 定义大小和位置列表
     size_list = [
         (90,90),(88,88),(88,88),(90,90),(208,208),
         (202,202),(196,196),(198,198),(190,190),(186,186),
@@ -46,7 +36,6 @@ def mihoyo_duantou(images: list[BuildImage], texts, args):
         (-1,-1),(-1,-1),(-1,-1),(-1,-1),(-1,-1),
         (-1,-1),(-1,-1),(-1,-1),(-1,-1),(-1,-1)
     ]
-    
     pos_list = [
         (326,173),(328,173),(328,173),(328,173),(328,184),
         (328,184),(328,185),(325,187),(325,185),(323,187),
@@ -74,35 +63,19 @@ def mihoyo_duantou(images: list[BuildImage], texts, args):
         (-1,-1),(-1,-1),(-1,-1),(-1,-1),(-1,-1),
         (-1,-1),(-1,-1),(-1,-1),(-1,-1),(-1,-1)
     ]
-
     for i in range(125):
         frame_num = i + 1
         frame = BuildImage.open(img_dir / f"{frame_num}.png").convert("RGBA")
         new_frame = BuildImage.new("RGBA", frame.size)
-        
-        # 先粘贴原始帧
         new_frame.paste(frame, (0, 0), alpha=True)
-
-        # 检查当前帧是否需要添加头像
         if size_list[i] != (-1, -1) and pos_list[i] != (-1, -1):
-            # 调整头像大小
             user_head = user_img.resize(size_list[i])
-                        
-            # 获取头像宽度和高度
             w, h = user_head.size
-            
-            # 计算实际粘贴位置（使圆心位于指定位置）
-            # 指定位置是圆心，所以需要减去半径得到左上角坐标
             x = pos_list[i][0] - w // 2
             y = pos_list[i][1] - h // 2
-            # 再粘贴头像
             new_frame.paste(user_head, (x,y), alpha=True)
-        
-        
         frames.append(new_frame.image)
-
     return save_gif(frames, 0.06)
-
 add_meme(
     "mihoyo_duantou",
     mihoyo_duantou,

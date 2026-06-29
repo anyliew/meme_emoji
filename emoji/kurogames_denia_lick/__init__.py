@@ -5,9 +5,7 @@ from pil_utils import BuildImage
 from meme_generator.tags import MemeTags
 from meme_generator import add_meme
 from meme_generator.utils import save_gif
-
 img_dir = Path(__file__).parent / "images"
-
 positions = [
     (45, 299), (45, 297), (44, 295), (43, 293), (41, 292),
     (39, 292), (37, 291), (35, 292), (34, 293), (31, 296),
@@ -15,7 +13,6 @@ positions = [
     (32, 310), (33, 311), (35, 311), (37, 311), (39, 311),
     (41, 309), (43, 306), (45, 304), (45, 302)
 ]
-
 sizes = [
     (153, 153), (153, 153), (153, 153), (153, 153), (153, 153),
     (153, 153), (153, 153), (153, 153), (153, 153), (153, 153),
@@ -23,7 +20,6 @@ sizes = [
     (153, 153), (153, 153), (153, 153), (153, 153), (153, 153),
     (153, 153), (153, 153), (153, 153), (153, 153)
 ]
-
 def kurogames_denia_lick(images: list[BuildImage], texts, args):
     frames: list[IMG] = []
     for i in range(24):
@@ -34,7 +30,6 @@ def kurogames_denia_lick(images: list[BuildImage], texts, args):
         new_frame.paste(frame, (0, 0), alpha=True)
         frames.append(new_frame.image)
     return save_gif(frames, 0.04)
-
 add_meme(
     "kurogames_denia_lick",
     kurogames_denia_lick,

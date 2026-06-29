@@ -1,27 +1,19 @@
 from datetime import datetime
 from pathlib import Path
 import random
-
 from pil_utils import BuildImage
-
 from meme_generator import add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.tags import MemeTags
-
 img_dir = Path(__file__).parent / "images"
-
-
 def kurogames_iuno_holdsign(images, texts: list[str], args):
     text = texts[0]
-    # 随机选择两张图片中的一张
     image_choice = random.choice(["0.png", "1.png"])
     frame = BuildImage.open(img_dir / image_choice)
-    
     try:
         if image_choice == "0.png":
-            # 第一张图片的文字坐标
             frame.draw_text(
-                (249, 577, 768, 952),  # 第一张图片的文字区域坐标
+                (249, 577, 768, 952),  
                 text,
                 fill=(0, 0, 0),
                 allow_wrap=True,
@@ -31,9 +23,8 @@ def kurogames_iuno_holdsign(images, texts: list[str], args):
                 font_families=["FZKaTong-M19S"],
             )
         else:
-            # 第二张图片的文字坐标
             frame.draw_text(
-                (273, 521, 726, 906),  # 第二张图片的文字区域坐标（请根据实际图片调整）
+                (273, 521, 726, 906),  
                 text,
                 fill=(0, 0, 0),
                 allow_wrap=True,
@@ -45,8 +36,6 @@ def kurogames_iuno_holdsign(images, texts: list[str], args):
     except ValueError:
         raise TextOverLength(text)
     return frame.save_jpg()
-
-
 add_meme(
     "kurogames_iuno_holdsign",
     kurogames_iuno_holdsign,

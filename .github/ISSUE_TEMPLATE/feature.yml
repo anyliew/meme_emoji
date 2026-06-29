@@ -1,43 +1,37 @@
 name: 素材投稿
-description: 对本项目提出一个素材投稿
+description: 提交新的表情包素材建议
 title: "[素材投稿]: "
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        感谢提出素材投稿，我们将仔细考虑能否做成一个表情包！
+        感谢您的投稿！请填写以下信息。
   - type: textarea
-    id: related-problem
+    id: source
     attributes:
-      label: 你的素材投稿图片出自哪里，表达了什么内容
-      description: 清晰并简洁地描述素材来源是什么，例如图片的角色出自库洛制作的游戏《鸣潮》的登场角色菲比，表达了恪守教义、自我约束的圣职者，仍然存有着为所爱之物欢欣雀跃的真挚之心。
-    validations:
-      required: false
-  - type: textarea
-    id: desired-solution
-    attributes:
-      label: 你希望看到做成怎样的表情包？
-      description: 清晰并简洁地描述你希望发生的事情。
+      label: 素材来源及内容说明
+      description: 图片出处、角色、表达的含义等
+      placeholder: 例如：来自《鸣潮》角色菲比，体现自我约束但内心真挚
     validations:
       required: true
   - type: textarea
-    id: alternatives
+    id: idea
     attributes:
-      label: 你是否检查meme-generator和meme-generator-contrib存在相同或者类似的表情包？
-      description: 清晰并简洁地描述你是否检查过。
+      label: 希望制作的表情包效果
+      description: 您期望的表情包形式或文字
     validations:
-      required: false
+      required: true
   - type: textarea
-    id: additional-context
+    id: extra
     attributes:
-      label: 你有考虑过投稿可能被鸽，等待时间长？毕竟Anyliew很爱躺平歇逼~
-      description: 在此处添加有关功能请求的任何其他上下文或截图。
+      label: 补充说明（可选）
+      description: 是否检查过已有同类素材，或其他想法
     validations:
       required: false
   - type: checkboxes
     attributes:
-      label: 意向参与投稿贡献
+      label: 参与贡献
       options:
-        - label: 我有意向参与meme_emoji的投稿素材制作实现有趣的表情包并将代码以及素材贡献到https://github.com/anyliew/meme_emoji仓库里！
+        - label: 我愿意参与制作并提交代码/素材
           required: false

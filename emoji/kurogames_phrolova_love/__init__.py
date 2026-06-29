@@ -5,22 +5,17 @@ from pil_utils import BuildImage
 from meme_generator.tags import MemeTags
 from meme_generator import add_meme
 from meme_generator.utils import save_gif
-
 img_dir = Path(__file__).parent / "images"
-
 def kurogames_phrolova_love(images: list[BuildImage], texts, args):
     user_head = images[0].convert("RGBA")
     frames: list[IMG] = []
-
     positions = [
         (76, 233), (77, 236), (78, 243), (77, 252), (74, 260),
         (72, 263), (69, 263), (69, 261), (70, 256), (76, 252),
         (79, 244), (78, 235), (78, 233), (78, 238), (77, 249),
         (76, 263), (72, 264), (69, 263), (66, 259), (70, 251)
     ]
-
     sizes = [(160, 70)] * 20
-
     for i in range(20):
         frame_num = i + 1
         frame = BuildImage.open(img_dir / f"{frame_num}.png").convert("RGBA")
@@ -30,9 +25,7 @@ def kurogames_phrolova_love(images: list[BuildImage], texts, args):
         new_frame.paste(resized_head, positions[i], alpha=True)
         new_frame.paste(frame, (0, 0), alpha=True)
         frames.append(new_frame.image)
-
     return save_gif(frames, 0.03)
-
 add_meme(
     "kurogames_phrolova_love",
     kurogames_phrolova_love,

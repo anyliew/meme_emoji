@@ -1,19 +1,13 @@
 from datetime import datetime
 from pathlib import Path
-
 from pil_utils import BuildImage
-
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
 from meme_generator.tags import MemeTags
-
 img_dir = Path(__file__).parent / "images"
-
-
 def mihoyo_sigewinne_fingered(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
-
     ta = "他"
     name = ta
     if texts:
@@ -22,7 +16,6 @@ def mihoyo_sigewinne_fingered(images: list[BuildImage], texts: list[str], args: 
         info = args.user_infos[0]
         ta = "他" if info.gender == "male" else "她"
         name = info.name or ta
-
     text = f"希格雯:这{name}没救了\n希格雯:快拉去璃月往生堂\n希格雯:让胡堂主埋了吧"
     try:
         frame.draw_text(
@@ -36,13 +29,10 @@ def mihoyo_sigewinne_fingered(images: list[BuildImage], texts: list[str], args: 
         )
     except ValueError:
         raise TextOverLength(name)
-
     def make(imgs: list[BuildImage]) -> BuildImage:
         img = imgs[0].convert("RGBA").resize((144, 144)).circle()
         return frame.copy().paste(img, (12, 47), alpha=True, below=True ) 
     return make_jpg_or_gif(images, make)
-
-
 add_meme(
     "mihoyo_sigewinne_fingered",
     mihoyo_sigewinne_fingered,

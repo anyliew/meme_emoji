@@ -1,18 +1,12 @@
 from datetime import datetime
 from pathlib import Path
-
 from pil_utils import BuildImage
-
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
-
 img_dir = Path(__file__).parent / "images"
-
-
 def spend_christmas(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
-
     ta = "他"
     name = ta
     if texts:
@@ -21,9 +15,7 @@ def spend_christmas(images: list[BuildImage], texts: list[str], args: MemeArgsMo
         info = args.user_infos[0]
         ta = "他" if info.gender == "male" else "她"
         name = info.name or ta
-
     text = f"{name}❤️,我们一起过圣诞"
-    #{name}挚爱❤️👩‍❤️‍💋‍👨{name}愛のカップ。
     try:
         frame.draw_text(
             (173, 193, 728, 374),
@@ -34,14 +26,10 @@ def spend_christmas(images: list[BuildImage], texts: list[str], args: MemeArgsMo
         )
     except ValueError:
         raise TextOverLength(name)
-
     def make(imgs: list[BuildImage]) -> BuildImage:
         img = imgs[0].convert("RGBA").circle().resize((255, 255))
         return frame.copy().paste(img, (120, 535), alpha=True, below=True)
-
     return make_jpg_or_gif(images, make)
-
-
 add_meme(
     "spend_christmas",
     spend_christmas,

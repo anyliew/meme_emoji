@@ -1,12 +1,8 @@
 from datetime import datetime
 from pathlib import Path
-
 from pil_utils import BuildImage
 from meme_generator import add_meme
-
 img_dir = Path(__file__).parent / "images"
-
-
 def steal_two(images: list[BuildImage], texts: list[str], args):
     frame = BuildImage.open(img_dir / "0.png")
     img0 = images[0].convert("RGBA").circle().resize((131, 131))
@@ -16,8 +12,6 @@ def steal_two(images: list[BuildImage], texts: list[str], args):
     frame.paste(img1, (11, 304), alpha=True, below=True)
     frame.paste(img2, (532, 387), alpha=True, below=True)
     return frame.save_jpg()
-
-
 add_meme(
     "steal_two",
     steal_two,

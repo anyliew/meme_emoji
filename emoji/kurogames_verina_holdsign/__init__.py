@@ -1,10 +1,8 @@
 from datetime import datetime
 from pathlib import Path
 import random
-
 from pil_utils import BuildImage
 from pydantic import Field
-
 from meme_generator import (
     MemeArgsModel,
     MemeArgsType,
@@ -13,17 +11,10 @@ from meme_generator import (
     add_meme,
 )
 from meme_generator.exception import TextOverLength, MemeFeedback
-
 img_dir = Path(__file__).parent / "images"
-
-
 help_text = "图片编号，范围为 1~5"
-
-
 class Model(MemeArgsModel):
     number: int = Field(0, description=help_text)
-
-
 args_type = MemeArgsType(
     args_model=Model,
     parser_options=[
@@ -34,19 +25,15 @@ args_type = MemeArgsType(
         ),
     ],
 )
-
-
 def kurogames_verina_holdsign(images, texts: list[str], args: Model):
     text = texts[0]
-    
     total_num = 5
     if args.number == 0:
-        image = random.choice(["0.png", "1.png", "2.png", "3.png"]) # "4.png" 不从随机中出
+        image = random.choice(["0.png", "1.png", "2.png", "3.png"]) 
     elif 1 <= args.number <= total_num:
         image = f"{args.number - 1}.png"
     else:
         raise MemeFeedback(f"图片编号错误，请选择 1~{total_num}")
-    
     frame = BuildImage.open(img_dir / image)
     try:
         if image == "0.png":
@@ -110,8 +97,6 @@ def kurogames_verina_holdsign(images, texts: list[str], args: Model):
     except ValueError:
         raise TextOverLength(text)
     return frame.save_png()
-
-
 add_meme(
     "kurogames_verina_holdsign",
     kurogames_verina_holdsign,

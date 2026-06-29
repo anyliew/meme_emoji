@@ -1,19 +1,13 @@
 from datetime import datetime
 from pathlib import Path
-
 from pil_utils import BuildImage
-
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
 from meme_generator.tags import MemeTags
-
 img_dir = Path(__file__).parent / "images"
-
-
 def mihoyo_liuwei_noise(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
-
     ta = "他"
     name = ta
     if texts:
@@ -22,7 +16,6 @@ def mihoyo_liuwei_noise(images: list[BuildImage], texts: list[str], args: MemeAr
         info = args.user_infos[0]
         ta = "他" if info.gender == "male" else "她"
         name = info.name or ta
-
     text = f"正常人{name}"
     try:
         frame.draw_text(
@@ -36,13 +29,10 @@ def mihoyo_liuwei_noise(images: list[BuildImage], texts: list[str], args: MemeAr
         )
     except ValueError:
         raise TextOverLength(name)
-
     def make(imgs: list[BuildImage]) -> BuildImage:
         img = imgs[0].convert("RGBA").resize((145, 145)).circle()
         return frame.copy().paste(img, (31, 252), alpha=True ) 
     return make_jpg_or_gif(images, make)
-
-
 add_meme(
     "mihoyo_liuwei_noise",
     mihoyo_liuwei_noise,

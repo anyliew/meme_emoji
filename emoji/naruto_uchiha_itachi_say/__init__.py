@@ -1,15 +1,9 @@
 from datetime import datetime
 from pathlib import Path
-
 from pil_utils import BuildImage
-
 from meme_generator import add_meme
 from meme_generator.exception import TextOverLength
-
-
 img_dir = Path(__file__).parent / "images"
-
-
 def naruto_uchiha_itachi_say(images, texts: list[str], args):
     text = texts[0]
     frame = BuildImage.open(img_dir / "0.png")
@@ -26,8 +20,6 @@ def naruto_uchiha_itachi_say(images, texts: list[str], args):
     except ValueError:
         raise TextOverLength(text)
     return frame.save_jpg()
-
-
 add_meme(
     "naruto_uchiha_itachi_say",
     naruto_uchiha_itachi_say,

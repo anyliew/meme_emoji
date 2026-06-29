@@ -16,7 +16,7 @@
 >
 > 请注意，本仓库的内容不支持Rust
 >
-> Rust的用户请移步[meme_emoji_rust](https://github.com/anyliew/meme_emoji_rust) 
+> Rust的用户请移步[meme-emoji](https://github.com/anyliew/meme-emoji) 
 >
 > 仅支持以下特定版本的依赖库：
 >
@@ -88,12 +88,12 @@
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/MoonShadow1976"><img src="https://avatars.githubusercontent.com/MoonShadow1976?s=100" width="100px;" alt="MoonShadow1976"/><br /><sub><b>MoonShadow1976</b></sub></a><br /><a href="https://github.com/anyliew/anyliew/meme_emoji/issues?q=author%3AMoonShadow1976" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/KaedeharaLu"><img src="https://avatars.githubusercontent.com/KaedeharaLu?s=100" width="100px;" alt="KaedeharaLu"/><br /><sub><b>KaedeharaLu</b></sub></a><br /><a href="https://github.com/anyliew/anyliew/meme_emoji/commits?author=KaedeharaLu" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/AsadaFutaba"><img src="https://avatars.githubusercontent.com/AsadaFutaba?s=100" width="100px;" alt="AsadaFutaba"/><br /><sub><b>AsadaFutaba</b></sub></a><br /><a href="https://github.com/anyliew/anyliew/meme_emoji/commits?author=AsadaFutaba" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/xiih"><img src="https://avatars.githubusercontent.com/xiih?s=100" width="100px;" alt="xiih"/><br /><sub><b>xiih</b></sub></a><br /><a href="https://github.com/anyliew/anyliew/meme_emoji/commits?author=xiih" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 本项目遵循 [all-contributors](https://github.com/all-contributors/all-contributors) 规范。
@@ -106,14 +106,6 @@
 
 单个表情有问题反馈请附带日志和截图
 答复受限网络没那么快及时处理
-
-### 🐧QQ Group
-
-* [进群注意事项](https://github.com/anyliew/meme_emoji/wiki/qq_group)
-
-<a href="https://qm.qq.com/q/KZFZGdWmyG">
-  <img src="D:\meme\meme_emoji\README.assets\qq_group.jpg" />
-</a>
 
 
 ## 🥳 投稿

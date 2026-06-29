@@ -1,0 +1,41 @@
+name: 侵权删除请求
+description: 如果项目中的图片、音频或其他资源侵犯了您的版权，请在此提交删除请求。
+title: "[侵权删除]: "
+labels: ["copyright"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **声明**：项目中的资源均来自互联网，仅供学习交流。如您认为相关内容侵犯了您的权益，请填写以下信息，我们会尽快核实并删除。
+  - type: input
+    id: resource_url
+    attributes:
+      label: 侵权资源链接（或文件路径）
+      description: 请提供项目中该资源的具体位置（URL或代码路径）
+      placeholder: 例如：assets/images/example.png
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: 原始来源链接（证明所有权的公开地址）
+      description: 请提供您拥有该版权的公开链接（如您的官网、作品页面等）
+      placeholder: https://your-site.com/your-work
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 详细说明
+      description: 请简要描述侵权情况，如资源类型、您的身份等
+      placeholder: 这张图片是我原创的，首发于……
+    validations:
+      required: false
+  - type: input
+    id: contact
+    attributes:
+      label: 联系方式（可选）
+      description: 方便我们与您沟通处理进度
+      placeholder: 邮箱或社交媒体
+    validations:
+      required: false

@@ -19,8 +19,8 @@ add_meme(
     max_images=1,
     min_texts=0,
     max_texts=1,
-    keywords=["和维里奈合影"],
+    keywords=["和维里奈合影","和小维合影"],
     tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 9, 2),
-    date_modified=datetime(2025, 9, 2),
+    date_modified=datetime(2026, 7, 21),
 )

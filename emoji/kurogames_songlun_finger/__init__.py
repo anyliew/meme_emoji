@@ -41,7 +41,7 @@ add_meme(
     min_texts=0,
     max_texts=1,
     keywords=["松伦指","潮批"],
-    tags=MemeTags.genshin,
+    tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 7, 1),
-    date_modified=datetime(2025, 7, 1),
+    date_modified=datetime(2026, 7, 21),
 )

@@ -41,7 +41,7 @@ add_meme(
     min_texts=0,
     max_texts=1,
     keywords=["松伦晚餐","松伦哥晚餐"],
-    tags=MemeTags.genshin,
+    tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 9, 2),
-    date_modified=datetime(2025, 9, 2),
+    date_modified=datetime(2026, 7, 21),
 )

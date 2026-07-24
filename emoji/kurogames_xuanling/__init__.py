@@ -1,0 +1,26 @@
+from datetime import datetime
+from pathlib import Path
+from pil_utils import BuildImage
+from meme_generator import MemeArgsModel, add_meme
+from meme_generator.exception import TextOverLength
+from meme_generator.utils import make_png_or_gif
+from meme_generator.tags import MemeTags
+img_dir = Path(__file__).parent / "images"
+def kurogames_xuanling(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+    frame = BuildImage.open(img_dir / "0.png")
+    def make(imgs: list[BuildImage]) -> BuildImage:
+        img = imgs[0].convert("RGBA").circle().resize((329, 329))
+        return frame.copy().paste(img, (93, 95), alpha=True,below=True)
+    return make_png_or_gif(images, make)
+add_meme(
+    "kurogames_xuanling",
+    kurogames_xuanling,
+    min_images=1,
+    max_images=1,
+    min_texts=0,
+    max_texts=1,
+    keywords=["玄翎"],
+    tags=MemeTags.wuthering_waves,
+    date_created=datetime(2026, 7, 16),
+    date_modified=datetime(2026, 7, 16),
+)

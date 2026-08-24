@@ -14,7 +14,7 @@ from meme_generator import (
 )
 
 img_dir = Path(__file__).parent / "images"
-help_text = "图片编号，0=随机选择，1=第一张(1.png)，2=第二张(2.png)，3=第三张(3.png)"
+help_text = "图片编号，0=随机选择，1=第一张(1.png)，2=第二张(2.png)"
 
 class Model(MemeArgsModel):
     number: int = Field(0, description=help_text)
@@ -30,12 +30,11 @@ args_type = MemeArgsType(
     ],
 )
 
-def mygo_togawa_sakiko_say(images, texts: list[str], args: Model):
+def deepseek_say(images, texts: list[str], args: Model):
     text = texts[0]
     img_files = [
         "1.png",
         "2.png",
-        "3.png",
     ]
     total_num = len(img_files)
     if args.number == 0:
@@ -46,10 +45,11 @@ def mygo_togawa_sakiko_say(images, texts: list[str], args: Model):
         raise ValueError(f"图片编号错误，请选择 1~{total_num} 或 0（随机）")
 
     frame = BuildImage.open(img_dir / img_files[img_index])
+
+    # 更新坐标：1.png 和 2.png 对应的文字区域
     text_areas = [
-        (1483, 172, 2318, 438),  # 1.png
-        (1145, 101, 1893, 420),  # 2.png
-        (1403, 99, 2374, 1009),  # 3.png
+        (59, 57, 569, 336),   # 1.png
+        (139, 140, 653, 427), # 2.png
     ]
 
     font_params = {
@@ -69,13 +69,13 @@ def mygo_togawa_sakiko_say(images, texts: list[str], args: Model):
     return frame.save_jpg()
 
 add_meme(
-    "mygo_togawa_sakiko_say",
-    mygo_togawa_sakiko_say,
+    "deepseek_say",
+    deepseek_say,
     min_texts=1,
     max_texts=1,
-    default_texts=["我从没觉得玩乐队开心过……"],
-    keywords=["丰川祥子说", "祥子说"],
+    default_texts=["正在思考中……"],
+    keywords=["Deepseek说", "deepseek说","鲸鱼娘说"],
     args_type=args_type,
-    date_created=datetime(2026, 8, 13),
-    date_modified=datetime(2026, 8, 13),
+    date_created=datetime(2026, 8, 24),
+    date_modified=datetime(2026, 8, 24),
 )

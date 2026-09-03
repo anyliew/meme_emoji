@@ -3,7 +3,6 @@ from pathlib import Path
 from pil_utils import BuildImage
 from meme_generator import add_meme
 from meme_generator.exception import TextOverLength
-from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
 def admission_letter(images, texts: list[str], args):
     text = texts[0]
@@ -30,7 +29,6 @@ add_meme(
     max_texts=1,
     default_texts=["Anyliew"],
     keywords=["录取通知书"],
-    tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 8, 25),
     date_modified=datetime(2025, 8, 25),
 )

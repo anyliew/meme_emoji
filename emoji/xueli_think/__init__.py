@@ -4,7 +4,6 @@ from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_png_or_gif
-from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
 def xueli_think(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
@@ -40,7 +39,6 @@ add_meme(
     min_texts=0,
     max_texts=1,
     keywords=["雪莉想", "雪梨想", "橘雪莉想"],
-    tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 10, 5),
     date_modified=datetime(2025, 10, 5),
 )

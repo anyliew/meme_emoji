@@ -46,14 +46,18 @@ def deepseek_say(images, texts: list[str], args: Model):
 
     frame = BuildImage.open(img_dir / img_files[img_index])
 
-    # 更新坐标：1.png 和 2.png 对应的文字区域
     text_areas = [
-        (59, 57, 569, 336),   # 1.png
-        (139, 140, 653, 427), # 2.png
+        (59, 57, 569, 336),
+        (139, 140, 653, 427),
+    ]
+
+    colors = [
+        (4, 21, 70),
+        (16, 49, 94),
     ]
 
     font_params = {
-        "fill": (0, 0, 0),
+        "fill": colors[img_index],
         "allow_wrap": True,
         "max_fontsize": 180,
         "min_fontsize": 10,

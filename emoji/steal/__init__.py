@@ -8,8 +8,8 @@ img_dir = Path(__file__).parent / "images"
 def steal(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
     def make(imgs: list[BuildImage]) -> BuildImage:
-        img = imgs[0].convert("RGBA").circle().resize((182, 182))
-        return frame.copy().paste(img, (24, 42), alpha=True, below=True)
+        img = imgs[0].convert("RGBA").circle().resize((376, 376))
+        return frame.copy().paste(img, (61, 34), alpha=True, below=True)
     return make_png_or_gif(images, make)
 add_meme(
     "steal",
@@ -18,5 +18,5 @@ add_meme(
     max_images=1,
     keywords=["偷"],
     date_created=datetime(2026, 3, 31),
-    date_modified=datetime(2026, 4, 1),
+    date_modified=datetime(2026, 9, 4),
 )

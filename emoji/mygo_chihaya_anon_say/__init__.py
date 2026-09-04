@@ -10,14 +10,14 @@ def mygo_chihaya_anon_say(images, texts: list[str], args):
     frame = BuildImage.open(img_dir / "0.png")
     try:
         frame.draw_text(
-            (80, 74, 315, 219),
+            (205, 166, 912, 557),
             text,
             fill=(0, 0, 0),
             allow_wrap=True,
-            max_fontsize=150,
+            max_fontsize=1150,
             min_fontsize=10,
             lines_align="left",
-            font_families=["FZKaTong-M19S"],
+            font_families=["FZShaoEr-M11S"],
         )
     except ValueError:
         raise TextOverLength(text)
@@ -30,5 +30,5 @@ add_meme(
     default_texts=["诶？！！！等……等等等，是一辈子喔？"],
     keywords=["千早爱音说"],
     date_created=datetime(2026, 8, 13),
-    date_modified=datetime(2026, 8, 13),
+    date_modified=datetime(2026, 9, 4),
 )

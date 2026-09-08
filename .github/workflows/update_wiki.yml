@@ -31,32 +31,28 @@ jobs:
         with:
           python-version: "3.10"
 
-      # ---------- 安装系统依赖 ----------
       - name: Install system dependencies (fonts & cairo)
         run: |
           sudo apt update
           sudo apt install -y \
             fonts-noto-color-emoji \
             libgl1 libglx-mesa0 libgl1-mesa-dri libegl1 libegl-mesa0 \
-            libcairo2-dev   # 这是 pycairo 的系统依赖
+            libcairo2-dev
 
-      # ---------- 安装 Python 依赖 ----------
       - name: Install Python packages
         run: |
           pip install --upgrade pip
-          pip install "meme_generator<0.2.0" filetype pillow pycairo
+          pip install meme_generator==0.1.14 filetype pillow pycairo
+          pip install "pydantic<2.0"
 
-      # ---------- 配置 meme_generator ----------
       - name: Configure meme_generator
         run: |
           mkdir -p ~/.config/meme_generator
           echo -e "[meme]\nload_builtin_memes = false\nmeme_dirs = [\"$GITHUB_WORKSPACE/emoji\"]" > ~/.config/meme_generator/config.toml
 
-      # ---------- 生成表情列表 ----------
       - name: Generate emoji list
         run: |
           python3 wiki/update_meme_list.py
-          # 假设脚本生成 wiki/wiki_emoji_list.md，将其重命名为标准名称
           if [ -f "wiki/wiki_emoji_list.md" ]; then
             mv wiki/wiki_emoji_list.md wiki/emoji_list.md
           else
@@ -64,21 +60,16 @@ jobs:
             exit 1
           fi
 
-      # ---------- 生成关键词列表 ----------
       - name: Generate keywords
         run: |
-          # 备份现有文件（用于检测变化）
           if [ -f "wiki/emoji_keywords.md" ]; then
             cp wiki/emoji_keywords.md wiki/emoji_keywords.md.backup
           fi
           python3 docs/meme_keywords.py
-          # 如果脚本生成在 docs/，则移动到 wiki/
           if [ -f "docs/meme_keywords.md" ]; then
             mv docs/meme_keywords.md wiki/emoji_keywords.md
           fi
-          # 检查是否变化（可选，但实际提交由 git diff 决定）
 
-      # ---------- 提交并推送 Wiki ----------
       - name: Commit and push to Wiki
         run: |
           cd wiki
@@ -92,7 +83,6 @@ jobs:
             git push origin master
           fi
 
-      # ---------- 清理备份文件 ----------
       - name: Cleanup
         if: always()
         run: |

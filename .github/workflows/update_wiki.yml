@@ -31,7 +31,7 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Install system dependencies (fonts & cairo)
+      - name: Install system dependencies
         run: |
           sudo apt update
           sudo apt install -y \
@@ -53,10 +53,10 @@ jobs:
       - name: Generate emoji list
         run: |
           python3 wiki/update_meme_list.py
-          if [ -f "wiki/wiki_emoji_list.md" ]; then
-            mv wiki/wiki_emoji_list.md wiki/emoji_list.md
+          if [ -f "wiki/表情列表.md" ]; then
+            mv "wiki/表情列表.md" "wiki/emoji_list.md"
           else
-            echo "ERROR: wiki/wiki_emoji_list.md not generated!" >&2
+            echo "ERROR: wiki/表情列表.md not generated!" >&2
             exit 1
           fi
 

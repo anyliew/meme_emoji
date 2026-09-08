@@ -1,0 +1,103 @@
+name: Update Wiki (Emoji List & Keywords)
+
+permissions:
+  contents: write   # 用于推送主仓库和 Wiki
+
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "emoji/**"
+  workflow_dispatch:   # 手动触发
+
+jobs:
+  update:
+    runs-on: ubuntu-22.04
+    steps:
+      # -------- 检出代码 --------
+      - name: Checkout main repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # 完整历史（方便比较）
+
+      - name: Checkout wiki repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}.wiki
+          path: wiki
+
+      # -------- 环境准备 --------
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install "meme_generator<0.2.0" filetype pillow
+
+      - name: Install fonts (for meme_generator rendering)
+        run: |
+          sudo apt update
+          sudo apt install -y fonts-noto-color-emoji libgl1 libglx-mesa0 libgl1-mesa-dri libegl1 libegl-mesa0
+          # 如果项目自带字体，可在此复制（此处假设系统字体已足够）
+          # 若仍需要自定义字体，可取消下方注释并确保 resources/fonts/ 存在
+          # sudo mkdir -p /usr/share/fonts/myfonts
+          # sudo cp -r resources/fonts/* /usr/share/fonts/myfonts/
+          # fc-cache -fv
+
+      - name: Configure meme_generator
+        run: |
+          mkdir -p ~/.config/meme_generator
+          echo -e "[meme]\nload_builtin_memes = false\nmeme_dirs = [\"$GITHUB_WORKSPACE/emoji\"]" > ~/.config/meme_generator/config.toml
+
+      # -------- 生成表情列表（原 update_emoji_list）--------
+      - name: Generate emoji list
+        run: |
+          python3 wiki/update_meme_list.py
+          # 假设脚本生成 wiki/wiki_emoji_list.md，将其重命名为标准名称
+          if [ -f "wiki/wiki_emoji_list.md" ]; then
+            mv wiki/wiki_emoji_list.md wiki/emoji_list.md
+          fi
+
+      # -------- 生成关键词列表（原 generate_keywords）--------
+      - name: Generate keywords
+        run: |
+          # 备份现有文件（用于检测变化）
+          if [ -f "wiki/emoji_keywords.md" ]; then
+            cp wiki/emoji_keywords.md wiki/emoji_keywords.md.backup
+          fi
+          # 运行脚本（脚本需生成 wiki/emoji_keywords.md 或 docs/meme_keywords.md）
+          python3 docs/meme_keywords.py
+          # 如果脚本生成在 docs/，则移动到 wiki/
+          if [ -f "docs/meme_keywords.md" ]; then
+            mv docs/meme_keywords.md wiki/emoji_keywords.md
+          fi
+          # 比较变化
+          if [ -f "wiki/emoji_keywords.md.backup" ] && cmp -s wiki/emoji_keywords.md wiki/emoji_keywords.md.backup; then
+            echo "keywords_unchanged=true" >> $GITHUB_ENV
+          else
+            echo "keywords_unchanged=false" >> $GITHUB_ENV
+          fi
+
+      # -------- 提交并推送 Wiki 变更 --------
+      - name: Commit and push to Wiki
+        run: |
+          cd wiki
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🤖 Auto-update emoji list and keywords"
+            git push origin master
+          fi
+
+      # -------- 清理备份文件 --------
+      - name: Cleanup
+        if: always()
+        run: |
+          rm -f wiki/emoji_keywords.md.backup

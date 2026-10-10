@@ -14,7 +14,7 @@ from meme_generator import (
 )
 
 img_dir = Path(__file__).parent / "images"
-help_text = "图片编号，0=随机选择，1=第一张(1.png)，2=第二张(2.png)"
+help_text = "图片编号，0=随机选择，1=第一张(1.png)，2=第二张(2.png)，3=第三张(3.png)，4=第四张(4.png)"
 
 class Model(MemeArgsModel):
     number: int = Field(0, description=help_text)
@@ -35,6 +35,8 @@ def deepseek_say(images, texts: list[str], args: Model):
     img_files = [
         "1.png",
         "2.png",
+        "3.png",
+        "4.png",
     ]
     total_num = len(img_files)
     if args.number == 0:
@@ -49,11 +51,15 @@ def deepseek_say(images, texts: list[str], args: Model):
     text_areas = [
         (59, 57, 569, 336),
         (139, 140, 653, 427),
+        (372, 0, 1254, 382),
+        (139, 122, 664, 427),
     ]
 
     colors = [
         (4, 21, 70),
         (16, 49, 94),
+        (0, 0, 0),
+        (0, 10, 53),
     ]
 
     font_params = {
@@ -78,8 +84,8 @@ add_meme(
     min_texts=1,
     max_texts=1,
     default_texts=["正在思考中……"],
-    keywords=["Deepseek说", "deepseek说","鲸鱼娘说"],
+    keywords=["Deepseek说", "deepseek说", "鲸鱼娘说", "大肥鱼说"],
     args_type=args_type,
     date_created=datetime(2026, 8, 24),
-    date_modified=datetime(2026, 8, 24),
+    date_modified=datetime(2026, 10, 10),
 )

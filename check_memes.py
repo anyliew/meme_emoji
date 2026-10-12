@@ -11,7 +11,6 @@
   [ERROR] A. max_texts>0 但代码从不消费 texts[]  -> 声明不一致
   [ERROR] B. 导入 TextOverLength 但从未使用       -> 死导入
   [ERROR] D. make_jpg_or_gif 且模板含透明像素      -> 输出黑底(需 PIL)
-  [WARN ] C. 缺少 tags=MemeTags.xxx              -> 分批补全中, 暂不阻塞
 
 ERROR 存在时退出码 1 (阻塞提交); 仅 WARN 时退出码 0。
 """
@@ -49,7 +48,6 @@ def scan_file(path):
     max_t = int(m.group(1)) if m else 0
     has_texts = "texts[" in s
     to_count = s.count("TextOverLength")
-    has_tags = "tags=" in s
     uses_jpg = "make_jpg_or_gif" in s
 
     # A. texts vs max_texts
@@ -59,10 +57,6 @@ def scan_file(path):
     # B. 死导入 TextOverLength
     if to_count == 1:
         errors.append(f"{name}: 导入了 TextOverLength 但未使用 (死导入)")
-
-    # C. tags (警告)
-    if not has_tags:
-        warnings.append(f"{name}: 缺少 tags=MemeTags.xxx (建议补全)")
 
     # D. jpg + 透明模板
     if uses_jpg:

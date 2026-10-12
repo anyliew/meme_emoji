@@ -27,7 +27,7 @@ args_type = MemeArgsType(
 )
 def new_goodnews(images: list[BuildImage], texts: list[str], args: Model):
     frame = BuildImage.open(img_dir / "0.png")
-    name = args.name if args.name else "天命之人"
+    name = args.name or (args.user_infos[0].name if args.user_infos else "天命之人")
     try:
         frame.draw_text(
             (363, 910, 719, 985),
@@ -69,5 +69,5 @@ add_meme(
     default_texts=["喜报传佳讯\n福星高照\n满门庭"],   
     args_type=args_type,
     date_created=datetime(2024, 7, 26),
-    date_modified=datetime(2026, 4, 11),
+    date_modified=datetime(2026, 10, 12),
 )

@@ -18,10 +18,10 @@ def ai_ace(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     text = f"不用了\n我{name}是AI高手\n正在用AI写代码中ing"
     try:
         frame.draw_text(
-            (35, 19, 594, 406),
+            (115, 83, 1104, 744),
             text,
             fill=(58, 58, 58),
-            max_fontsize=100,
+            max_fontsize=200,
             min_fontsize=20,
             lines_align="left",
             font_families=["FZShaoEr-M11S"],
@@ -29,8 +29,8 @@ def ai_ace(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     except ValueError:
         raise TextOverLength(name)
     def make(imgs: list[BuildImage]) -> BuildImage:
-        img = imgs[0].convert("RGBA").resize((340, 340))
-        return frame.copy().paste(img, (600, 77), alpha=True, below=True)
+        img = imgs[0].convert("RGBA").resize((650, 650))
+        return frame.copy().paste(img, (1142, 151), alpha=True, below=True)
     return make_png_or_gif(images, make)
 add_meme(
     "ai_ace",

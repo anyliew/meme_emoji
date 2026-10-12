@@ -19,10 +19,10 @@ def kurogames_phoebe_score_sheet(images: list[BuildImage], texts: list[str], arg
     text = f"{name},你这个月评分为0,纯纯的饭桶！"
     try:
         frame.draw_text(
-            (50, 50, 740, 280),
+            (0, 0, 1620, 622),
             text,
             fill="black",
-            max_fontsize=100,
+            max_fontsize=200,
             min_fontsize=35,
             allow_wrap=True,
             lines_align="center",
@@ -31,8 +31,8 @@ def kurogames_phoebe_score_sheet(images: list[BuildImage], texts: list[str], arg
     except ValueError:
         raise TextOverLength(name)
     def make(imgs: list[BuildImage]) -> BuildImage:
-        img = imgs[0].convert("RGBA").circle().resize((140, 140))
-        return frame.copy().paste(img, (155, 855), alpha=True)
+        img = imgs[0].convert("RGBA").circle().resize((235, 235))
+        return frame.copy().paste(img, (332, 1730), alpha=True)
     return make_jpg_or_gif(images, make)
 add_meme(
     "kurogames_phoebe_score_sheet",

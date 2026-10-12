@@ -1,6 +1,4 @@
-
-
-![meme_emoji](https://socialify.git.ci/anyliew/meme_emoji/image?description=1&font=KoHo&forks=1&issues=1&language=1&logo=https%3A%2F%2Fgithub.com%2Fanyliew%2Fmeme_emoji%2Fraw%2Fmain%2Fdocs%2Fpicture%2Flogo.png&name=1&owner=1&pattern=Plus&pulls=1&stargazers=1&theme=Light)
+![meme_emoji](https://socialify.git.ci/anyliew/meme_emoji/image?description=1&font=JetBrains+Mono&forks=1&issues=1&language=1&logo=https%3A%2F%2Fprod-alicdn-community.kurobbs.com%2Fforum%2F132b295e167d4f95a9f64b02f082bb7d20261012.webp&name=1&owner=1&pattern=Plus&pulls=1&stargazers=1&theme=Light)
 
 ## meme_emoji 表情包扩展仓库 
 
@@ -61,11 +59,11 @@
 
 #### 😉 名称排序  A-Z
 
-* [表情列表](https://github.com/anyliew/meme_emoji/wiki/%E8%A1%A8%E6%83%85%E5%88%97%E8%A1%A8)
+* [表情列表](https://github.com/anyliew/meme_emoji/wiki/emoji_list)
 
 #### 🥰 时间排序  新-旧
 
-* [表情列表](https://github.com/anyliew/meme_emoji/wiki/emoji_list)
+* [表情列表](https://github.com/anyliew/meme_emoji/wiki/emoji_keywords)
 
 
 ## 📄 使用教程 

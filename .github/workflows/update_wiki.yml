@@ -16,18 +16,18 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout main repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
       - name: Checkout wiki repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: ${{ github.repository }}.wiki
           path: wiki
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.10"
 
@@ -52,20 +52,11 @@ jobs:
 
       - name: Generate emoji list
         run: |
-          python3 wiki/update_meme_list.py
-          if [ -f "wiki/表情列表.md" ]; then
-            mv "wiki/表情列表.md" "wiki/emoji_list.md"
-          else
-            echo "ERROR: wiki/表情列表.md not generated!" >&2
-            exit 1
-          fi
+          python3 wiki/scripts/update_meme_list.py
 
       - name: Generate keywords
         run: |
-          if [ -f "wiki/emoji_keywords.md" ]; then
-            cp wiki/emoji_keywords.md wiki/emoji_keywords.md.backup
-          fi
-          python3 docs/meme_keywords.py
+          python3 wiki/scripts/meme_keywords.py
           if [ -f "docs/meme_keywords.md" ]; then
             mv docs/meme_keywords.md wiki/emoji_keywords.md
           fi
@@ -75,15 +66,10 @@ jobs:
           cd wiki
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .
+          git add emoji_list.md emoji_keywords.md images thumbs
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
             git commit -m "🤖 Auto-update emoji list and keywords"
             git push origin master
           fi
-
-      - name: Cleanup
-        if: always()
-        run: |
-          rm -f wiki/emoji_keywords.md.backup

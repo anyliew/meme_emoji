@@ -3,7 +3,7 @@ from pathlib import Path
 from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
-from meme_generator.utils import make_jpg_or_gif
+from meme_generator.utils import make_png_or_gif
 from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
 def mihoyo_navia_caspar_persuade(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
@@ -32,7 +32,7 @@ def mihoyo_navia_caspar_persuade(images: list[BuildImage], texts: list[str], arg
     def make(imgs: list[BuildImage]) -> BuildImage:
         img = imgs[0].convert("RGBA").resize((350, 350))
         return frame.copy().paste(img, (141, 85), alpha=True, below=True)
-    return make_jpg_or_gif(images, make)
+    return make_png_or_gif(images, make)
 add_meme(
     "mihoyo_navia_caspar_persuade",
     mihoyo_navia_caspar_persuade,
@@ -43,5 +43,5 @@ add_meme(
     keywords=["说服"],
     tags=MemeTags.genshin,
     date_created=datetime(2025, 7, 1),
-    date_modified=datetime(2025, 7, 1),
+    date_modified=datetime(2026, 10, 12),
 )

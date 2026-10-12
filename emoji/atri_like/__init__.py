@@ -4,7 +4,7 @@ from pil_utils import BuildImage
 from meme_generator import add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.tags import MemeTags
-from meme_generator.utils import make_jpg_or_gif
+from meme_generator.utils import make_png_or_gif
 img_dir = Path(__file__).parent / "images"
 default_text = "亚托莉喜欢这个"
 def atri_like(images: list[BuildImage], texts: list[str], args):
@@ -24,7 +24,7 @@ def atri_like(images: list[BuildImage], texts: list[str], args):
     def make(imgs: list[BuildImage]) -> BuildImage:
         img = imgs[0].convert("RGBA").resize((305, 235), keep_ratio=True)
         return frame.copy().paste(img, (106, 72), below=True)
-    return make_jpg_or_gif(images, make)
+    return make_png_or_gif(images, make)
 add_meme(
     "atri_like",
     atri_like,
@@ -36,5 +36,5 @@ add_meme(
     keywords=["亚托莉喜欢"],
     tags=MemeTags.atri,
     date_created=datetime(2025, 5, 25),
-    date_modified=datetime(2025, 5, 25),
+    date_modified=datetime(2026, 10, 12),
 )

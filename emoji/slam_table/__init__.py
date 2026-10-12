@@ -2,7 +2,6 @@ from datetime import datetime
 from pathlib import Path
 from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
-from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_png_or_gif
 img_dir = Path(__file__).parent / "images"
 def slam_table(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
@@ -20,5 +19,5 @@ add_meme(
     max_texts=0,
     keywords=["砸桌"],
     date_created=datetime(2026, 2, 16),
-    date_modified=datetime(2026, 2, 16),
+    date_modified=datetime(2026, 10, 12),
 )

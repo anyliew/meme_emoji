@@ -10,7 +10,7 @@ from meme_generator import (
     add_meme,
 )
 from meme_generator.exception import TextOverLength
-from meme_generator.utils import make_jpg_or_gif
+from meme_generator.utils import make_png_or_gif
 img_dir = Path(__file__).parent / "images"
 help_text = "昵称（第一段文字）"
 class Model(MemeArgsModel):
@@ -57,7 +57,7 @@ def new_goodnews(images: list[BuildImage], texts: list[str], args: Model):
     def make(imgs: list[BuildImage]) -> BuildImage:
         img = imgs[0].convert("RGBA").resize((445, 445))
         return frame.copy().paste(img, (319, 408), alpha=True, below=True)
-    return make_jpg_or_gif(images, make)
+    return make_png_or_gif(images, make)
 add_meme(
     "new_goodnews",
     new_goodnews,

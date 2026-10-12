@@ -2,7 +2,6 @@ from datetime import datetime
 from pathlib import Path
 from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
-from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_png_or_gif
 from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
@@ -23,5 +22,5 @@ add_meme(
     keywords=["丛雨平板"],
     tags=MemeTags.yuzu_soft,
     date_created=datetime(2025, 6, 20),
-    date_modified=datetime(2025, 6, 20),
+    date_modified=datetime(2026, 10, 12),
 )

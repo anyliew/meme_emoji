@@ -3,7 +3,7 @@ from pathlib import Path
 from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
-from meme_generator.utils import make_jpg_or_gif
+from meme_generator.utils import make_png_or_gif
 from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
 def mihoyo_keqing_pointo(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
@@ -32,7 +32,7 @@ def mihoyo_keqing_pointo(images: list[BuildImage], texts: list[str], args: MemeA
     def make(imgs: list[BuildImage]) -> BuildImage:
         img = imgs[0].convert("RGBA").resize((230, 290))
         return frame.copy().paste(img, (26, 171), alpha=True,below=True)
-    return make_jpg_or_gif(images, make)
+    return make_png_or_gif(images, make)
 add_meme(
     "mihoyo_keqing_pointo",
     mihoyo_keqing_pointo,
@@ -43,5 +43,5 @@ add_meme(
     keywords=["刻晴指"],
     tags=MemeTags.genshin,
     date_created=datetime(2025, 9, 27),
-    date_modified=datetime(2025, 9, 27),
+    date_modified=datetime(2026, 10, 12),
 )

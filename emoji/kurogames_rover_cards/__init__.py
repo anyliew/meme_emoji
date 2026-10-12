@@ -3,7 +3,8 @@ from pathlib import Path
 from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
-from meme_generator.utils import make_jpg_or_gif
+from meme_generator.utils import make_png_or_gif
+from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
 def kurogames_rover_cards(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
@@ -32,7 +33,7 @@ def kurogames_rover_cards(images: list[BuildImage], texts: list[str], args: Meme
         img = imgs[0].convert("RGBA").resize((80, 80))
         img = img.rotate(30, expand=True)
         return frame.copy().paste(img, (417, 247), alpha=True, below=True)
-    return make_jpg_or_gif(images, make)
+    return make_png_or_gif(images, make)
 add_meme(
     "kurogames_rover_cards",
     kurogames_rover_cards,
@@ -41,6 +42,7 @@ add_meme(
     min_texts=0,
     max_texts=1,
     keywords=["荣耀之丘"],
+    tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 7, 7),
-    date_modified=datetime(2025, 7, 7),
+    date_modified=datetime(2026, 10, 12),
 )

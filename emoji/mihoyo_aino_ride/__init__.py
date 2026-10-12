@@ -2,8 +2,7 @@ from datetime import datetime
 from pathlib import Path
 from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
-from meme_generator.exception import TextOverLength
-from meme_generator.utils import make_jpg_or_gif
+from meme_generator.utils import make_png_or_gif
 from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
 def mihoyo_aino_ride(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
@@ -19,7 +18,7 @@ def mihoyo_aino_ride(images: list[BuildImage], texts: list[str], args: MemeArgsM
         img4 = imgs[0].convert("RGBA").resize((111, 125))
         result.paste(img4, (133, 692), alpha=True, below=True)
         return result
-    return make_jpg_or_gif(images, make)
+    return make_png_or_gif(images, make)
 add_meme(
     "mihoyo_aino_ride",
     mihoyo_aino_ride,
@@ -30,5 +29,5 @@ add_meme(
     keywords=["爱诺骑"],
     tags=MemeTags.genshin,
     date_created=datetime(2025, 12, 2),
-    date_modified=datetime(2025, 12, 2),
+    date_modified=datetime(2026, 10, 12),
 )

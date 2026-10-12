@@ -15,7 +15,7 @@ def gong_xi_fa_cai(images: list[BuildImage], texts: list[str], args: MemeArgsMod
         info = args.user_infos[0]
         ta = "他" if info.gender == "male" else "她"
         name = info.name or ta
-    text = f""
+    text = name
     try:
         frame.draw_text(
             (50, 20, 700, 130),
@@ -39,5 +39,5 @@ add_meme(
     max_texts=1,
     keywords=["恭喜发财"],
     date_created=datetime(2024, 7, 26),
-    date_modified=datetime(2024, 7, 26),
+    date_modified=datetime(2026, 10, 12),
 )

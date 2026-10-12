@@ -2,8 +2,7 @@ from datetime import datetime
 from pathlib import Path
 from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
-from meme_generator.exception import TextOverLength
-from meme_generator.utils import make_jpg_or_gif
+from meme_generator.utils import make_png_or_gif
 img_dir = Path(__file__).parent / "images"
 def throwing_poop(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
@@ -15,7 +14,7 @@ def throwing_poop(images: list[BuildImage], texts: list[str], args: MemeArgsMode
         img3 = imgs[0].convert("RGBA").resize((108, 108)).rotate(20, expand=True)
         result = result.paste(img3, (297, 1003), alpha=True, below=True)
         return result
-    return make_jpg_or_gif(images, make)
+    return make_png_or_gif(images, make)
 add_meme(
     "throwing_poop",
     throwing_poop,
@@ -25,5 +24,5 @@ add_meme(
     max_texts=0,
     keywords=["扔史"],
     date_created=datetime(2025, 9, 21),
-    date_modified=datetime(2025, 9, 23),
+    date_modified=datetime(2026, 10, 12),
 )

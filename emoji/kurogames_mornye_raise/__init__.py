@@ -33,6 +33,7 @@ add_meme(
     min_images=1,  
     max_images=1,  
     keywords=["莫宁举"],  
+    tags=MemeTags.wuthering_waves,
     date_created=datetime(2026, 1, 20),  
-    date_modified=datetime(2026, 1, 20),  
+    date_modified=datetime(2026, 10, 12),  
 )

@@ -10,8 +10,8 @@ from meme_generator import (
     ParserOption,
     add_meme,
 )
-from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_png_or_gif
+from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
 help_text = "图片模板编号，1~3  可选：1: 财神丛雨，2: 原版丛雨，3: 虎头丛雨，0 为随机"
 class Model(MemeArgsModel):
@@ -51,6 +51,7 @@ add_meme(
     max_images=1,
     args_type=args_type,
     keywords=["丛雨抱"],
+    tags=MemeTags.yuzu_soft,
     date_created=datetime(2026, 2, 19),
-    date_modified=datetime(2026, 4, 1),
+    date_modified=datetime(2026, 10, 12),
 )

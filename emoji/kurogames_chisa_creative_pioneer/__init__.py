@@ -4,6 +4,7 @@ from PIL.Image import Image as IMG
 from pil_utils import BuildImage  
 from meme_generator import add_meme  
 from meme_generator.utils import save_gif  
+from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
 def kurogames_chisa_creative_pioneer(images: list[BuildImage], texts, args):
     user_head = images[0].resize((164, 164)).convert("RGBA").circle()
@@ -23,6 +24,7 @@ add_meme(
     min_images=1,  
     max_images=1,  
     keywords=["创作先锋"],  
+    tags=MemeTags.wuthering_waves,
     date_created=datetime(2026, 2, 16),  
-    date_modified=datetime(2026, 2, 16),  
+    date_modified=datetime(2026, 10, 12),  
 )

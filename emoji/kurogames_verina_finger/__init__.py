@@ -3,7 +3,7 @@ from pathlib import Path
 from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
-from meme_generator.utils import make_jpg_or_gif
+from meme_generator.utils import make_png_or_gif
 from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
 def kurogames_verina_finger(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
@@ -32,7 +32,7 @@ def kurogames_verina_finger(images: list[BuildImage], texts: list[str], args: Me
     def make(imgs: list[BuildImage]) -> BuildImage:
         img = imgs[0].convert("RGBA").resize((420, 420))
         return frame.copy().paste(img, (248, 555), alpha=True, below=True)
-    return make_jpg_or_gif(images, make)
+    return make_png_or_gif(images, make)
 add_meme(
     "kurogames_verina_finger",
     kurogames_verina_finger,
@@ -43,5 +43,5 @@ add_meme(
     keywords=["维里奈指","小维指"],
     tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 7, 7),
-    date_modified=datetime(2025, 7, 7),
+    date_modified=datetime(2026, 10, 12),
 )

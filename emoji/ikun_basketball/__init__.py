@@ -2,8 +2,7 @@ from datetime import datetime
 from pathlib import Path
 from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
-from meme_generator.exception import TextOverLength
-from meme_generator.utils import make_jpg_or_gif
+from meme_generator.utils import make_png_or_gif
 img_dir = Path(__file__).parent / "images"
 def ikun_basketball(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
@@ -11,7 +10,7 @@ def ikun_basketball(images: list[BuildImage], texts: list[str], args: MemeArgsMo
         img = imgs[0].convert("RGBA").circle().resize((250, 250))
         img = img.rotate(10, expand=True)
         return frame.copy().paste(img, (322, 129), alpha=True,below=True)
-    return make_jpg_or_gif(images, make)
+    return make_png_or_gif(images, make)
 add_meme(
     "ikun_basketball",
     ikun_basketball,
@@ -19,5 +18,5 @@ add_meme(
     max_images=1,
     keywords=["篮球","🏀"],
     date_created=datetime(2025, 5, 29),
-    date_modified=datetime(2025, 5, 29),
+    date_modified=datetime(2026, 10, 12),
 )

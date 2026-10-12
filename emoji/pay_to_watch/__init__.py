@@ -3,7 +3,7 @@ from pathlib import Path
 from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
-from meme_generator.utils import make_jpg_or_gif
+from meme_generator.utils import make_png_or_gif
 img_dir = Path(__file__).parent / "images"
 def pay_to_watch(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
@@ -31,7 +31,7 @@ def pay_to_watch(images: list[BuildImage], texts: list[str], args: MemeArgsModel
     def make(imgs: list[BuildImage]) -> BuildImage:
         img = imgs[0].convert("RGBA").resize((185, 185))
         return frame.copy().paste(img, (150, 240), alpha=True, below=True)
-    return make_jpg_or_gif(images, make)
+    return make_png_or_gif(images, make)
 add_meme(
     "pay_to_watch",
     pay_to_watch,
@@ -41,5 +41,5 @@ add_meme(
     max_texts=1,
     keywords=["付费观看"],
     date_created=datetime(2025, 7, 2),
-    date_modified=datetime(2025, 7, 2),
+    date_modified=datetime(2026, 10, 12),
 )

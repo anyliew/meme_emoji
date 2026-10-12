@@ -2,7 +2,6 @@ from datetime import datetime
 from pathlib import Path
 from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
-from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
 img_dir = Path(__file__).parent / "images"
 def kfc_thursday(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
@@ -18,5 +17,5 @@ add_meme(
     max_images=1,
     keywords=["星期四","疯狂星期四"],
     date_created=datetime(2025, 5, 29),
-    date_modified=datetime(2025, 5, 29),
+    date_modified=datetime(2026, 10, 12),
 )

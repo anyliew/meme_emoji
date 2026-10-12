@@ -4,6 +4,7 @@ from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
 from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_jpg_or_gif
+from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
 def kurogames_phoebe_score_sheet(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
@@ -41,6 +42,7 @@ add_meme(
     min_texts=0,
     max_texts=1,
     keywords=["菲比评分表","评分表"],
+    tags=MemeTags.wuthering_waves,
     date_created=datetime(2025, 5, 24),
-    date_modified=datetime(2025, 5, 24),
+    date_modified=datetime(2026, 10, 12),
 )

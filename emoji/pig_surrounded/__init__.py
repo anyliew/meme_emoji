@@ -2,7 +2,6 @@ from datetime import datetime
 from pathlib import Path
 from pil_utils import BuildImage
 from meme_generator import MemeArgsModel, add_meme
-from meme_generator.exception import TextOverLength
 from meme_generator.utils import make_png_or_gif
 from meme_generator.tags import MemeTags
 img_dir = Path(__file__).parent / "images"
@@ -18,8 +17,8 @@ add_meme(
     min_images=1,
     max_images=1,
     min_texts=0,
-    max_texts=1,
+    max_texts=0,
     keywords=["被猪包围"],
     date_created=datetime(2026, 2, 7),
-    date_modified=datetime(2026, 2, 7),
+    date_modified=datetime(2026, 10, 12),
 )

@@ -20,7 +20,7 @@ positions = [
 
 sizes = [(63, 63)] * 24 + [(65, 65)] + [(63, 63)] * 13
 
-def nailoong_perch(images: list[BuildImage], texts, args):
+def nailoong_flare(images: list[BuildImage], texts, args):
     user_img = images[0].convert("RGBA")
     frames = []
     total_frames = 38
@@ -37,11 +37,11 @@ def nailoong_perch(images: list[BuildImage], texts, args):
     return save_gif(frames, 0.07)
 
 add_meme(
-    "nailoong_perch",
-    nailoong_perch,
+    "nailoong_flare",
+    nailoong_flare,
     min_images=1,
     max_images=1,
-    keywords=["趴墩"],
+    keywords=["托马斯", "奶龙托马斯"],
     date_created=datetime(2026, 10, 12),
-    date_modified=datetime(2026, 10, 12),
+    date_modified=datetime(2026, 10, 14),
 )

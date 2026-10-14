@@ -27,8 +27,8 @@ def fbi_photo(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     except ValueError:
         raise TextOverLength(name)
     def make(imgs: list[BuildImage]) -> BuildImage:
-        img = imgs[0].convert("RGBA").resize((220, 220))
-        return frame.copy().paste(img, (985, 400), alpha=True)
+        img = imgs[0].convert("RGBA").resize((235, 303), keep_ratio=True)
+        return frame.copy().paste(img, (978, 363), alpha=True, below=True)
     return make_jpg_or_gif(images, make)
 add_meme(
     "fbi_photo",

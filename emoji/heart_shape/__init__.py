@@ -2,69 +2,52 @@ from datetime import datetime
 from pathlib import Path
 
 from pil_utils import BuildImage
-from pydantic import Field
 
-from meme_generator import (
-    MemeArgsModel,
-    MemeArgsType,
-    ParserArg,
-    ParserOption,
-    add_meme,
-)
-from meme_generator.exception import TextOverLength
+from meme_generator import MemeArgsModel, add_meme
+from meme_generator.utils import make_png_or_gif
 
 img_dir = Path(__file__).parent / "images"
 
-help_text = "昵称"
+AVATAR_SLOTS: list[tuple[int, int, int, int]] = [
+    (323, 73, 242, 241),      # 1
+    (599, 73, 242, 241),      # 2
+    (1163, 73, 501, 500),     # 3
+    (1710, 332, 242, 241),    # 4
+    (77, 355, 218, 218),      # 5
+    (350, 355, 482, 482),     # 6
+    (891, 355, 218, 218),     # 7
+    (77, 613, 218, 218),      # 8
+    (1163, 613, 501, 499),    # 9
+    (891, 619, 218, 217),     # 10
+    (1710, 619, 247, 247),    # 11
+    (352, 899, 213, 213),     # 12
+    (620, 899, 489, 491),     # 13
+    (1163, 1153, 242, 241),   # 14
+    (891, 1433, 218, 220),    # 15
+]
 
 
-class Model(MemeArgsModel):
-    name: str = Field("", description=help_text)
-
-
-args_type = MemeArgsType(
-    args_model=Model,
-    parser_options=[
-        ParserOption(
-            names=["-n", "--name"],
-            args=[ParserArg(name="name", value="str")],
-            help_text=help_text,
-        ),
-    ],
-)
-
-
-def heart_shape(images: list[BuildImage], texts: list[str], args: Model):
+def heart_shape(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
     frame = BuildImage.open(img_dir / "0.png")
-    name = args.name or (
-        args.user_infos[0].name if args.user_infos else texts[0]
-    )
-    try:
-        frame.draw_text(
-            (180, 93, 1868, 295),
-            name,
-            fill=(255, 255, 255),
-            allow_wrap=True,
-            max_fontsize=300,
-            min_fontsize=15,
-            lines_align="center",
-            font_families=["FZKaTong-M19S"],
-        )
-    except ValueError:
-        raise TextOverLength(name)
-    return frame.save_png()
+
+    def make(imgs: list[BuildImage]) -> BuildImage:
+        result = frame.copy()
+        for i, (x, y, w, h) in enumerate(AVATAR_SLOTS):
+            img = imgs[i % len(imgs)].convert("RGBA").square().resize((w, h))
+            result.paste(img, (x, y), alpha=True)
+        return result
+
+    return make_png_or_gif(images, make)
 
 
 add_meme(
     "heart_shape",
     heart_shape,
-    min_images=0,
-    max_images=0,
-    min_texts=1,
-    max_texts=1,
-    default_texts=["Anyliew"],
+    min_images=1,
+    max_images=15,
+    min_texts=0,
+    max_texts=0,
     keywords=["爱心形状"],
-    args_type=args_type,
     date_created=datetime(2026, 10, 12),
-    date_modified=datetime(2026, 10, 14),
+    date_modified=datetime(2026, 10, 16),
 )

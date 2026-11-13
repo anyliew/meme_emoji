@@ -1,2 +1,0 @@
-meme_generator==0.1.14
-nonebot-plugin-memes==0.7.12

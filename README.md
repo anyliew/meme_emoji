@@ -89,23 +89,17 @@
 
 ## 🔗 相关链接
 
-### meme-generator
-
-- [meme-generator](https://github.com/MemeCrafters/meme-generator)
-- [meme-generator Wiki](https://github.com/MemeCrafters/meme-generator/wiki)
-
-### 文档
-
-- [meme_emoji Wiki](https://github.com/anyliew/meme_emoji/wiki)
-
-### 仓库
-
-| 语言 | 仓库 |
-| --- | --- |
-| Python | [meme_emoji](https://github.com/anyliew/meme_emoji) · [crazy_emoji](https://github.com/anyliew/crazy_emoji) · [furina_emoji](https://gitcode.com/anyliew/furina_emoji) |
-| Rust | [meme-emoji](https://github.com/anyliew/meme-emoji) · [crazy-emoji](https://github.com/anyliew/crazy-emoji) · [jj-emoji](https://github.com/anyliew/jj-emoji) |
-
-> 下划线命名（`meme_emoji`、`crazy_emoji`）为 Python 版，连字符命名（`meme-emoji`、`crazy-emoji`）为对应的 Rust 版。
+| 分类 | 项目 | 地址 |
+| --- | --- | --- |
+| 上游 | meme-generator | <https://github.com/MemeCrafters/meme-generator> |
+| 上游 | meme-generator Wiki | <https://github.com/MemeCrafters/meme-generator/wiki> |
+| 文档 | meme_emoji Wiki | <https://github.com/anyliew/meme_emoji/wiki> |
+| Python | meme_emoji | <https://github.com/anyliew/meme_emoji> |
+| Python | crazy_emoji | <https://github.com/anyliew/crazy_emoji> |
+| Python | furina_emoji | <https://gitcode.com/anyliew/furina_emoji> |
+| Rust | meme-emoji | <https://github.com/anyliew/meme-emoji> |
+| Rust | crazy-emoji | <https://github.com/anyliew/crazy-emoji> |
+| Rust | jj-emoji | <https://github.com/anyliew/jj-emoji> |
 
 ## ⭐ 支持本项目
 

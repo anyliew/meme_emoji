@@ -98,15 +98,14 @@
 
 - [meme_emoji Wiki](https://github.com/anyliew/meme_emoji/wiki)
 
-### Rust 仓库
+### 仓库
 
-- [meme-emoji](https://github.com/anyliew/meme-emoji)
-- [crazy-emoji](https://github.com/anyliew/crazy-emoji)
-- [jj-emoji](https://github.com/anyliew/jj-emoji)
+| 语言 | 仓库 |
+| --- | --- |
+| Python | [meme_emoji](https://github.com/anyliew/meme_emoji) · [crazy_emoji](https://github.com/anyliew/crazy_emoji) · [furina_emoji](https://gitcode.com/anyliew/furina_emoji) |
+| Rust | [meme-emoji](https://github.com/anyliew/meme-emoji) · [crazy-emoji](https://github.com/anyliew/crazy-emoji) · [jj-emoji](https://github.com/anyliew/jj-emoji) |
 
-### Python 仓库
-
-- [furina_emoji](https://gitcode.com/anyliew/furina_emoji)
+> 下划线命名（`meme_emoji`、`crazy_emoji`）为 Python 版，连字符命名（`meme-emoji`、`crazy-emoji`）为对应的 Rust 版。
 
 ## ⭐ 支持本项目
 

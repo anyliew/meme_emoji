@@ -11,6 +11,11 @@ on:
       - "emoji/**"
   workflow_dispatch:
 
+# 同一时间只允许一个更新任务，避免两次自动提交互相冲突
+concurrency:
+  group: update-wiki
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-22.04
@@ -25,6 +30,7 @@ jobs:
         with:
           repository: ${{ github.repository }}.wiki
           path: wiki
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v7
@@ -51,8 +57,10 @@ jobs:
           echo -e "[meme]\nload_builtin_memes = false\nmeme_dirs = [\"$GITHUB_WORKSPACE/emoji\"]" > ~/.config/meme_generator/config.toml
 
       - name: Generate emoji list
+        # --force：忽略已有预览图，全部按当前代码重建。
+        # 预览占位头像由脚本内的 apply_preview_avatar() 统一替换为 picture/head.png。
         run: |
-          python3 wiki/scripts/update_meme_list.py
+          python3 wiki/scripts/update_meme_list.py --force
 
       - name: Generate keywords
         run: |
@@ -69,7 +77,9 @@ jobs:
           git add emoji_list.md emoji_keywords.md images thumbs
           if git diff --cached --quiet; then
             echo "No changes to commit"
-          else
-            git commit -m "🤖 Auto-update emoji list and keywords"
-            git push origin master
+            exit 0
           fi
+          git commit -m "🤖 Auto-update emoji list and keywords"
+          # Wiki 也可能被手工编辑过，先 rebase 再推送，避免 non-fast-forward
+          git pull --rebase origin master
+          git push origin master

@@ -51,14 +51,28 @@ jobs:
           pip install meme_generator==0.1.14 filetype pillow pycairo
           pip install "pydantic<2.0"
 
+      - name: Replace preview placeholder avatar
+        # 预览图的缺省头像取自 meme_generator 内置的
+        # resources/images/emojis/*.png（utils.random_image 随机挑选），
+        # 这里把它们统一覆盖为仓库内的 docs/picture/head.png，
+        # 使所有表情预览使用同一张头像。
+        run: |
+          PLACEHOLDER_DIR="$(python3 -c 'import pathlib, meme_generator; print(pathlib.Path(meme_generator.__file__).parent / "resources" / "images" / "emojis")')"
+          echo "placeholder dir: ${PLACEHOLDER_DIR}"
+          ls "${PLACEHOLDER_DIR}"
+          count=$(ls "${PLACEHOLDER_DIR}"/*.png | wc -l)
+          for f in "${PLACEHOLDER_DIR}"/*.png; do
+            cp docs/picture/head.png "${f}"
+          done
+          echo "replaced ${count} placeholder avatar(s) with docs/picture/head.png"
+
       - name: Configure meme_generator
         run: |
           mkdir -p ~/.config/meme_generator
           echo -e "[meme]\nload_builtin_memes = false\nmeme_dirs = [\"$GITHUB_WORKSPACE/emoji\"]" > ~/.config/meme_generator/config.toml
 
       - name: Generate emoji list
-        # --force：忽略已有预览图，全部按当前代码重建。
-        # 预览占位头像由脚本内的 apply_preview_avatar() 统一替换为 picture/head.png。
+        # --force：忽略已有预览图，全部按当前代码重建
         run: |
           python3 wiki/scripts/update_meme_list.py --force
 

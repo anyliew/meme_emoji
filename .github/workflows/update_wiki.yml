@@ -45,6 +45,88 @@ jobs:
             libgl1 libglx-mesa0 libgl1-mesa-dri libegl1 libegl-mesa0 \
             libcairo2-dev
 
+      - name: Install meme-generator fonts
+        # 预览图渲染依赖上游字体，缺字体时中文会变成方块（乱码）。
+        # 字体清单取自 MemeCrafters/meme-generator 的 resources/fonts，
+        # 运行时通过 GitHub API 动态获取，失败则回退到内置清单。
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import pathlib
+          import time
+          import urllib.parse
+          import urllib.request
+
+          REPO = "MemeCrafters/meme-generator"
+          SUBDIR = "resources/fonts"
+          RAW = f"https://raw.githubusercontent.com/{REPO}/main/{SUBDIR}/"
+          API = f"https://api.github.com/repos/{REPO}/contents/{SUBDIR}"
+
+          FALLBACK = [
+              "Aller_Bd.ttf",
+              "FZKATJW.ttf",
+              "FZSEJW.ttf",
+              "FZSJ-QINGCRJ.ttf",
+              "FZXS14.ttf",
+              "GlowSansSC-Normal-Heavy.otf",
+              "HiraginoMin-W5-90-RKSJ-H-2.ttc",
+              "Neo Sans Bold.ttf",
+              "NotoSansSC-Bold.ttf",
+              "NotoSansSC-Regular.ttf",
+              "NotoSerifSC-Bold.otf",
+              "NotoSerifSC-Regular.otf",
+              "RoGSanSrfStd-Bd.otf",
+              "consola.ttf",
+              "上首方糖体.ttf",
+              "庞门正道粗书体.ttf",
+          ]
+
+          headers = {"User-Agent": "meme-emoji-ci"}
+          token = os.environ.get("GH_TOKEN")
+          if token:
+              headers["Authorization"] = f"Bearer {token}"
+
+          try:
+              req = urllib.request.Request(API, headers=headers)
+              items = json.load(urllib.request.urlopen(req, timeout=30))
+              names = [it["name"] for it in items if it.get("type") == "file"]
+              print(f"字体清单来自 GitHub API：{len(names)} 个")
+          except Exception as exc:
+              print(f"API 获取失败（{exc}），回退到内置清单")
+              names = FALLBACK
+
+          dest = pathlib.Path("/tmp/mgfonts")
+          dest.mkdir(parents=True, exist_ok=True)
+
+          failed = []
+          for name in names:
+              url = RAW + urllib.parse.quote(name)
+              for attempt in range(1, 4):
+                  try:
+                      data = urllib.request.urlopen(url, timeout=120).read()
+                      (dest / name).write_bytes(data)
+                      print(f"  ok   {name}  {len(data) // 1024} KiB")
+                      break
+                  except Exception as exc:
+                      if attempt == 3:
+                          failed.append(name)
+                          print(f"  FAIL {name}: {exc}")
+                      else:
+                          print(f"  retry {name} ({attempt}/3)")
+                          time.sleep(2)
+
+          if failed:
+              raise SystemExit(f"字体下载失败：{failed}")
+          PY
+          sudo mkdir -p /usr/share/fonts/meme
+          sudo cp /tmp/mgfonts/* /usr/share/fonts/meme/
+          sudo fc-cache -fv
+          echo "--- 已安装字体数：$(fc-list | wc -l) ---"
+          fc-list :lang=zh | head -5
+
       - name: Install Python packages
         run: |
           pip install --upgrade pip

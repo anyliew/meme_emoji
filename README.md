@@ -5,12 +5,6 @@
 
 为你的聊天机器人添加更多趣味表情生成
 
-[![Stars](https://img.shields.io/github/stars/anyliew/meme_emoji?style=flat-square&label=Stars)](https://github.com/anyliew/meme_emoji/stargazers)
-[![Forks](https://img.shields.io/github/forks/anyliew/meme_emoji?style=flat-square&label=Forks)](https://github.com/anyliew/meme_emoji/network/members)
-[![Issues](https://img.shields.io/github/issues/anyliew/meme_emoji?style=flat-square&label=Issues)](https://github.com/anyliew/meme_emoji/issues)
-[![License](https://img.shields.io/github/license/anyliew/meme_emoji?style=flat-square&label=License)](./LICENSE)
-[![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-
 [表情列表](https://github.com/anyliew/meme_emoji/wiki/emoji_list) ·
 [使用文档](https://github.com/anyliew/meme_emoji/wiki) ·
 [问题反馈](https://github.com/anyliew/meme_emoji/issues) ·

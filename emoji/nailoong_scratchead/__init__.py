@@ -41,7 +41,7 @@ add_meme(
     nailoong_scratchead,
     min_images=1,
     max_images=1,
-    keywords=["奶龙挠头"],
+    keywords=["奶龙挠痒痒", "挠痒痒"],
     date_created=datetime(2026, 11, 17),
     date_modified=datetime(2026, 11, 17),
 )
